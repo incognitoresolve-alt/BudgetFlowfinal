@@ -8,9 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>BudgetFlow — Planificateur</title>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQnVkZ2V0RmxvdyIsInNob3J0X25hbWUiOiJCdWRnZXRGbG93IiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2YzZjRmNiIsInRoZW1lX2NvbG9yIjoiIzI1NjNlYiIsInN0YXJ0X3VybCI6Ii8iLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA1MTIgNTEyJyUzRSUzQ3JlY3Qgd2lkdGg9JzUxMicgaGVpZ2h0PSc1MTInIHJ4PSc4MCcgZmlsbD0nJTIzMjU2M2ViJy8lM0UlM0N0ZXh0IHg9JzI1NicgeT0nMzIwJyBmb250LXNpemU9JzI4MCcgdGV4dC1hbmNob3I9J21pZGRsZScgZmlsbD0nd2hpdGUnJTNFJUQxJTg0JTNDJTJGdGV4dCUzRSUzQyUyRnN2ZyUzRSIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
 <meta name="theme-color" content="#f3f4f6" id="themeColorMeta">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
   :root {
@@ -24,72 +25,77 @@
   body.theme-onyx {
     --bg: #000000; --surface: #0a0a0a; --surface2: #171717; --border: #27272a;
     --accent: #ffffff; --accent-text: #000000; --green: #10b981; --red: #ef4444;
-    --text: #fafafa; --muted: #a1a1aa; --blue: #60a5fa;
+    --text: #fafafa; --muted: #a1a1aa;
   }
   body.theme-navy {
     --bg: #020617; --surface: #0f172a; --surface2: #1e293b; --border: #334155;
     --accent: #38bdf8; --accent-text: #0f172a; --green: #34d399; --red: #f87171;
-    --text: #f8fafc; --muted: #94a3b8; --blue: #60a5fa;
+    --text: #f8fafc; --muted: #94a3b8;
   }
   body.theme-classic-dark {
     --bg: #0a0c0f; --surface: #111318; --surface2: #181c23; --border: #252a35;
     --accent: #f0a500; --accent-text: #000000; --green: #3ddc84; --red: #e05c3a;
-    --text: #e8eaf0; --muted: #5a6070; --blue: #4f9cf9;
+    --text: #e8eaf0; --muted: #5a6070;
     --font-sans: 'DM Mono', monospace; --font-title: 'Syne', sans-serif; --font-mono: 'DM Mono', monospace;
   }
   body.theme-classic-midnight {
     --bg: #0f0c29; --surface: #1a153a; --surface2: #251e4d; --border: #382d72;
     --accent: #b197fc; --accent-text: #000000; --green: #38d9a9; --red: #ff8787;
-    --text: #f8f9fa; --muted: #9775fa; --blue: #74c0fc;
+    --text: #f8f9fa; --muted: #9775fa;
     --font-sans: 'DM Mono', monospace; --font-title: 'Syne', sans-serif; --font-mono: 'DM Mono', monospace;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; overflow-x: hidden; transition: background-color 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+  
   .btn-shimmer { position: relative; overflow: hidden; }
   .btn-shimmer::after { content: ""; position: absolute; top: 0; left: -150%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: shimmer 3s infinite; pointer-events: none; }
   @keyframes shimmer { 0% { left: -150%; } 25% { left: 200%; } 100% { left: 200%; } }
+
   #welcomeScreen { position: fixed; inset: 0; background: var(--surface); z-index: 9000; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity 0.4s ease; }
   #welcomeScreen.hidden { opacity: 0; pointer-events: none; }
   .welcome-box { position: relative; z-index: 10; width: 100%; max-width: 380px; padding: 40px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); text-align: center; }
-  .welcome-logo { font-family: var(--font-title); font-weight: 800; font-size: 28px; letter-spacing: -1px; color: var(--text); margin-bottom: 8px; }
+  .welcome-logo { font-family: var(--font-title); font-weight: 800; font-size: 28px; letter-spacing: -1px; margin-bottom: 8px; }
   .welcome-logo span { color: var(--accent); }
   .welcome-tagline { font-size: 13px; color: var(--muted); margin-bottom: 32px; font-weight: 500; }
-  .welcome-label { display: block; font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 8px; text-align: left; }
+  .welcome-label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 8px; text-align: left; }
   .welcome-input { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 16px; font-family: var(--font-sans); font-size: 16px; color: var(--text); outline: none; transition: all 0.2s; margin-bottom: 24px; }
   .welcome-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
   .welcome-btn { width: 100%; background: var(--accent); color: var(--accent-text); border: none; border-radius: 12px; padding: 16px; font-size: 15px; font-weight: 600; cursor: pointer; transition: opacity 0.2s; margin-bottom: 12px; }
   .welcome-btn:hover { opacity: 0.9; }
+  
   .install-btn { width: 100%; background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 12px; padding: 14px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 12px; display: none; align-items: center; justify-content: center; gap: 8px;}
   .install-btn:hover { background: var(--border); }
-  .welcome-btn-guide { width: 100%; background: transparent; color: var(--muted); border: none; font-size: 13px; font-weight: 500; cursor: pointer; transition: color 0.2s; padding: 12px; }
+  .welcome-btn-guide { width: 100%; background: transparent; color: var(--muted); border: none; font-size: 13px; font-weight: 500; cursor: pointer; padding: 12px; }
   .welcome-btn-guide:hover { color: var(--text); }
-  .welcome-error { font-size: 12px; color: var(--red); margin-top: 16px; font-weight: 500; min-height: 18px; }
+  .welcome-error { font-size: 12px; color: var(--red); margin-top: 16px; font-weight: 500; min-height: 18px;}
   .ios-install-hint { font-size: 11px; color: var(--muted); margin-bottom: 16px; display: none; line-height: 1.5; padding: 12px; background: var(--surface2); border-radius: 8px;}
-  #toast { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: var(--surface); color: var(--text); padding: 12px 16px 12px 20px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid var(--border); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 16px; z-index: 9999; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); white-space: nowrap; }
+
+  #toast { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: var(--surface); color: var(--text); padding: 12px 16px 12px 20px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid var(--border); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 16px; z-index: 9999; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
   #toast.show { bottom: 32px; }
   .toast-btn { background: var(--accent); color: var(--accent-text); border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 12px; cursor: pointer; transition: opacity 0.2s; }
-  .toast-btn:hover { opacity: 0.9; }
+
   #appShell { display: none; }
   #appShell.visible { display: block; }
-  header { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 100; gap: 12px; }
-  .logo { font-family: var(--font-title); font-weight: 800; font-size: 20px; letter-spacing: -0.5px; color: var(--text); flex-shrink: 0; }
+  header { display: flex; align-items: center; justify-content: space-between; padding: 20px 32px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 100; }
+  .logo { font-family: var(--font-title); font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
   .logo span { color: var(--accent); }
-  .header-right { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  .header-install-pill { display: none; align-items: center; gap: 6px; background: var(--accent); color: var(--accent-text); border: none; border-radius: 20px; padding: 8px 14px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: var(--font-sans); white-space: nowrap; }
-  .header-install-pill:hover { opacity: 0.9; transform: translateY(-1px); }
-  .user-badge { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 24px; padding: 6px 16px 6px 8px; font-size: 13px; font-weight: 600; color: var(--text); cursor: pointer; transition: all 0.2s; background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+  .header-right { display: flex; gap: 12px; align-items: center; }
+  .user-badge { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 24px; padding: 6px 16px 6px 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
   .user-badge:hover { background: var(--surface2); }
+  .header-install-pill { display: none; align-items: center; gap: 6px; background: var(--accent); color: var(--accent-text); border: none; border-radius: 20px; padding: 8px 14px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: var(--font-sans); }
+
   .month-nav { display: flex; padding: 0 24px; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; background: var(--surface); }
   .month-nav::-webkit-scrollbar { display: none; }
-  .month-tab { padding: 16px 24px; font-weight: 600; font-size: 13px; color: var(--muted); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; font-family: var(--font-sans); }
+  .month-tab { padding: 16px 24px; font-weight: 600; font-size: 13px; color: var(--muted); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
   .month-tab.active { color: var(--text); border-bottom-color: var(--accent); }
   .month-tab .month-total { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 500; margin-top: 4px; opacity: 0.7; }
   .month-tab.active .month-total { color: var(--accent); opacity: 1; }
+
   main { padding: 32px; max-width: 1100px; margin: 0 auto; }
   .advice-banner { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 32px; display: flex; align-items: center; gap: 24px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
   .advice-icon { font-size: 28px; background: var(--bg); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid var(--border); flex-shrink: 0; }
   .advice-content { flex: 1; }
-  .advice-text { font-size: 14px; line-height: 1.5; color: var(--text); font-weight: 500; }
+  .advice-text { font-size: 14px; line-height: 1.5; font-weight: 500; }
   .advice-text strong { color: var(--accent); }
   .advice-text .highlight-red { color: var(--red); font-weight: 700; }
   .advice-text .highlight-green { color: var(--green); font-weight: 700; }
@@ -98,7 +104,7 @@
   .advice-actions a { text-decoration: none; padding: 10px 16px; font-size: 13px; font-weight: 600; border-radius: 8px; border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; white-space: nowrap; }
   .advice-actions a:hover { background: var(--bg); }
   .advice-actions a.btn-accent { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
-  .advice-actions a.btn-accent:hover { opacity: 0.9; }
+
   .dashboard-section { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 40px; }
   .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
@@ -108,23 +114,22 @@
   .stat-card.expenses .stat-value { color: var(--red); }
   .stat-card.balance .stat-value { color: var(--text); }
   .stat-card.domicil .stat-value { color: var(--text); }
-  .stat-sub { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+  .stat-sub { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 500;}
+
   .table-section { margin-bottom: 40px; }
-  .table-header { display: flex; align-items: center; justify-content: space-between; padding: 0 0 16px 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 12px; }
-  .table-title { font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--text); }
+  .table-header { display: flex; align-items: center; justify-content: space-between; padding: 0 0 16px 0; margin-bottom: 16px; border-bottom: 2px solid var(--border); }
+  .table-title { font-family: var(--font-title); font-weight: 700; font-size: 18px; }
   .table-actions { display: flex; gap: 8px; }
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: all 0.2s; font-family: var(--font-sans); text-decoration: none; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: all 0.2s; font-family: var(--font-sans); }
   .btn:hover { background: var(--bg); }
   .btn-accent { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
-  .btn-accent:hover { opacity: 0.9; background: var(--accent); }
   .btn-danger { background: transparent; color: var(--red); border: 1px solid var(--red); }
-  .btn-danger:hover { background: rgba(220,38,38,0.05); }
+
   .budget-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
   .budget-table thead tr { background: var(--bg); }
   .budget-table th { padding: 14px 16px; font-size: 11px; font-weight: 600; color: var(--muted); text-align: left; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); }
   .budget-table tbody tr { transition: background 0.15s; }
   .budget-table tbody tr:not(:last-child) { border-bottom: 1px solid var(--border); }
-  .budget-table tbody tr:hover { background: var(--bg); }
   .budget-table td { padding: 0; vertical-align: middle; border-bottom: 1px solid var(--border); }
   .budget-table tbody tr:last-child td { border-bottom: none; }
   .cell-input { width: 100%; background: transparent; border: none; padding: 16px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--text); outline: none; transition: background 0.15s; }
@@ -143,25 +148,26 @@
   .add-row-tr { background: var(--surface) !important; }
   .add-row-tr td { padding: 0 !important; border-top: 1px dashed var(--border) !important; border-bottom: none !important; }
   .add-row-btn-inline { width: 100%; background: none; border: none; color: var(--muted); font-family: var(--font-sans); font-weight: 600; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; transition: color 0.2s; }
-  .add-row-btn-inline:hover { color: var(--text); }
+
   .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 200; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
   .modal-overlay.open { opacity: 1; pointer-events: all; }
   .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; width: 420px; max-width: 92vw; transform: translateY(10px); transition: transform 0.2s; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); max-height: 90vh; overflow-y: auto; }
   .modal-overlay.open .modal { transform: translateY(0); }
-  .modal-title { font-family: var(--font-title); font-weight: 800; font-size: 18px; margin-bottom: 24px; color: var(--text); }
+  .modal-title { font-family: var(--font-title); font-weight: 800; font-size: 18px; margin-bottom: 24px; }
   .modal-field { margin-bottom: 16px; }
   .modal-field label { display: block; font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
   .modal-field input, .modal-field select { width: 100%; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; font-family: var(--font-sans); font-size: 15px; color: var(--text); outline: none; transition: border-color 0.2s; }
   .modal-field input:focus, .modal-field select:focus { border-color: var(--accent); }
   .modal-actions { display: flex; gap: 12px; margin-top: 24px; }
   .modal-actions .btn { flex: 1; padding: 14px; font-size: 14px; min-height: 48px; }
+
   .theme-selector { display: flex; gap: 12px; justify-content: flex-start; margin-bottom: 16px; }
   .theme-btn { width: 44px; height: 44px; border-radius: 8px; cursor: pointer; transition: transform 0.2s; border: 2px solid transparent; }
-  .theme-btn:hover { transform: scale(1.1); }
   .theme-btn.active { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
+
   .about-card { display: flex; flex-direction: column; align-items: center; text-align: center; padding-bottom: 12px; }
   .about-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 16px; box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); }
-  .about-name { font-family: var(--font-title); font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+  .about-name { font-family: var(--font-title); font-size: 22px; font-weight: 800; margin-bottom: 4px; }
   .about-title { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
   .about-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
 
@@ -211,26 +217,27 @@
   }
 </style>
 </head>
-<body>
+<body class="">
 
 <div id="welcomeScreen">
   <div class="welcome-box">
     <div class="welcome-logo">Budget<span>Flow</span></div>
     <div class="welcome-tagline">Planificateur financier privé</div>
+    
     <label class="welcome-label" for="userCodeInput">Clé de chiffrement</label>
     <input class="welcome-input" id="userCodeInput" type="password" placeholder="Entrez votre mot de passe…" autocomplete="off" spellcheck="false" maxlength="32" />
+    
     <button type="button" class="welcome-btn btn-shimmer" onclick="window.enterApp()">Ouvrir mon espace</button>
-    <button type="button" id="installBtnWelcome" class="pwa-install-btn btn-shimmer">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v13M8 11l4 4 4-4"/><path d="M20 17v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
-      Installer sur l'écran d'accueil
+    
+    <button type="button" id="installBtnWelcome" class="install-btn btn-shimmer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Installer l'application
     </button>
-    <div id="iosInstallCard" class="ios-install-card">
-      <div class="ios-title">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v13M8 11l4 4 4-4"/><path d="M20 17v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
-        Installer sur iPhone / iPad
-      </div>
-      <p>Touchez l'icône <strong>Partager</strong> <span style="font-size:15px;">⬆️</span> en bas de Safari, puis sélectionnez <strong>« Sur l'écran d'accueil »</strong>.</p>
+    
+    <div id="iosInstallHint" class="ios-install-hint">
+      Pour installer BudgetFlow sur iPhone : touchez l'icône <b>Partager</b> en bas de l'écran, puis sélectionnez <b>"Sur l'écran d'accueil"</b>.
     </div>
+
     <button type="button" class="welcome-btn-guide" onclick="window.openGuideModal()">Mode d'emploi</button>
     <div class="welcome-error" id="welcomeError"></div>
   </div>
@@ -240,7 +247,7 @@
   <header>
     <div class="logo">Budget<span>Flow</span></div>
     <div class="header-right">
-      <span id="yearBadge" style="font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--muted);"></span>
+      <span class="year-badge" id="yearBadge" style="font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: var(--muted);"></span>
       <button id="installBtnHeader" class="header-install-pill btn-shimmer">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v13M8 11l4 4 4-4"/><path d="M20 17v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/></svg>
         Installer
@@ -250,7 +257,9 @@
       <div class="user-badge" onclick="window.openLogoutModal()">Réglages</div>
     </div>
   </header>
+
   <nav class="month-nav" id="monthNav"></nav>
+
   <main>
     <div id="adviceBanner" class="advice-banner">
       <div class="advice-icon">💡</div>
@@ -266,27 +275,12 @@
 
     <div class="dashboard-section">
       <div class="stats-grid">
-        <div class="stat-card income">
-          <div class="stat-label">Revenus</div>
-          <div class="stat-value" id="statIncome">0 €</div>
-          <div class="stat-sub" id="statIncomeCount">0 flux</div>
-        </div>
-        <div class="stat-card expenses">
-          <div class="stat-label">Dépenses</div>
-          <div class="stat-value" id="statExpenses">0 €</div>
-          <div class="stat-sub" id="statExpensesCount">0 flux</div>
-        </div>
-        <div class="stat-card balance">
-          <div class="stat-label">Solde Net</div>
-          <div class="stat-value" id="statBalance">0 €</div>
-          <div class="stat-sub" id="statBalanceLabel">—</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Charges Fixes</div>
-          <div class="stat-value" id="statDomicil">0 €</div>
-          <div class="stat-sub" id="statDomicilCount">0 charge(s)</div>
-        </div>
+        <div class="stat-card income"><div class="stat-label">Revenus</div><div class="stat-value" id="statIncome">0 €</div><div class="stat-sub" id="statIncomeCount">0 flux</div></div>
+        <div class="stat-card expenses"><div class="stat-label">Dépenses</div><div class="stat-value" id="statExpenses">0 €</div><div class="stat-sub" id="statExpensesCount">0 flux</div></div>
+        <div class="stat-card balance"><div class="stat-label">Solde Net</div><div class="stat-value" id="statBalance">0 €</div><div class="stat-sub" id="statBalanceLabel">—</div></div>
+        <div class="stat-card"><div class="stat-label">Charges Fixes</div><div class="stat-value" id="statDomicil">0 €</div><div class="stat-sub" id="statDomicilCount">0 charge(s)</div></div>
       </div>
+
       <div class="stat-card" style="display:flex;flex-direction:column;justify-content:center;">
         <div class="stat-label">Répartition des dépenses</div>
         <div style="display:flex;gap:20px;align-items:center;margin-top:16px;">
@@ -335,32 +329,19 @@
 <div class="modal-overlay" id="modalOverlay" onclick="window.closeModalOutside(event)">
   <div class="modal">
     <div class="modal-title">Nouvelle dépense</div>
-    <div class="modal-field">
-      <label>Libellé</label>
-      <input type="text" id="newLabel" placeholder="Ex: Assurance vie…" />
-    </div>
-    <div class="modal-field">
-      <label>Montant (€)</label>
-      <input type="number" id="newAmount" placeholder="0" step="0.01" min="0" />
-    </div>
+    <div class="modal-field"><label>Libellé</label><input type="text" id="newLabel" placeholder="Ex: Assurance vie…" /></div>
+    <div class="modal-field"><label>Montant (€)</label><input type="number" id="newAmount" placeholder="0" step="0.01" min="0" /></div>
     <div class="modal-field">
       <label>Type de charge</label>
       <select id="newCat">
-        <option value="fixed">Fixe</option>
-        <option value="domiciliation">Domiciliation</option>
-        <option value="credit">Crédit</option>
-        <option value="variable">Variable</option>
+        <option value="fixed">Fixe</option><option value="domiciliation">Domiciliation</option>
+        <option value="credit">Crédit</option><option value="variable">Variable</option>
       </select>
     </div>
-    <div class="modal-field">
-      <label>Note / Mémo</label>
-      <input type="text" id="newNote" placeholder="Facultatif" />
-    </div>
+    <div class="modal-field"><label>Note / Mémo</label><input type="text" id="newNote" placeholder="Facultatif" /></div>
     <div class="modal-field" style="display:flex;align-items:center;gap:10px;background:var(--bg);padding:12px 14px;border-radius:10px;border:1px solid var(--border);margin-top:4px;">
       <input type="checkbox" id="newRecurring" style="width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;" />
-      <label for="newRecurring" style="margin:0;font-size:13px;color:var(--text);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:500;">
-        Appliquer à tous les mois suivants
-      </label>
+      <label for="newRecurring" style="margin:0;font-size:13px;color:var(--text);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:500;">Appliquer à tous les mois suivants</label>
     </div>
     <div class="modal-actions">
       <button class="btn" onclick="window.closeModal()">Annuler</button>
@@ -408,17 +389,17 @@
       </div>
     </div>
     <div class="modal-actions" style="flex-direction:column;margin-top:0;gap:8px;">
-      <button class="btn" style="width:100%;min-height:48px;" onclick="window.openAboutModal()">À propos du concepteur</button>
+      <button class="btn" style="width:100%;min-height:48px;font-size:14px;" onclick="window.openAboutModal()">À propos du concepteur</button>
       <button class="btn btn-danger" style="width:100%;min-height:48px;font-size:14px;" onclick="window.switchAccount()">DÉCONNEXION</button>
       <button class="btn" style="width:100%;min-height:44px;" onclick="window.closeLogoutModal(null,true)">Fermer</button>
     </div>
   </div>
 </div>
 
-<div class="modal-overlay" id="aboutModalOverlay" style="z-index:8500" onclick="window.closeAboutModalOutside(event)">
-  <div class="modal" style="width: 400px; max-width: 95vw; padding: 40px 24px;">
+<div class="modal-overlay" id="aboutModalContainer" style="z-index:8500" onclick="window.closeAboutModalOutside(event)">
+  <div class="modal" id="aboutModal">
     <div class="about-card">
-      <img src="data:image/jpeg;base64,ta_photo_en_base_64_ici" alt="Boris A." class="about-img" onerror="this.src='https://ui-avatars.com/api/?name=Boris+A&background=2563eb&color=fff&size=150'" />
+      <img src="./285614.jpg" alt="Boris A." class="about-img" onerror="this.src='https://ui-avatars.com/api/?name=Boris+A&background=2563eb&color=fff&size=150'" />
       <div class="about-name">Boris A.</div>
       <div class="about-title">Conseiller Financier</div>
       <div class="about-desc">
@@ -468,413 +449,367 @@
     <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:48px;font-size:15px;" onclick="window.closeGuideModal()">Compris !</button>
   </div>
 </div>
-
 <script>
 (function () {
   'use strict';
 
-  var MONTHS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-  var YEAR   = new Date().getFullYear();
-  var TRASH_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>';
+  window.MONTHS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+  window.YEAR = new Date().getFullYear();
+  window.currentMonth = new Date().getMonth();
+  window.currentUser = null;
+  window.state = {};
+  window.trashIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>`;
 
-  var currentMonth = new Date().getMonth();
-  var currentUser  = null;
-  var state        = {};
-
-  document.getElementById('yearBadge').textContent = YEAR;
-
-  function uid() { return Math.random().toString(36).slice(2, 9); }
-
-  function esc(s) {
-    return String(s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-
-  function parseAmt(val) {
-    if (val === null || val === undefined || val === '') return 0;
-    return parseFloat(String(val).replace(',', '.')) || 0;
-  }
-
-  function formatAmt(n) {
-    return n.toLocaleString('fr-BE', { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + ' €';
-  }
-
-  function calcIncome(mi)   { return (state[mi].incomeRows  || []).reduce(function(s,r){ return s + parseAmt(r.amount); }, 0); }
-  function calcExpenses(mi) { return (state[mi].expenseRows || []).reduce(function(s,r){ return s + parseAmt(r.amount); }, 0); }
-
-  function storageKey() { return 'budgetflow_' + YEAR + '_' + currentUser.toLowerCase().trim(); }
-
-  function defaultMonthState() {
-    return { incomeRows: [{ id: uid(), label: '', amount: '', paid: false }], expenseRows: [] };
-  }
-
-  function save() { try { localStorage.setItem(storageKey(), JSON.stringify(state)); } catch(e) {} }
-
-  function load() {
-    try {
-      var d = localStorage.getItem(storageKey());
-      if (d) {
-        state = JSON.parse(d);
-        MONTHS.forEach(function(_, i) {
-          if (!state[i]) state[i] = defaultMonthState();
-          if (!state[i].incomeRows)  state[i].incomeRows  = [];
-          if (!state[i].expenseRows) state[i].expenseRows = [];
-          delete state[i].extraCols;
-        });
-      } else {
-        resetState();
-      }
-    } catch(e) { resetState(); }
-  }
-
-  function resetState() {
-    state = {};
-    MONTHS.forEach(function(_, i) { state[i] = defaultMonthState(); });
-  }
-
-  var themeColors = {
-    '':                    '#f3f4f6',
-    'theme-onyx':          '#000000',
-    'theme-navy':          '#020617',
-    'theme-classic-dark':  '#0a0c0f',
-    'theme-classic-midnight': '#0f0c29'
-  };
+  const badge = document.getElementById('yearBadge');
+  if (badge) badge.textContent = window.YEAR;
 
   window.setTheme = function(themeName) {
     document.body.className = themeName;
     try { localStorage.setItem('budgetflow_theme', themeName); } catch(e) {}
-    var meta = document.getElementById('themeColorMeta');
-    if (meta) meta.content = themeColors[themeName] || '#f3f4f6';
-    document.querySelectorAll('.theme-btn').forEach(function(btn) {
+    const metaColor = document.getElementById('themeColorMeta');
+    if (metaColor) {
+      if(themeName === 'theme-onyx') metaColor.content = '#000000';
+      else if(themeName === 'theme-navy') metaColor.content = '#020617';
+      else if(themeName === 'theme-classic-dark') metaColor.content = '#0a0c0f';
+      else if(themeName === 'theme-classic-midnight') metaColor.content = '#0f0c29';
+      else metaColor.content = '#f3f4f6';
+    }
+    document.querySelectorAll('.theme-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.theme === themeName);
     });
   };
 
-  (function() {
-    var saved = '';
-    try { saved = localStorage.getItem('budgetflow_theme') || ''; } catch(e) {}
-    window.setTheme(saved);
+  (function initTheme() { 
+    let savedTheme = '';
+    try { savedTheme = localStorage.getItem('budgetflow_theme') || ''; } catch(e) {}
+    window.setTheme(savedTheme); 
   })();
 
-  var deferredPrompt   = null;
-  var btnWelcome       = document.getElementById('installBtnWelcome');
-  var btnHeader        = document.getElementById('installBtnHeader');
-  var iosCard          = document.getElementById('iosInstallCard');
-
-  function isIos() { return /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase()); }
-  function isStandalone() { return window.matchMedia('(display-mode: standalone)').matches || !!navigator.standalone || document.referrer.includes('android-app://'); }
-
-  function showInstallButtons() {
-    if(btnWelcome) btnWelcome.style.display = 'flex';
-    if(btnHeader) btnHeader.style.display  = 'flex';
+  // Enregistrement du Service Worker "virtuel" généré par JS
+  if ('serviceWorker' in navigator) {
+    const swCode = `
+      self.addEventListener('install', (e) => { self.skipWaiting(); });
+      self.addEventListener('activate', (e) => { e.waitUntil(self.clients.claim()); });
+      self.addEventListener('fetch', (e) => { });
+    `;
+    const blob = new Blob([swCode], { type: 'application/javascript' });
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(err => console.log('SW error', err));
   }
 
-  function hideInstallButtons() {
-    if(btnWelcome) btnWelcome.style.display = 'none';
-    if(btnHeader) btnHeader.style.display  = 'none';
+  let deferredPrompt;
+  const installBtnWelcome = document.getElementById('installBtnWelcome');
+  const installBtnHeader = document.getElementById('installBtnHeader');
+  const iosHint = document.getElementById('iosInstallHint');
+
+  const isIos = () => /iphone|ipad|ipod/.test(window.navigator.userAgent.toLowerCase());
+  const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone || document.referrer.includes('android-app://');
+
+  if (!isStandalone()) {
+    if (isIos()) {
+      if(iosHint) iosHint.style.display = 'block';
+    } else {
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        if(installBtnWelcome) installBtnWelcome.style.display = 'flex';
+        if(installBtnHeader) installBtnHeader.style.display = 'flex';
+      });
+
+      const triggerInstall = async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          if(installBtnWelcome) installBtnWelcome.style.display = 'none';
+          if(installBtnHeader) installBtnHeader.style.display = 'none';
+        }
+        deferredPrompt = null;
+      };
+
+      if(installBtnWelcome) installBtnWelcome.addEventListener('click', triggerInstall);
+      if(installBtnHeader) installBtnHeader.addEventListener('click', triggerInstall);
+    }
   }
 
-  function triggerInstall() {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(function(result) {
-      if (result.outcome === 'accepted') hideInstallButtons();
-      deferredPrompt = null;
-    });
-  }
+  window.storageKey = function() { return 'budgetflow_' + window.YEAR + '_' + window.currentUser.toLowerCase().trim(); };
+  window.uid = function() { return Math.random().toString(36).slice(2, 9); };
+  window.defaultState = function() { return { incomeRows: [{ id: window.uid(), label: '', amount: '', paid: false }], expenseRows: [], extraCols: [] }; };
+  window.save = function() { try { localStorage.setItem(window.storageKey(), JSON.stringify(window.state)); } catch(e) {} };
 
-  if(btnWelcome) btnWelcome.addEventListener('click', triggerInstall);
-  if(btnHeader) btnHeader.addEventListener('click',  triggerInstall);
+  window.load = function() {
+    try {
+      const d = localStorage.getItem(window.storageKey());
+      if (d) {
+        window.state = JSON.parse(d);
+        window.MONTHS.forEach((_, i) => {
+          if (!window.state[i]) window.state[i] = window.defaultState();
+          if (!window.state[i].extraCols) window.state[i].extraCols = [];
+          if (!window.state[i].expenseRows) window.state[i].expenseRows = [];
+          if (!window.state[i].incomeRows) window.state[i].incomeRows = [];
+        });
+      } else { window.resetState(); }
+    } catch(e) { window.resetState(); }
+  };
 
-  if (isStandalone()) {
-    hideInstallButtons();
-  } else if (isIos()) {
-    if(iosCard) iosCard.style.display = 'block';
-  } else {
-    window.addEventListener('beforeinstallprompt', function(e) {
-      e.preventDefault();
-      deferredPrompt = e;
-      showInstallButtons();
-    });
-    window.addEventListener('appinstalled', function() {
-      hideInstallButtons();
-      deferredPrompt = null;
-    });
-  }
+  window.resetState = function() { window.state = {}; window.MONTHS.forEach((_, i) => { window.state[i] = window.defaultState(); }); };
+  window.parseAmt = function(val) { if (!val) return 0; return parseFloat(String(val).replace(',', '.')) || 0; };
+  window.calcExpenses = function(mi) { return (window.state[mi].expenseRows || []).reduce((s, r) => s + window.parseAmt(r.amount), 0); };
+  window.calcIncome = function(mi) { return (window.state[mi].incomeRows || []).reduce((s, r) => s + window.parseAmt(r.amount), 0); };
+  window.formatAmt = function(n) { return n.toLocaleString('fr-BE', { minimumFractionDigits: 0, maximumFractionDigits: 2 }) + ' €'; };
 
   window.enterApp = function() {
-    var raw    = document.getElementById('userCodeInput').value.trim();
-    var errEl  = document.getElementById('welcomeError');
-    errEl.textContent = '';
-    if (raw.length < 2) { errEl.textContent = 'Clé de sécurité invalide (minimum 2 caractères).'; return; }
-    currentUser = raw;
-    load();
-    var ws = document.getElementById('welcomeScreen');
+    const raw = document.getElementById('userCodeInput').value.trim();
+    const errEl = document.getElementById('welcomeError');
+    if (raw.length < 2) { errEl.textContent = "Clé de sécurité invalide."; return; }
+    window.currentUser = raw;
+    window.load();
+    const ws = document.getElementById('welcomeScreen');
     ws.classList.add('hidden');
-    setTimeout(function() { ws.style.display = 'none'; }, 400);
+    setTimeout(() => { ws.style.display = 'none'; }, 400);
     document.getElementById('appShell').classList.add('visible');
-    renderAll();
-    triggerToast();
+    window.renderAll();
+    window.triggerToast();
   };
 
-  document.getElementById('userCodeInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') window.enterApp();
-  });
-
-  function triggerToast() {
+  window.triggerToast = function() {
     try {
-      var key = 'budgetflow_seen_guide_' + currentUser;
+      const key = 'budgetflow_seen_guide_' + window.currentUser;
       if (!localStorage.getItem(key)) {
-        setTimeout(function() { var t = document.getElementById('toast'); if(t) t.classList.add('show'); }, 1000);
+        setTimeout(() => { const t = document.getElementById('toast'); if(t) t.classList.add('show'); localStorage.setItem(key, 'true'); }, 1000);
         setTimeout(window.closeToast, 7000);
-        localStorage.setItem(key, 'true');
       }
     } catch(e) {}
-  }
-
-  window.closeToast = function() { var t = document.getElementById('toast'); if(t) t.classList.remove('show'); };
-  window.changeMonth = function(i) { currentMonth = i; renderAll(); };
-
-  function generateAdvice(inc, exp, bal) {
-    var el = document.getElementById('adviceText');
-    if (inc === 0 && exp === 0) { el.textContent = 'Aucune donnée financière détectée pour ce mois.'; return; }
-    if (bal < 0) { el.innerHTML = '<span class="highlight-red">Alerte Déficit :</span> Vos dépenses excèdent vos revenus de ' + Math.abs(bal).toFixed(2) + '€.'; return; }
-    if (inc === 0) return;
-
-    var savings  = (bal / inc) * 100;
-    var fixed    = (state[currentMonth].expenseRows || []).filter(function(r){ return ['fixed','domiciliation','credit'].includes(r.cat); });
-    var fixedAmt = fixed.reduce(function(s,r){ return s + parseAmt(r.amount); }, 0);
-    var fixedRate = (fixedAmt / inc) * 100;
-
-    if (fixedRate > 60) {
-      el.innerHTML = '<strong>Attention :</strong> Vos charges fixes absorbent <strong>' + fixedRate.toFixed(0) + '%</strong> de vos revenus (recommandation : &lt; 50%).';
-    } else if (savings < 10) {
-      el.innerHTML = '<strong>Taux de capitalisation : ' + savings.toFixed(0) + '%.</strong> Un effort sur les dépenses variables est conseillé.';
-    } else if (savings < 20) {
-      el.innerHTML = '<strong>Gestion saine :</strong> Ratio d\'épargne évalué à <strong>' + savings.toFixed(0) + '%</strong>.';
-    } else {
-      el.innerHTML = '<span class="highlight-green">Performance optimale.</span> Épargne générée : <strong>' + savings.toFixed(0) + '%</strong>. Vous êtes en capacité d\'investir.';
-    }
-  }
-
-  function updateStatsAndHeader() {
-    var mi  = currentMonth;
-    var inc = calcIncome(mi);
-    var exp = calcExpenses(mi);
-    var bal = inc - exp;
-
-    document.getElementById('monthNav').innerHTML = MONTHS.map(function(m, i) {
-      var total = calcExpenses(i);
-      return '<button class="month-tab' + (i === mi ? ' active' : '') + '" onclick="window.changeMonth(' + i + ')">'
-        + m.slice(0,3).toUpperCase()
-        + '<span class="month-total">' + (total > 0 ? formatAmt(total) : '—') + '</span>'
-        + '</button>';
-    }).join('');
-
-    var fixedRows = (state[mi].expenseRows || []).filter(function(r){ return ['fixed','domiciliation','credit'].includes(r.cat); });
-    var fixedAmt  = fixedRows.reduce(function(s,r){ return s + parseAmt(r.amount); }, 0);
-
-    document.getElementById('statIncome').textContent       = formatAmt(inc);
-    document.getElementById('statIncomeCount').textContent  = (state[mi].incomeRows || []).length + ' flux';
-    document.getElementById('statExpenses').textContent     = formatAmt(exp);
-    document.getElementById('statExpensesCount').textContent= (state[mi].expenseRows || []).length + ' flux';
-    document.getElementById('statBalance').textContent      = (bal >= 0 ? '+' : '') + formatAmt(bal);
-    document.getElementById('statBalance').style.color      = bal >= 0 ? 'var(--green)' : 'var(--red)';
-    document.getElementById('statBalanceLabel').textContent = bal >= 0 ? 'Surplus' : 'Déficit';
-    document.getElementById('statDomicil').textContent      = formatAmt(fixedAmt);
-    document.getElementById('statDomicilCount').textContent = fixedRows.length + ' charge(s)';
-
-    document.getElementById('monthTitle').textContent    = MONTHS[mi] + ' ' + YEAR;
-    document.getElementById('monthTitleInc').textContent = MONTHS[mi] + ' ' + YEAR;
-
-    generateAdvice(inc, exp, bal);
-
-    var chartEl  = document.getElementById('expenseChart');
-    var legendEl = document.getElementById('chartLegend');
-    if (exp === 0) {
-      chartEl.style.background = 'var(--surface2)';
-      legendEl.innerHTML = '<span style="color:var(--muted);font-size:13px;">Aucune dépense ce mois.</span>';
-    } else {
-      var cats   = { fixed: 0, domiciliation: 0, credit: 0, variable: 0 };
-      var colors = { fixed: '#3b82f6', domiciliation: '#059669', credit: '#dc2626', variable: '#6b7280' };
-      var names  = { fixed: 'Charges Fixes', domiciliation: 'Domiciliations', credit: 'Crédits', variable: 'Variables' };
-      (state[mi].expenseRows || []).forEach(function(r) { if (cats[r.cat] !== undefined) cats[r.cat] += parseAmt(r.amount); });
-
-      var gradient = [], angle = 0, legendHTML = '';
-      Object.keys(cats).forEach(function(c) {
-        if (cats[c] > 0) {
-          var pct = (cats[c] / exp) * 100;
-          var deg = (pct / 100) * 360;
-          gradient.push(colors[c] + ' ' + angle + 'deg ' + (angle + deg) + 'deg');
-          angle += deg;
-          legendHTML += '<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px;">'
-            + '<span style="display:flex;align-items:center;gap:8px;color:var(--text);">'
-            + '<span style="width:12px;height:12px;border-radius:4px;background:' + colors[c] + ';flex-shrink:0;"></span>'
-            + names[c] + '</span>'
-            + '<span style="font-weight:600;font-family:var(--font-mono);color:var(--text);">' + pct.toFixed(0) + '%</span>'
-            + '</div>';
-        }
-      });
-      chartEl.style.background = 'conic-gradient(' + gradient.join(', ') + ')';
-      legendEl.innerHTML = legendHTML;
-    }
-
-    var btnCopy = document.getElementById('btnCopyPrev');
-    if (btnCopy) btnCopy.style.display = mi === 0 ? 'none' : 'inline-flex';
-  }
-
-  function renderTables() {
-    var mi = currentMonth;
-    var focusScroll = 'onfocus="setTimeout(function(){this.scrollIntoView({behavior:\'smooth\',block:\'center\'})},300)"';
-
-    var incomeRows = state[mi].incomeRows || [];
-    document.getElementById('incomeTbody').innerHTML = incomeRows.map(function(r) {
-      return '<tr>'
-        + '<td><button class="status-toggle' + (r.paid ? ' paid' : '') + '" onclick="window.toggleInc(\'' + r.id + '\')">' + (r.paid ? '✓' : '') + '</button></td>'
-        + '<td><input class="cell-input" value="' + esc(r.label) + '" placeholder="Origine du flux…" oninput="window.updInc(\'' + r.id + '\',\'label\',this.value)" ' + focusScroll + '/></td>'
-        + '<td><input class="cell-input amount-cell positive" type="number" step="0.01" min="0" value="' + esc(r.amount) + '" placeholder="0" oninput="window.updInc(\'' + r.id + '\',\'amount\',this.value)" ' + focusScroll + '/></td>'
-        + '<td style="text-align:center;"><button class="del-row-btn" onclick="window.delInc(\'' + r.id + '\')" title="Supprimer">' + TRASH_ICON + '</button></td>'
-        + '</tr>';
-    }).join('');
-
-    document.getElementById('expenseHead').innerHTML =
-      '<tr><th style="width:48px">✓</th><th>Libellé</th><th style="width:130px">Catégorie</th><th style="text-align:right;width:150px">Montant</th><th>Mémo</th><th style="width:52px;text-align:center">Action</th></tr>';
-
-    var catMap  = { fixed:'Fixe', domiciliation:'Dom.', credit:'Crédit', variable:'Variable' };
-    var expRows = state[mi].expenseRows || [];
-
-    var expHtml = expRows.map(function(r) {
-      return '<tr>'
-        + '<td><button class="status-toggle' + (r.paid ? ' paid' : '') + '" onclick="window.toggleExp(\'' + r.id + '\')">' + (r.paid ? '✓' : '') + '</button></td>'
-        + '<td><input class="cell-input" value="' + esc(r.label) + '" placeholder="Désignation…" oninput="window.updExp(\'' + r.id + '\',\'label\',this.value)" ' + focusScroll + '/></td>'
-        + '<td><span class="cat-badge ' + esc(r.cat) + '" onclick="window.cycleCat(\'' + r.id + '\')" title="Cliquer pour changer">' + (catMap[r.cat] || r.cat) + '</span></td>'
-        + '<td><input class="cell-input amount-cell" type="number" step="0.01" min="0" value="' + esc(r.amount) + '" placeholder="0" oninput="window.updExp(\'' + r.id + '\',\'amount\',this.value)" ' + focusScroll + '/></td>'
-        + '<td><input class="cell-input" style="font-size:13px;color:var(--muted);" value="' + esc(r.note || '') + '" placeholder="Mémo…" oninput="window.updExp(\'' + r.id + '\',\'note\',this.value)" ' + focusScroll + '/></td>'
-        + '<td style="text-align:center;"><button class="del-row-btn" onclick="window.delExp(\'' + r.id + '\')" title="Supprimer">' + TRASH_ICON + '</button></td>'
-        + '</tr>';
-    }).join('');
-
-    expHtml += '<tr class="add-row-tr"><td colspan="6"><button class="add-row-btn-inline" onclick="window.openModal()">+ Ajouter une ligne de dépense</button></td></tr>';
-    document.getElementById('expenseTbody').innerHTML = expHtml;
-  }
-
-  function renderAll() { updateStatsAndHeader(); renderTables(); }
-
-  window.addIncomeRow = function() { state[currentMonth].incomeRows.push({ id: uid(), label: '', amount: '', paid: false }); save(); renderAll(); };
-  window.updInc = function(id, field, val) { var r = state[currentMonth].incomeRows.find(function(r){ return r.id === id; }); if (r) { r[field] = val; save(); updateStatsAndHeader(); } };
-  window.delInc = function(id) { if (!confirm('Supprimer ce revenu ?')) return; state[currentMonth].incomeRows = state[currentMonth].incomeRows.filter(function(r){ return r.id !== id; }); save(); renderAll(); };
-  window.toggleInc = function(id) { var r = state[currentMonth].incomeRows.find(function(r){ return r.id === id; }); if (r) { r.paid = !r.paid; save(); renderAll(); } };
-
-  window.updExp = function(id, field, val) { var r = state[currentMonth].expenseRows.find(function(r){ return r.id === id; }); if (r) { r[field] = val; save(); updateStatsAndHeader(); } };
-  window.delExp = function(id) { if (!confirm('Supprimer cette dépense ?')) return; state[currentMonth].expenseRows = state[currentMonth].expenseRows.filter(function(r){ return r.id !== id; }); save(); renderAll(); };
-  window.toggleExp = function(id) { var r = state[currentMonth].expenseRows.find(function(r){ return r.id === id; }); if (r) { r.paid = !r.paid; save(); renderAll(); } };
-  window.cycleCat = function(id) { var cats = ['fixed','domiciliation','credit','variable']; var r = state[currentMonth].expenseRows.find(function(r){ return r.id === id; }); if (r) { r.cat = cats[(cats.indexOf(r.cat) + 1) % 4]; save(); renderAll(); } };
-
-  window.copyPreviousMonth = function() {
-    var mi = currentMonth;
-    if (mi === 0) return;
-    var prev = state[mi - 1].expenseRows || [];
-    var fixed = prev.filter(function(r){ return ['fixed','domiciliation','credit'].includes(r.cat); });
-    if (fixed.length === 0) { alert('Aucune charge fixe trouvée le mois précédent.'); return; }
-    if (!confirm('Copier ' + fixed.length + ' charges fixes de ' + MONTHS[mi-1] + ' vers ' + MONTHS[mi] + ' ?')) return;
-    fixed.forEach(function(r) { state[mi].expenseRows.push({ id: uid(), label: r.label, amount: r.amount, cat: r.cat, note: r.note || '', paid: false }); });
-    save(); renderAll();
   };
 
-  window.openModal = function() {
-    document.getElementById('newLabel').value    = '';
-    document.getElementById('newAmount').value   = '';
-    document.getElementById('newNote').value     = '';
-    document.getElementById('newCat').value      = 'fixed';
-    document.getElementById('newRecurring').checked = false;
-    document.getElementById('modalOverlay').classList.add('open');
-    setTimeout(function(){ document.getElementById('newLabel').focus(); }, 100);
-  };
-  window.closeModal = function() { document.getElementById('modalOverlay').classList.remove('open'); };
-  window.closeModalOutside = function(e) { if (e.target.id === 'modalOverlay') window.closeModal(); };
+  window.closeToast = function() { const t = document.getElementById('toast'); if(t) t.classList.remove('show'); };
+  window.changeMonth = function(i) { window.currentMonth = i; window.renderAll(); };
 
-  window.confirmAddRow = function() {
-    var label     = document.getElementById('newLabel').value.trim();
-    var amount    = document.getElementById('newAmount').value;
-    var cat       = document.getElementById('newCat').value;
-    var note      = document.getElementById('newNote').value.trim();
-    var recurring = document.getElementById('newRecurring').checked;
+  window.openGuideModal = function() { document.getElementById('guideModalOverlay').classList.add('open'); };
+  window.closeGuideModal = function() { document.getElementById('guideModalOverlay').classList.remove('open'); };
+  window.closeGuideModalOutside = function(e) { if (e.target.id === 'guideModalOverlay') window.closeGuideModal(); };
 
-    if (!label && !amount) { window.closeModal(); return; }
-    var base = { label: label, amount: amount, cat: cat, note: note, paid: false };
-
-    if (recurring) {
-      for (var i = currentMonth; i < 12; i++) { state[i].expenseRows.push(Object.assign({}, base, { id: uid() })); }
-    } else {
-      state[currentMonth].expenseRows.push(Object.assign({}, base, { id: uid() }));
-    }
-    window.closeModal(); save(); renderAll();
-  };
+  window.openAboutModal = function() { window.closeLogoutModal(null, true); document.getElementById('aboutModalContainer').classList.add('open'); };
+  window.closeAboutModal = function() { document.getElementById('aboutModalContainer').classList.remove('open'); };
+  window.closeAboutModalOutside = function(e) { if (e.target.id === 'aboutModalContainer') window.closeAboutModal(); };
 
   window.openSyncModal = function() {
-    document.getElementById('exportCodeInput').value = btoa(encodeURIComponent(JSON.stringify(state)));
+    document.getElementById('exportCodeInput').value = btoa(encodeURIComponent(JSON.stringify(window.state)));
     document.getElementById('importCodeInput').value = '';
     document.getElementById('syncModalOverlay').classList.add('open');
   };
   window.closeSyncModal = function() { document.getElementById('syncModalOverlay').classList.remove('open'); };
+
   window.copySyncCode = function() {
-    var t = document.getElementById('exportCodeInput');
-    t.select(); t.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(t.value).then(function(){ alert('Code copié dans le presse-papiers.'); }).catch(function(){ alert('Sélectionnez et copiez le code manuellement.'); });
+    try {
+      const t = document.getElementById('exportCodeInput'); t.select(); t.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(t.value).then(() => alert("Code copié."));
+    } catch (e) { alert("Sélectionnez et copiez le code manuellement."); }
   };
-  window.emailSyncCode = function() { window.location.href = 'mailto:?subject=Sauvegarde BudgetFlow&body=' + encodeURIComponent(document.getElementById('exportCodeInput').value); };
+  window.emailSyncCode = function() { window.location.href = "mailto:?subject=Sauvegarde BudgetFlow&body=" + encodeURIComponent(document.getElementById('exportCodeInput').value); };
+
   window.importSyncCode = function() {
     try {
-      var raw = document.getElementById('importCodeInput').value.trim();
-      var decoded = JSON.parse(decodeURIComponent(atob(raw)));
-      if (!confirm('Restaurer les données écrasera les données actuelles. Continuer ?')) return;
-      state = decoded;
-      MONTHS.forEach(function(_, i) {
-        if (!state[i]) state[i] = defaultMonthState();
-        if (!state[i].incomeRows)  state[i].incomeRows  = [];
-        if (!state[i].expenseRows) state[i].expenseRows = [];
+      const decoded = JSON.parse(decodeURIComponent(atob(document.getElementById('importCodeInput').value.trim())));
+      if (!confirm("Restaurer les données écrasera le mois en cours. Continuer ?")) return;
+      window.state = decoded;
+      window.MONTHS.forEach((_, i) => {
+        if (!window.state[i]) window.state[i] = window.defaultState();
+        if (!window.state[i].incomeRows) window.state[i].incomeRows = [];
+        if (!window.state[i].expenseRows) window.state[i].expenseRows = [];
       });
-      save(); renderAll(); window.closeSyncModal(); alert('Données restaurées avec succès !');
-    } catch(e) { alert('Code invalide ou corrompu. Vérifiez et réessayez.'); }
+      window.save(); window.renderAll(); window.closeSyncModal(); alert("Données restaurées !");
+    } catch(e) { alert("Code corrompu."); }
   };
 
-  window.openLogoutModal  = function() { document.getElementById('logoutModal').classList.add('open'); };
+  window.openLogoutModal = function() { document.getElementById('logoutModal').classList.add('open'); };
   window.closeLogoutModal = function(e, force) { if (force || (e && e.target && e.target.id === 'logoutModal')) document.getElementById('logoutModal').classList.remove('open'); };
   window.switchAccount = function() {
-    if (!confirm('Vous serez déconnecté. Les données restent sur cet appareil. Continuer ?')) return;
-    currentUser = null; state = {};
-    document.getElementById('logoutModal').classList.remove('open');
+    if (!confirm("Vous serez déconnecté. Continuer ?")) return;
+    window.currentUser = null; window.state = {}; document.getElementById('logoutModal').classList.remove('open');
     document.getElementById('appShell').classList.remove('visible');
-    var ws = document.getElementById('welcomeScreen'); ws.style.display = 'flex'; ws.classList.remove('hidden');
-    document.getElementById('userCodeInput').value = ''; document.getElementById('welcomeError').textContent = '';
+    const ws = document.getElementById('welcomeScreen'); ws.style.display = 'flex'; ws.classList.remove('hidden');
+    document.getElementById('userCodeInput').value = '';
   };
 
-  window.openGuideModal         = function() { document.getElementById('guideModalOverlay').classList.add('open'); };
-  window.closeGuideModal        = function() { document.getElementById('guideModalOverlay').classList.remove('open'); };
-  window.closeGuideModalOutside = function(e) { if (e.target.id === 'guideModalOverlay') window.closeGuideModal(); };
+  window.generateAdvice = function(inc, exp, bal) {
+    const el = document.getElementById('adviceText');
+    if (inc === 0 && exp === 0) return el.innerHTML = "Aucune donnée financière détectée pour le mois sélectionné.";
+    if (bal < 0) return el.innerHTML = `<span class="highlight-red">Alerte Déficit :</span> Vos dépenses excèdent vos revenus de ${Math.abs(bal).toFixed(2)}€.`;
+    if (inc === 0) return;
+    
+    const savings = (bal / inc) * 100;
+    const fixedRows = (window.state[window.currentMonth].expenseRows || []).filter(r => ['fixed', 'domiciliation', 'credit'].includes(r.cat));
+    const fixedExp = fixedRows.reduce((s, r) => s + window.parseAmt(r.amount), 0);
+    const fixedRate = (fixedExp / inc) * 100;
 
-  window.openAboutModal = function() { window.closeLogoutModal(null, true); document.getElementById('aboutModalOverlay').classList.add('open'); };
-  window.closeAboutModal = function() { document.getElementById('aboutModalOverlay').classList.remove('open'); };
-  window.closeAboutModalOutside = function(e) { if (e.target.id === 'aboutModalOverlay') window.closeAboutModal(); };
+    if (fixedRate > 60) el.innerHTML = `<strong>Attention :</strong> Vos charges fixes absorbent ${fixedRate.toFixed(0)}% de vos revenus (Recommandation: < 50%).`;
+    else if (savings < 10) el.innerHTML = `<strong>Taux de capitalisation : ${savings.toFixed(0)}%</strong>. Un effort sur les variables est conseillé.`;
+    else if (savings >= 10 && savings < 20) el.innerHTML = `<strong>Gestion saine :</strong> Ratio d'épargne évalué à ${savings.toFixed(0)}%.`;
+    else el.innerHTML = `<span class="highlight-green">Performance optimale.</span> Épargne générée : ${savings.toFixed(0)}%. Vous êtes en capacité d'investir.`;
+  };
+
+  window.updateStatsAndHeader = function() {
+    const mi = window.currentMonth;
+    const inc = window.calcIncome(mi);
+    const exp = window.calcExpenses(mi);
+    const bal = inc - exp;
+
+    document.getElementById('monthNav').innerHTML = window.MONTHS.map((m, i) => {
+      const total = window.calcExpenses(i);
+      return `<button class="month-tab ${i === mi ? 'active' : ''}" onclick="window.changeMonth(${i})">${m.slice(0,3).toUpperCase()}<span class="month-total">${total > 0 ? window.formatAmt(total) : '—'}</span></button>`;
+    }).join('');
+
+    const domRows = (window.state[mi].expenseRows || []).filter(r => ['fixed', 'domiciliation', 'credit'].includes(r.cat));
+    const domAmount = domRows.reduce((s, r) => s + window.parseAmt(r.amount), 0);
+
+    document.getElementById('statIncome').textContent = window.formatAmt(inc);
+    document.getElementById('statIncomeCount').textContent = (window.state[mi].incomeRows || []).length + ' flux';
+    document.getElementById('statExpenses').textContent = window.formatAmt(exp);
+    document.getElementById('statExpensesCount').textContent = (window.state[mi].expenseRows || []).length + ' flux';
+    document.getElementById('statBalance').textContent = (bal >= 0 ? '+' : '') + window.formatAmt(bal);
+    document.getElementById('statBalance').style.color = bal >= 0 ? 'var(--green)' : 'var(--red)';
+    document.getElementById('statBalanceLabel').textContent = bal >= 0 ? 'Surplus' : 'Déficit';
+    document.getElementById('statDomicil').textContent = window.formatAmt(domAmount);
+    document.getElementById('statDomicilCount').textContent = domRows.length + ' charge(s)';
+    document.getElementById('monthTitle').textContent = window.MONTHS[mi] + " " + window.YEAR;
+    document.getElementById('monthTitleInc').textContent = window.MONTHS[mi] + " " + window.YEAR;
+
+    window.generateAdvice(inc, exp, bal);
+
+    if(exp === 0) {
+      document.getElementById('expenseChart').style.background = 'var(--surface2)';
+      document.getElementById('chartLegend').innerHTML = '<span style="color:var(--muted);font-size:13px;">Aucune donnée ce mois-ci.</span>';
+    } else {
+      let cats = { 'fixed':0, 'domiciliation':0, 'credit':0, 'variable':0 };
+      (window.state[mi].expenseRows || []).forEach(r => cats[r.cat] += window.parseAmt(r.amount));
+      const colors = { 'fixed':'#3b82f6', 'domiciliation':'#059669', 'credit':'#dc2626', 'variable':'#6b7280' };
+      const names = { 'fixed':'Charges Fixes', 'domiciliation':'Domiciliations', 'credit':'Crédits', 'variable':'Variables' };
+      let gradient = [], currentAngle = 0, legendHTML = '';
+      for(let c in cats) {
+        if(cats[c] > 0) {
+          const pct = (cats[c] / exp) * 100;
+          const angle = (pct / 100) * 360;
+          gradient.push(`${colors[c]} ${currentAngle}deg ${currentAngle + angle}deg`);
+          currentAngle += angle;
+          legendHTML += `<div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px; color:var(--text);"><span style="display:flex; align-items:center; gap:8px;"><span style="width:12px;height:12px;border-radius:4px;background:${colors[c]}"></span>${names[c]}</span><span style="font-weight:600; font-family:var(--font-mono);">${pct.toFixed(0)}%</span></div>`;
+        }
+      }
+      document.getElementById('expenseChart').style.background = `conic-gradient(${gradient.join(', ')})`;
+      document.getElementById('chartLegend').innerHTML = legendHTML;
+    }
+    const btnCopy = document.getElementById('btnCopyPrev');
+    if(btnCopy) btnCopy.style.display = mi === 0 ? 'none' : 'flex';
+  };
+
+  window.esc = function(s) { return String(s || '').replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); };
+
+  window.renderTables = function() {
+    const mi = window.currentMonth;
+    const focusScroll = `onfocus="setTimeout(() => this.scrollIntoView({behavior: 'smooth', block: 'center'}), 300)"`;
+    
+    document.getElementById('incomeTbody').innerHTML = (window.state[mi].incomeRows || []).map(r => `
+      <tr>
+        <td data-label="✓"><button class="status-toggle ${r.paid ? 'paid' : ''}" onclick="window.toggleInc('${r.id}')">${r.paid ? '✓' : ''}</button></td>
+        <td data-label="Source"><input class="cell-input" value="${window.esc(r.label)}" placeholder="Origine du flux..." oninput="window.updInc('${r.id}','label',this.value)" ${focusScroll}/></td>
+        <td data-label="Montant"><input class="cell-input amount-cell positive" type="number" step="0.01" value="${r.amount}" placeholder="0" oninput="window.updInc('${r.id}','amount',this.value)" ${focusScroll}/></td>
+        <td data-label="Supprimer" style="text-align:center;"><button class="del-row-btn" onclick="window.delInc('${r.id}')">${window.trashIcon}</button></td>
+      </tr>`).join('');
+
+    let ths = "<th style='width:40px'>✓</th><th>Libellé</th><th>Catégorie</th><th style='text-align:right'>Montant</th><th>Note</th>";
+    document.getElementById('expenseHead').innerHTML = `<tr>${ths}<th style="width:50px; text-align:center;">Action</th></tr>`;
+
+    const mapCat = { 'fixed':'Fixe', 'domiciliation':'Dom.', 'credit':'Crédit', 'variable':'Variable' };
+    let expHtml = (window.state[mi].expenseRows || []).map(r => {
+      return `<tr>
+        <td data-label="Statut"><button class="status-toggle ${r.paid ? (r.cat === 'domiciliation' ? 'domicil-paid' : 'paid') : ''}" onclick="window.toggleExp('${r.id}')">${r.paid ? '✓' : ''}</button></td>
+        <td data-label="Désignation"><input class="cell-input" value="${window.esc(r.label)}" placeholder="Désignation..." oninput="window.updExp('${r.id}','label',this.value)" ${focusScroll}/></td>
+        <td data-label="Classe"><span class="cat-badge ${r.cat}" onclick="window.cycleCat('${r.id}')">${mapCat[r.cat] || r.cat}</span></td>
+        <td data-label="Montant"><input class="cell-input amount-cell" type="number" step="0.01" value="${r.amount}" placeholder="0" oninput="window.updExp('${r.id}','amount',this.value)" ${focusScroll}/></td>
+        <td data-label="Mémo"><input class="cell-input" style="font-size:13px; color:var(--muted)" value="${window.esc(r.note||'')}" placeholder="Mémo..." oninput="window.updExp('${r.id}','note',this.value)" ${focusScroll}/></td>
+        <td data-label="Supprimer" style="text-align:center;"><button class="del-row-btn" onclick="window.delExp('${r.id}')">${window.trashIcon}</button></td>
+      </tr>`;
+    }).join('');
+    
+    expHtml += `<tr class="add-row-tr"><td colspan="6"><button class="add-row-btn-inline" onclick="window.openModal()">+ Ajouter une ligne de dépense</button></td></tr>`;
+    document.getElementById('expenseTbody').innerHTML = expHtml;
+  };
+
+  window.renderAll = function() { window.updateStatsAndHeader(); window.renderTables(); };
+
+  window.addIncomeRow = function() { window.state[window.currentMonth].incomeRows.push({ id: window.uid(), label: '', amount: '', paid: false }); window.save(); window.renderAll(); };
+  window.updInc = function(id, f, v) { window.state[window.currentMonth].incomeRows.find(r=>r.id===id)[f]=v; window.save(); window.updateStatsAndHeader(); };
+  window.delInc = function(id) { if (confirm("Supprimer ce revenu ?")) { window.state[window.currentMonth].incomeRows = window.state[window.currentMonth].incomeRows.filter(r=>r.id!==id); window.save(); window.renderAll(); } };
+  window.toggleInc = function(id) { let r = window.state[window.currentMonth].incomeRows.find(r=>r.id===id); r.paid=!r.paid; window.save(); window.renderAll(); };
+
+  window.updExp = function(id, f, v) { window.state[window.currentMonth].expenseRows.find(r=>r.id===id)[f]=v; window.save(); window.updateStatsAndHeader(); };
+  window.delExp = function(id) { if (confirm("Supprimer cette dépense ?")) { window.state[window.currentMonth].expenseRows = window.state[window.currentMonth].expenseRows.filter(r=>r.id!==id); window.save(); window.renderAll(); } };
+  window.toggleExp = function(id) { let r = window.state[window.currentMonth].expenseRows.find(r=>r.id===id); r.paid=!r.paid; window.save(); window.renderAll(); };
+  window.cycleCat = function(id) { let c = ['fixed','domiciliation','credit','variable'], r = window.state[window.currentMonth].expenseRows.find(r=>r.id===id); r.cat = c[(c.indexOf(r.cat)+1)%4]; window.save(); window.renderAll(); };
+
+  window.copyPreviousMonth = function() {
+    const mi = window.currentMonth;
+    if (mi === 0) return; 
+    const prevExpenses = window.state[mi - 1].expenseRows || [];
+    const recurrent = prevExpenses.filter(r => ['fixed', 'domiciliation', 'credit'].includes(r.cat));
+    if (recurrent.length === 0) { alert("Aucune charge fixe trouvée le mois précédent."); return; }
+    if (confirm(`Copier ${recurrent.length} charges fixes de ${window.MONTHS[mi-1]} vers ${window.MONTHS[mi]} ?`)) {
+      recurrent.forEach(r => { window.state[mi].expenseRows.push({ id: window.uid(), label: r.label, amount: r.amount, cat: r.cat, note: r.note, paid: false }); });
+      window.save(); window.renderAll();
+    }
+  };
+
+  window.openModal = function() { document.getElementById('modalOverlay').classList.add('open'); };
+  window.closeModal = function() { document.getElementById('modalOverlay').classList.remove('open'); };
+  window.closeModalOutside = function(e) { if(e.target.id === 'modalOverlay') window.closeModal(); };
+
+  window.confirmAddRow = function() {
+    const label = document.getElementById('newLabel').value;
+    const amount = document.getElementById('newAmount').value;
+    const cat = document.getElementById('newCat').value;
+    const note = document.getElementById('newNote').value;
+    const recurCheckbox = document.getElementById('newRecurring');
+    const recurring = recurCheckbox ? recurCheckbox.checked : false;
+
+    if(!label && !amount) { window.closeModal(); return; }
+    const newRow = { label, amount, cat, note, paid:false };
+
+    if (recurring) {
+      for(let i = window.currentMonth; i < 12; i++) { window.state[i].expenseRows.push({ ...newRow, id:window.uid() }); }
+    } else { window.state[window.currentMonth].expenseRows.push({ ...newRow, id:window.uid() }); }
+
+    window.closeModal(); 
+    document.getElementById('newLabel').value = ''; document.getElementById('newAmount').value = ''; document.getElementById('newNote').value = ''; 
+    if(recurCheckbox) recurCheckbox.checked = false;
+    window.save(); window.renderAll();
+  };
+
+  window.openColModal = function() { document.getElementById('colModalOverlay').classList.add('open'); };
+  window.closeColModal = function() { document.getElementById('colModalOverlay').classList.remove('open'); };
+  window.closeColModalOutside = function(e) { if(e.target.id==='colModalOverlay') window.closeColModal(); };
+  window.confirmAddCol = function() { window.state[window.currentMonth].extraCols.push(document.getElementById('newColName').value); window.closeColModal(); document.getElementById('newColName').value = ''; window.save(); window.renderAll(); };
 
   window.exportData = function() {
-    var mi   = currentMonth;
-    var rows = state[mi].expenseRows || [];
-    var inc  = state[mi].incomeRows  || [];
-    var csv  = 'BudgetFlow — ' + MONTHS[mi] + ' ' + YEAR + '\n\nREVENUS,Montant\n';
-    inc.forEach(function(r) { csv += '"' + String(r.label || '').replace(/"/g,'""') + '",' + parseAmt(r.amount) + '\n'; });
-    csv += '\nDEPENSES,Catégorie,Montant,Mémo\n';
-    rows.forEach(function(r) { csv += '"' + String(r.label || '').replace(/"/g,'""') + '","' + String(r.cat || '').replace(/"/g,'""') + '",' + parseAmt(r.amount) + ',"' + String(r.note || '').replace(/"/g,'""') + '"\n'; });
-    csv += '\nTOTAL REVENUS,' + calcIncome(mi) + '\nTOTAL DÉPENSES,' + calcExpenses(mi) + '\nSOLDE NET,' + (calcIncome(mi) - calcExpenses(mi)) + '\n';
-    var blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
-    var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-    a.download = 'budgetflow_' + MONTHS[mi].toLowerCase() + '_' + YEAR + '.csv'; a.click();
-    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    const mi = window.currentMonth;
+    const rows = window.state[mi].expenseRows || [];
+    const inc = window.state[mi].incomeRows || [];
+    let csv = 'BudgetFlow ' + window.MONTHS[mi] + ' ' + window.YEAR + '\nREVENUS,Montant\n';
+    inc.forEach(r => { csv += '"' + String(r.label || '').replace(/"/g, '""') + '",' + window.parseAmt(r.amount) + '\n'; });
+    csv += 'DEPENSES,Catégorie,Montant,Note\n';
+    rows.forEach(r => { csv += '"' + String(r.label || '').replace(/"/g, '""') + '","' + String(r.cat || '').replace(/"/g, '""') + '",' + window.parseAmt(r.amount) + ',"' + String(r.note || '').replace(/"/g, '""') + '"\n'; });
+    csv += 'TOTALS,,' + window.calcIncome(mi) + ',' + window.calcExpenses(mi) + '\n';
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'budgetflow_' + window.MONTHS[mi].toLowerCase() + '_' + window.YEAR + '.csv'; a.click();
   };
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') { window.closeModal(); window.closeLogoutModal(null, true); window.closeGuideModal(); window.closeSyncModal(); window.closeToast(); window.closeAboutModal(); }
-    if (e.key === 'Enter') { if (document.getElementById('modalOverlay').classList.contains('open')) window.confirmAddRow(); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { window.closeModal(); window.closeColModal(); window.closeLogoutModal(null, true); window.closeGuideModal(); window.closeSyncModal(); window.closeToast(); window.closeAboutModal(); }
+    if (e.key === 'Enter' && document.getElementById('modalOverlay').classList.contains('open')) window.confirmAddRow();
+    if (e.key === 'Enter' && document.getElementById('colModalOverlay').classList.contains('open')) window.confirmAddCol();
   });
 
 })();
 </script>
+</body>
+</html>
