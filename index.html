@@ -7,363 +7,346 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>BudgetFlow Pro — Planificateur Financier Privé (Souverain)</title>
-
-<meta name="theme-color" content="#f3f4f6" id="themeColorMeta">
+<title>BudgetFlow Pro — Planificateur Financier Privé</title>
+<meta name="theme-color" content="#f4f6f8" id="themeColorMeta">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="BudgetFlow">
-
 <style>
-  :root {
-    --bg: #f0f2f5; --surface: #ffffff; --surface2: #f8f9fb; --border: #e4e7ed;
-    --accent: #2563eb; --accent-light: rgba(37,99,235,0.08); --accent-text: #ffffff;
-    --green: #059669; --red: #dc2626; --blue: #3b82f6;
-    --text: #0f1117; --muted: #6b7280;
-    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-title: system-ui, -apple-system, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --radius-sm: 8px; --radius: 12px; --radius-lg: 18px; --radius-xl: 24px;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-lg: 0 16px 40px rgba(0,0,0,0.12);
-  }
-  body.theme-onyx {
-    --bg: #000000; --surface: #0c0c0c; --surface2: #161616; --border: #242424;
-    --accent: #ffffff; --accent-light: rgba(255,255,255,0.06); --accent-text: #000000;
-    --green: #10b981; --red: #ef4444; --text: #f5f5f5; --muted: #737373; --blue: #60a5fa;
-  }
-  body.theme-navy {
-    --bg: #020617; --surface: #0f172a; --surface2: #1a2540; --border: #2d3b55;
-    --accent: #38bdf8; --accent-light: rgba(56,189,248,0.08); --accent-text: #0f172a;
-    --green: #34d399; --red: #f87171; --text: #e2e8f0; --muted: #64748b; --blue: #60a5fa;
-  }
-  body.theme-gold {
-    --bg: #0a0800; --surface: #110f00; --surface2: #1a1700; --border: #2e2800;
-    --accent: #f0a500; --accent-light: rgba(240,165,0,0.08); --accent-text: #000000;
-    --green: #3ddc84; --red: #e05c3a; --text: #ede8d8; --muted: #6b6040; --blue: #4f9cf9;
-  }
-  body.theme-violet {
-    --bg: #09071a; --surface: #110e2e; --surface2: #1a1640; --border: #2d2660;
-    --accent: #a78bfa; --accent-light: rgba(167,139,250,0.08); --accent-text: #09071a;
-    --green: #34d399; --red: #f87171; --text: #ede9ff; --muted: #7c6fa0; --blue: #60a5fa;
-  }
+:root {
+  --bg:#f4f6f8;--surface:#fff;--surface2:#f8f9fb;--border:#eaedf2;
+  --accent:#2563eb;--accent-light:rgba(37,99,235,0.07);--accent-text:#fff;
+  --green:#059669;--red:#dc2626;--blue:#3b82f6;
+  --text:#1a1d24;--muted:#737b8b;
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  --r-sm:10px;--r:16px;--r-lg:20px;--r-xl:28px;
+  --sh-sm:0 2px 12px rgba(0,0,0,0.04);--sh:0 8px 28px rgba(0,0,0,0.07);--sh-lg:0 20px 50px rgba(0,0,0,0.10);
+}
+body.theme-onyx{--bg:#050505;--surface:#121212;--surface2:#1c1c1c;--border:#2a2a2a;--accent:#fff;--accent-light:rgba(255,255,255,0.06);--accent-text:#000;--green:#10b981;--red:#ef4444;--text:#f9f9f9;--muted:#888;--blue:#60a5fa;--sh-sm:0 2px 12px rgba(0,0,0,0.4);}
+body.theme-navy{--bg:#020617;--surface:#0f172a;--surface2:#162032;--border:#223048;--accent:#38bdf8;--accent-light:rgba(56,189,248,0.08);--accent-text:#0f172a;--green:#34d399;--red:#f87171;--text:#f1f5f9;--muted:#718096;--blue:#60a5fa;--sh-sm:0 2px 12px rgba(0,0,0,0.5);}
+body.theme-gold{--bg:#0a0800;--surface:#141205;--surface2:#1c190a;--border:#2e2800;--accent:#f0a500;--accent-light:rgba(240,165,0,0.08);--accent-text:#000;--green:#3ddc84;--red:#e05c3a;--text:#fdfaf0;--muted:#7c7255;--blue:#4f9cf9;--sh-sm:0 2px 12px rgba(0,0,0,0.5);}
+body.theme-violet{--bg:#09071a;--surface:#130f30;--surface2:#1b1642;--border:#2d2660;--accent:#a78bfa;--accent-light:rgba(167,139,250,0.08);--accent-text:#09071a;--green:#34d399;--red:#f87171;--text:#f5f3ff;--muted:#8a7eb8;--blue:#60a5fa;--sh-sm:0 2px 12px rgba(0,0,0,0.4);}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--text); font-family: var(--font-sans); min-height: 100vh; overflow-x: hidden; transition: background-color 0.3s, color 0.3s; -webkit-font-smoothing: antialiased; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);min-height:100vh;overflow-x:hidden;transition:background-color .3s,color .3s;-webkit-font-smoothing:antialiased;letter-spacing:-.01em;}
 
-  /* ── SHIMMER ── */
-  .btn-shimmer { position: relative; overflow: hidden; }
-  .btn-shimmer::after { content: ""; position: absolute; top: 0; left: -160%; width: 60%; height: 100%; background: linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.38) 50%, rgba(255,255,255,0) 100%); transform: skewX(-20deg); animation: shimmer 2.5s infinite; pointer-events: none; }
-  @keyframes shimmer { 0% { left: -160%; } 35% { left: 160%; } 100% { left: 160%; } }
+/* SHIMMER */
+.btn-shimmer{position:relative;overflow:hidden;}
+.btn-shimmer::after{content:"";position:absolute;top:0;left:-160%;width:60%;height:100%;background:linear-gradient(105deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.36) 50%,rgba(255,255,255,0) 100%);transform:skewX(-20deg);animation:shimmer 2.8s infinite;pointer-events:none;}
+@keyframes shimmer{0%{left:-160%}35%{left:160%}100%{left:160%}}
 
-  /* ===== WELCOME SCREEN ===== */
-  #welcomeScreen { position: fixed; inset: 0; background: var(--surface); z-index: 9000; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: opacity 0.4s ease; padding: 16px;}
-  #welcomeScreen.hidden { opacity: 0; pointer-events: none; }
+/* ===== WELCOME ===== */
+#welcomeScreen{position:fixed;inset:0;background:var(--bg);z-index:9000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .4s ease;padding:16px;}
+#welcomeScreen.hidden{opacity:0;pointer-events:none;}
+.welcome-box{width:100%;max-width:420px;padding:50px 40px;background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--sh-lg);text-align:center;}
+.welcome-logo{font-weight:800;font-size:28px;letter-spacing:-.8px;color:var(--text);margin-bottom:6px;}
+.welcome-logo span{color:var(--accent);}
+.welcome-logo sup{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;vertical-align:super;}
+.welcome-tagline{font-size:13px;color:var(--muted);margin-bottom:32px;font-weight:500;line-height:1.5;}
+.profile-selector{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;justify-content:center;}
+.profile-chip{padding:10px 22px;border-radius:30px;border:1.5px solid var(--border);background:var(--bg);color:var(--muted);font-size:13px;font-weight:700;cursor:pointer;transition:all .25s;min-height:48px;display:flex;align-items:center;}
+.profile-chip.active{background:var(--accent);color:var(--accent-text);border-color:var(--accent);box-shadow:0 4px 15px var(--accent-light);}
+.welcome-label{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;text-align:left;letter-spacing:.5px;text-transform:uppercase;}
+.welcome-input{width:100%;background:var(--surface2);border:1.5px solid transparent;border-radius:var(--r);padding:16px 20px;font-family:var(--font-sans);font-size:16px;color:var(--text);outline:none;transition:all .2s;margin-bottom:20px;}
+.welcome-input:focus{border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 4px var(--accent-light);}
+.welcome-cta{width:100%;background:var(--accent);color:var(--accent-text);border:none;border-radius:var(--r);padding:18px;font-size:15px;font-weight:700;cursor:pointer;transition:all .25s;margin-bottom:16px;min-height:54px;box-shadow:0 6px 20px var(--accent-light);}
+.welcome-cta:hover{opacity:.95;transform:translateY(-2px);}
+.welcome-cta:active{transform:translateY(0);}
+.pwa-install-btn{width:100%;display:none;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1d4ed8 0%,#2563eb 60%,#0284c7 100%);color:#fff;border:none;border-radius:var(--r);padding:16px 20px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:16px;box-shadow:0 6px 20px rgba(37,99,235,.25);transition:all .2s;min-height:54px;}
+.pwa-install-btn:hover{opacity:.95;transform:translateY(-2px);}
+body.theme-onyx .pwa-install-btn,body.theme-navy .pwa-install-btn,body.theme-gold .pwa-install-btn,body.theme-violet .pwa-install-btn{background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 60%,transparent));box-shadow:0 6px 20px var(--accent-light);}
+.ios-hint-box{display:none;width:100%;background:var(--accent-light);border-radius:var(--r);padding:20px 18px;margin-bottom:16px;text-align:left;}
+.ios-hint-title{font-size:13px;font-weight:800;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.5px;}
+.ios-hint-step{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px;font-size:13px;color:var(--text);line-height:1.5;}
+.ios-step-num{width:22px;height:22px;border-radius:50%;background:var(--accent);color:var(--accent-text);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.welcome-guide-btn{width:100%;background:transparent;color:var(--muted);border:none;font-size:14px;font-weight:600;cursor:pointer;transition:color .2s;padding:12px;min-height:48px;}
+.welcome-guide-btn:hover{color:var(--text);}
+.welcome-error{font-size:13px;color:var(--red);margin-top:12px;font-weight:600;min-height:18px;line-height:1.4;}
+.security-badge{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--surface2);border-radius:var(--r-sm);margin-bottom:24px;font-size:12px;color:var(--muted);line-height:1.5;text-align:left;}
+.security-badge strong{color:var(--green);}
 
-  .welcome-box { width: 100%; max-width: 400px; padding: 44px 36px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); text-align: center; position: relative; z-index: 10;}
+/* ===== TOAST ===== */
+#toast{position:fixed;bottom:-100px;left:50%;transform:translateX(-50%);background:var(--surface);color:var(--text);padding:14px 22px 14px 26px;border-radius:50px;box-shadow:var(--sh-lg);font-size:14px;font-weight:600;display:flex;align-items:center;gap:16px;z-index:9999;transition:bottom .5s cubic-bezier(.175,.885,.32,1.275);max-width:calc(100vw - 32px);word-break:break-word;}
+#toast.show{bottom:40px;}
+#toast.error{border-left:4px solid var(--red);color:var(--red);}
+#toast.success{border-left:4px solid var(--green);color:var(--green);}
+.toast-btn{background:var(--accent);color:var(--accent-text);border:none;padding:10px 20px;border-radius:30px;font-weight:700;font-size:13px;cursor:pointer;min-height:40px;flex-shrink:0;}
 
-  .welcome-logo { font-family: var(--font-title); font-weight: 800; font-size: 26px; letter-spacing: -0.8px; color: var(--text); margin-bottom: 4px; }
-  .welcome-logo span { color: var(--accent); }
-  .welcome-logo sup { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; vertical-align: super; }
+/* ===== APP SHELL ===== */
+#appShell{display:none;}
+#appShell.visible{display:block;}
 
-  .welcome-tagline { font-size: 12px; color: var(--muted); margin-bottom: 24px; font-weight: 500; line-height: 1.4; }
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 40px;background:var(--surface);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--border);}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.5px;color:var(--text);}
+.logo span{color:var(--accent);}
+.logo sup{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;vertical-align:super;}
+.header-right{display:flex;gap:10px;align-items:center;}
+.user-badge{display:flex;align-items:center;gap:10px;background:var(--surface2);border-radius:30px;padding:8px 20px;font-size:14px;font-weight:700;color:var(--text);cursor:pointer;transition:all .2s;min-height:48px;border:none;}
+.user-badge:hover{background:var(--border);}
+.profile-pill{font-size:11px;font-weight:800;color:var(--accent);background:var(--accent-light);padding:4px 12px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;}
+.header-pwa-btn{display:none;align-items:center;gap:8px;background:var(--accent);color:var(--accent-text);border:none;border-radius:30px;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 15px var(--accent-light);white-space:nowrap;min-height:48px;}
+.header-pwa-btn:hover{transform:translateY(-2px);}
 
-  .profile-selector { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center; }
-  .profile-chip { padding: 8px 18px; border-radius: 20px; border: 1.5px solid var(--border); background: var(--bg); color: var(--muted); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-  .profile-chip.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+/* DROPDOWN */
+.dropdown{position:relative;display:inline-block;}
+.dropdown>.btn{background:var(--surface2);border:none;}
+.dropdown>.btn:hover{background:var(--border);}
+.dropdown-content{display:none;position:absolute;right:0;top:calc(100% + 10px);background:var(--surface);min-width:190px;box-shadow:var(--sh-lg);border-radius:var(--r);z-index:1000;overflow:hidden;padding:8px;animation:ddFade .18s ease;}
+@keyframes ddFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.dropdown-content.show{display:block;}
+.dropdown-content button{color:var(--text);padding:13px 16px;display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:none;background:none;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;border-radius:var(--r-sm);}
+.dropdown-content button:hover{background:var(--surface2);color:var(--accent);}
 
-  .welcome-label { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 8px; text-align: left; letter-spacing: 0.5px; text-transform: uppercase; }
-  .welcome-input { width: 100%; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 15px 16px; font-family: var(--font-sans); font-size: 16px; color: var(--text); outline: none; transition: all 0.2s; margin-bottom: 16px; }
-  .welcome-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+/* MONTH NAV */
+.month-nav{display:flex;padding:10px 32px;background:var(--surface);overflow-x:auto;scrollbar-width:none;gap:6px;box-shadow:0 1px 0 var(--border);}
+.month-nav::-webkit-scrollbar{display:none;}
+.month-tab{padding:11px 20px;font-weight:700;font-size:13px;color:var(--muted);cursor:pointer;border:none;background:transparent;border-radius:30px;transition:all .2s;white-space:nowrap;min-height:46px;}
+.month-tab:hover{background:var(--surface2);color:var(--text);}
+.month-tab.active{background:var(--accent);color:var(--accent-text);box-shadow:0 4px 14px var(--accent-light);}
+.month-tab .month-total{display:block;font-family:var(--font-mono);font-size:10px;font-weight:500;margin-top:3px;opacity:.8;}
+.month-tab.active .month-total{opacity:1;}
 
-  .welcome-cta { width: 100%; background: var(--accent); color: var(--accent-text); border: none; border-radius: var(--radius); padding: 16px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-bottom: 12px; letter-spacing: 0.1px; }
-  .welcome-cta:hover { opacity: 0.9; transform: translateY(-1px); }
-  .welcome-cta:active { transform: translateY(0); }
+/* MAIN */
+main{padding:36px 32px 100px;max-width:1080px;margin:0 auto;}
+.gdpr-banner{background:var(--surface);border-radius:var(--r-xl);padding:18px 24px;margin-bottom:32px;font-size:14px;color:var(--text);display:flex;align-items:center;gap:16px;box-shadow:var(--sh-sm);}
+.advice-banner{background:var(--surface);border-radius:var(--r-xl);padding:30px 34px;margin-bottom:40px;display:flex;align-items:center;gap:28px;box-shadow:var(--sh-sm);}
+.advice-icon{font-size:30px;background:var(--surface2);width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:50%;flex-shrink:0;}
+.advice-content{flex:1;}
+.advice-text{font-size:15px;line-height:1.6;color:var(--text);font-weight:500;}
+.advice-text strong,.advice-text .hi-accent{color:var(--accent);}
+.advice-text .hi-red{color:var(--red);font-weight:700;}
+.advice-text .hi-green{color:var(--green);font-weight:700;}
+.advice-disclaimer{font-size:12px;color:var(--muted);margin-top:8px;}
+.advice-actions{display:flex;gap:12px;flex-shrink:0;}
+.advice-actions a{text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px 20px;font-size:14px;font-weight:700;border-radius:30px;border:none;color:var(--text);background:var(--surface2);transition:all .2s;white-space:nowrap;min-height:48px;}
+.advice-actions a:hover{background:var(--border);transform:translateY(-2px);}
+.advice-actions a.cta-accent{background:var(--accent);color:var(--accent-text);box-shadow:0 4px 15px var(--accent-light);}
+.advice-actions a.cta-accent:hover{box-shadow:0 6px 20px var(--accent-light);}
 
-  .pwa-install-btn { width: 100%; display: none; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #0284c7 100%); color: #ffffff; border: none; border-radius: var(--radius); padding: 14px 20px; font-size: 13px; font-weight: 700; cursor: pointer; margin-bottom: 12px; box-shadow: 0 4px 16px rgba(37,99,235,0.32); transition: all 0.2s; letter-spacing: 0.1px; }
-  .pwa-install-btn:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: 0 6px 22px rgba(37,99,235,0.42); }
+/* DASHBOARD */
+.dashboard{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:40px;}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.stat-card{background:var(--surface);border-radius:var(--r-xl);padding:26px;box-shadow:var(--sh-sm);transition:transform .25s ease;}
+.stat-card:hover{transform:translateY(-3px);}
+.stat-label{font-size:12px;font-weight:700;text-transform:uppercase;color:var(--muted);margin-bottom:12px;letter-spacing:.8px;}
+.stat-value{font-family:var(--font-mono);font-size:30px;font-weight:600;letter-spacing:-1px;}
+.stat-card.inc .stat-value{color:var(--green);}
+.stat-card.exp .stat-value{color:var(--red);}
+.stat-sub{font-size:13px;color:var(--muted);margin-top:8px;font-weight:500;}
 
-  body.theme-onyx .pwa-install-btn, body.theme-navy .pwa-install-btn, body.theme-gold .pwa-install-btn, body.theme-violet .pwa-install-btn { background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 60%, transparent)); box-shadow: 0 4px 16px var(--accent-light); }
+/* TREND CHART */
+.trend-card{background:var(--surface);border-radius:var(--r-xl);padding:26px 30px;box-shadow:var(--sh-sm);margin-bottom:40px;}
+.trend-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.trend-title{font-weight:800;font-size:16px;color:var(--text);}
+.trend-subtitle{font-size:12px;color:var(--muted);}
+#trendChart{display:flex;align-items:flex-end;justify-content:space-between;gap:5px;height:140px;border-bottom:2px solid var(--border);position:relative;}
+.trend-bar{flex:1;min-width:8px;border-radius:4px 4px 0 0;transition:opacity .2s;cursor:default;}
+.trend-bar:hover{opacity:.75;}
+.trend-bar.positive{background:var(--green);}
+.trend-bar.negative{background:var(--red);}
+.trend-bar.empty{background:var(--border);height:3px!important;border-radius:2px;}
+.trend-labels{display:flex;justify-content:space-between;margin-top:12px;font-size:11px;font-weight:700;color:var(--muted);font-family:var(--font-mono);}
+.trend-zero-line{position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--border);}
 
-  .ios-hint-box { display: none; width: 100%; background: var(--accent-light); border: 1.5px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: var(--radius); padding: 16px 14px; margin-bottom: 12px; text-align: left; }
-  .ios-hint-title { font-size: 12px; font-weight: 800; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .ios-hint-step { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; font-size: 12px; color: var(--text); line-height: 1.5; }
-  .ios-hint-step:last-child { margin-bottom: 0; }
-  .ios-step-num { width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: var(--accent-text); font-size: 10px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+/* TABLES */
+.table-section{margin-bottom:40px;}
+.table-header{display:flex;align-items:center;justify-content:space-between;padding:0 0 18px 0;margin-bottom:18px;border-bottom:2px solid var(--border);flex-wrap:wrap;gap:12px;}
+.table-title{font-weight:800;font-size:19px;color:var(--text);}
+.table-actions{display:flex;gap:10px;}
 
-  .welcome-guide-btn { width: 100%; background: transparent; color: var(--muted); border: none; font-size: 13px; font-weight: 600; cursor: pointer; transition: color 0.2s; padding: 10px; }
-  .welcome-guide-btn:hover { color: var(--text); }
-  .welcome-error { font-size: 12px; color: var(--red); margin-top: 10px; font-weight: 600; min-height: 16px; line-height: 1.4; }
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:30px;font-size:14px;font-weight:700;cursor:pointer;border:none;background:var(--surface);color:var(--text);transition:all .2s;text-decoration:none;min-height:48px;box-shadow:var(--sh-sm);}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.btn:active{transform:scale(.97);opacity:.85;}
+.btn-accent{background:var(--accent);color:var(--accent-text);box-shadow:0 4px 15px var(--accent-light);}
+.btn-accent:hover{box-shadow:0 6px 20px var(--accent-light);}
+.btn-ghost{background:var(--surface2);box-shadow:none;}
+.btn-ghost:hover{background:var(--border);box-shadow:none;}
+.btn-danger{background:rgba(220,38,38,.08);color:var(--red);box-shadow:none;}
+.btn-danger:hover{background:rgba(220,38,38,.15);box-shadow:none;}
 
-  .security-badge { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 20px; font-size: 11px; color: var(--muted); line-height: 1.4; text-align: left; }
-  .security-badge strong { color: var(--green); }
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px;}
 
-  /* ===== TOAST ===== */
-  #toast { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background: var(--surface); color: var(--text); padding: 12px 16px 12px 20px; border-radius: 50px; box-shadow: var(--shadow-lg); border: 1px solid var(--border); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 16px; z-index: 9999; transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); white-space: nowrap; }
-  #toast.show { bottom: 32px; }
-  .toast-btn { background: var(--accent); color: var(--accent-text); border: none; padding: 8px 16px; border-radius: 20px; font-weight: 700; font-size: 12px; cursor: pointer; transition: opacity 0.2s; }
-  .toast-btn:hover { opacity: 0.9; }
+.budget-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-sm);}
+.budget-table thead tr{background:transparent;}
+.budget-table th{padding:16px 18px;font-size:12px;font-weight:700;color:var(--muted);text-align:left;text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--border);}
+.budget-table tbody tr{transition:background .15s;}
+.budget-table tbody tr:not(:last-child){border-bottom:1px solid var(--surface2);}
+.budget-table tbody tr:hover{background:var(--surface2);}
+.budget-table td{padding:6px 10px;vertical-align:middle;border-bottom:1px solid var(--border);}
+.budget-table tbody tr:last-child td{border-bottom:none;}
 
-  /* ===== APP SHELL ===== */
-  #appShell { display: none; }
-  #appShell.visible { display: block; }
+.cell-input{width:100%;background:transparent;border:none;padding:12px 10px;font-family:var(--font-sans);font-size:15px;font-weight:500;color:var(--text);outline:none;border-radius:8px;transition:background .15s;}
+.cell-input:focus{background:var(--surface2);}
+.cell-input::placeholder{color:var(--muted);opacity:.55;}
+.cell-input.amt{text-align:right;font-weight:700;font-family:var(--font-mono);font-size:16px;}
+.cell-input.pos{color:var(--green);}
 
-  /* ─ HEADER ─ */
-  header { display: flex; align-items: center; justify-content: space-between; padding: 18px 32px; border-bottom: 1px solid var(--border); background: var(--surface); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
-  .logo { font-weight: 800; font-size: 18px; letter-spacing: -0.5px; color: var(--text); }
-  .logo span { color: var(--accent); }
-  .logo sup { font-size: 9px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; vertical-align: super; }
-  .header-right { display: flex; gap: 10px; align-items: center; }
-  .user-badge { display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); border-radius: 20px; padding: 6px 16px; font-size: 13px; font-weight: 700; color: var(--text); cursor: pointer; transition: all 0.2s; background: var(--surface); box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
-  .user-badge:hover { background: var(--surface2); }
-  .profile-pill { font-size: 11px; font-weight: 800; color: var(--accent); background: var(--accent-light); padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+.status-toggle{width:44px;height:44px;border-radius:10px;border:none;background:var(--surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;color:transparent;margin:0 auto;transition:all .2s;}
+.status-toggle.paid{background:var(--green);color:#fff;box-shadow:0 2px 10px rgba(5,150,105,.3);}
+.status-toggle:hover:not(.paid){background:var(--border);}
 
-  .header-pwa-btn { display: none; align-items: center; gap: 6px; background: var(--accent); color: var(--accent-text); border: none; border-radius: 20px; padding: 8px 14px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 10px var(--accent-light); white-space: nowrap; }
-  .header-pwa-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.cat-badge{display:inline-block;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;transition:all .2s;white-space:nowrap;border:none;user-select:none;}
+.cat-badge.fixed{background:rgba(59,130,246,.1);color:var(--blue);}
+.cat-badge.variable{background:var(--surface2);color:var(--muted);border:1px solid var(--border);}
+.cat-badge.domiciliation{background:rgba(5,150,105,.1);color:var(--green);}
+.cat-badge.credit{background:rgba(220,38,38,.1);color:var(--red);}
+.cat-badge:hover{transform:scale(1.05);}
 
-  /* ─ MONTH NAV ─ */
-  .month-nav { display: flex; padding: 0 24px; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; background: var(--surface); }
-  .month-nav::-webkit-scrollbar { display: none; }
-  .month-tab { padding: 14px 20px; font-weight: 700; font-size: 12px; color: var(--muted); cursor: pointer; border: none; background: none; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap; }
-  .month-tab.active { color: var(--text); border-bottom-color: var(--accent); }
-  .month-tab .month-total { display: block; font-family: var(--font-mono); font-size: 10px; font-weight: 500; margin-top: 3px; opacity: 0.7; }
-  .month-tab.active .month-total { color: var(--accent); opacity: 1; }
+.del-btn{width:44px;height:44px;border-radius:10px;background:transparent;border:none;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;margin:0 auto;opacity:.45;}
+.del-btn:hover{background:rgba(220,38,38,.1);color:var(--red);opacity:1;}
 
-  /* ─ MAIN ─ */
-  main { padding: 28px 32px; max-width: 1120px; margin: 0 auto; }
+.add-row-tr{background:transparent!important;}
+.add-row-tr td{padding:10px!important;border-top:1px dashed var(--border)!important;border-bottom:none!important;}
+.add-row-btn{width:100%;background:var(--surface2);border:none;color:var(--muted);font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:18px;border-radius:var(--r);transition:all .2s;min-height:54px;}
+.add-row-btn:hover{background:var(--border);color:var(--text);}
 
-  /* ─ GDPR BANNER ─ */
-  .gdpr-banner { background: var(--surface2); border: 1px solid var(--green); border-radius: var(--radius-lg); padding: 16px; margin-bottom: 28px; font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 12px; }
+.fab{display:none;position:fixed;bottom:24px;right:20px;z-index:500;width:58px;height:58px;border-radius:50%;background:var(--accent);color:var(--accent-text);border:none;font-size:26px;font-weight:300;cursor:pointer;box-shadow:0 8px 28px var(--accent-light);transition:all .25s;align-items:center;justify-content:center;}
+.fab:hover{transform:scale(1.08);box-shadow:0 12px 36px var(--accent-light);}
+.fab:active{transform:scale(.94);}
 
-  /* ─ ADVICE BANNER ─ */
-  .advice-banner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px 24px; margin-bottom: 28px; display: flex; align-items: center; gap: 20px; box-shadow: var(--shadow-sm); }
-  .advice-icon { font-size: 26px; background: var(--bg); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius); border: 1px solid var(--border); flex-shrink: 0; }
-  .advice-content { flex: 1; }
-  .advice-text { font-size: 14px; line-height: 1.55; color: var(--text); font-weight: 500; }
-  .advice-text strong, .advice-text .hi-accent { color: var(--accent); }
-  .advice-text .hi-red { color: var(--red); font-weight: 700; }
-  .advice-text .hi-green { color: var(--green); font-weight: 700; }
-  .advice-disclaimer { font-size: 11px; color: var(--muted); margin-top: 6px; }
-  .advice-actions { display: flex; gap: 10px; flex-shrink: 0; }
-  .advice-actions a { text-decoration: none; padding: 10px 16px; font-size: 13px; font-weight: 700; border-radius: var(--radius-sm); border: 1px solid var(--border); color: var(--text); background: var(--surface); transition: all 0.2s; white-space: nowrap; }
-  .advice-actions a:hover { background: var(--bg); }
-  .advice-actions a.cta-accent { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+/* MODALS */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);z-index:200;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;padding:20px;}
+.modal-overlay.open{opacity:1;pointer-events:all;}
+.modal{background:var(--surface);border-radius:var(--r-xl);padding:40px;width:440px;max-width:100%;transform:translateY(18px) scale(.98);transition:all .3s cubic-bezier(.34,1.56,.64,1);box-shadow:var(--sh-lg);max-height:90vh;overflow-y:auto;}
+.modal-overlay.open .modal{transform:translateY(0) scale(1);}
+.modal-title{font-weight:800;font-size:21px;margin-bottom:26px;color:var(--text);letter-spacing:-.5px;}
+.modal-field{margin-bottom:18px;}
+.modal-field label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px;}
+.modal-field input,.modal-field select,.modal-field textarea{width:100%;background:var(--surface2);border:1.5px solid transparent;border-radius:var(--r);padding:15px 16px;font-family:var(--font-sans);font-size:15px;color:var(--text);outline:none;transition:all .2s;}
+.modal-field textarea{font-family:var(--font-mono);font-size:11px;resize:none;line-height:1.5;}
+.modal-field input:focus,.modal-field select:focus,.modal-field textarea:focus{border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 4px var(--accent-light);}
+.modal-field input.input-error{border-color:var(--red);box-shadow:0 0 0 3px rgba(220,38,38,.12);}
+.modal-field .field-error{font-size:12px;color:var(--red);font-weight:600;margin-top:5px;display:none;}
+.modal-field .field-error.show{display:block;}
+.modal-actions{display:flex;gap:12px;margin-top:28px;}
+.modal-actions .btn{flex:1;padding:16px;font-size:15px;min-height:54px;}
 
-  /* ─ DASHBOARD ─ */
-  .dashboard { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 36px; }
-  .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-sm); }
-  .stat-label { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; letter-spacing: 0.6px; }
-  .stat-value { font-family: var(--font-mono); font-size: 26px; font-weight: 600; letter-spacing: -0.5px; }
-  .stat-card.inc .stat-value { color: var(--green); }
-  .stat-card.exp .stat-value { color: var(--red); }
-  .stat-sub { font-size: 12px; color: var(--muted); margin-top: 6px; font-weight: 500; }
+/* ACCORDION (Portabilité) */
+.sync-group{background:var(--surface2);border-radius:var(--r-lg);margin-bottom:14px;transition:background .2s;}
+.sync-group summary{padding:18px 20px;font-weight:700;font-size:14px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--text);min-height:54px;}
+.sync-group summary::-webkit-details-marker{display:none;}
+.sync-group[open]{background:var(--surface);box-shadow:var(--sh-sm);border:1px solid var(--border);}
+.sync-group[open] summary{border-bottom:1px solid var(--border);color:var(--accent);}
+.sync-group .details-content{padding:20px;}
+.import-info-box{background:var(--accent-light);border-radius:var(--r-sm);padding:12px 16px;font-size:13px;color:var(--text);line-height:1.6;margin-bottom:14px;}
 
-  /* ─ TABLES ─ */
-  .table-section { margin-bottom: 36px; }
-  .table-header { display: flex; align-items: center; justify-content: space-between; padding: 0 0 14px 0; margin-bottom: 14px; border-bottom: 2px solid var(--border); flex-wrap: wrap; gap: 10px; }
-  .table-title { font-weight: 800; font-size: 17px; color: var(--text); }
-  .table-actions { display: flex; gap: 8px; }
+/* THEMES */
+.theme-grid{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.theme-dot{width:48px;height:48px;border-radius:50%;cursor:pointer;transition:transform .2s;border:2px solid transparent;flex-shrink:0;}
+.theme-dot:hover{transform:scale(1.1);}
+.theme-dot.active{box-shadow:0 0 0 3px var(--surface),0 0 0 5px var(--accent);}
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 9px 16px; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; cursor: pointer; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: all 0.2s; text-decoration: none; }
-  .btn:hover { background: var(--bg); }
-  .btn-accent { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
-  .btn-accent:hover { opacity: 0.9; background: var(--accent); }
-  .btn-danger { background: transparent; color: var(--red); border: 1px solid var(--red); }
-  .btn-danger:hover { background: rgba(220,38,38,0.05); }
+/* iOS */
+.ios-step-row{display:flex;align-items:flex-start;gap:16px;padding:16px;background:var(--surface2);border-radius:var(--r);margin-bottom:12px;}
+.ios-num{width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-text);font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.ios-icon{font-size:24px;flex-shrink:0;}
+.ios-txt{font-size:14px;color:var(--text);line-height:1.5;}
+.ios-txt strong{color:var(--accent);}
+.install-section{display:none;padding:20px;background:var(--surface2);border-radius:var(--r-lg);margin-bottom:24px;}
+.install-section-title{font-size:12px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;}
 
-  .budget-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
-  .budget-table thead tr { background: var(--bg); }
-  .budget-table th { padding: 12px 16px; font-size: 11px; font-weight: 700; color: var(--muted); text-align: left; text-transform: uppercase; letter-spacing: 0.6px; border-bottom: 1px solid var(--border); }
-  .budget-table tbody tr { transition: background 0.15s; }
-  .budget-table tbody tr:not(:last-child) { border-bottom: 1px solid var(--border); }
-  .budget-table tbody tr:hover { background: var(--bg); }
-  .budget-table td { padding: 0; vertical-align: middle; border-bottom: 1px solid var(--border); }
-  .budget-table tbody tr:last-child td { border-bottom: none; }
+/* PRINT (Export PDF) */
+@media print{
+  @page{margin:1.5cm;}
+  body{background:#fff!important;color:#000!important;}
+  header,.month-nav,.gdpr-banner,.advice-banner,.table-actions,.add-row-tr,
+  .status-toggle,.del-btn,.cat-badge,#toast,.modal-overlay,#welcomeScreen,.dropdown,.fab,.trend-card{display:none!important;}
+  #appShell{display:block!important;}
+  main{padding:0;max-width:100%;margin:0;}
+  .dashboard{grid-template-columns:1fr;gap:16px;page-break-inside:avoid;}
+  .stat-card{border:1px solid #e4e7ed!important;box-shadow:none!important;padding:16px;background:#fff!important;}
+  .budget-table{border:1px solid #e4e7ed!important;box-shadow:none!important;border-radius:8px!important;}
+  .budget-table th,.budget-table td{border-bottom:1px solid #e4e7ed!important;color:#000!important;padding:10px!important;}
+  .cell-input{border:none!important;background:transparent!important;color:#000!important;padding:0!important;}
+  .stat-card.inc .stat-value{color:#059669!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .stat-card.exp .stat-value{color:#dc2626!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
 
-  .cell-input { width: 100%; background: transparent; border: none; padding: 15px 16px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--text); outline: none; }
-  .cell-input::placeholder { color: var(--muted); opacity: 0.55; }
-  .cell-input.amt { text-align: right; font-weight: 600; font-family: var(--font-mono); }
-  .cell-input.pos { color: var(--green); }
-
-  .status-toggle { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--border); background: var(--surface); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; color: transparent; margin: 0 auto; transition: all 0.2s; }
-  .status-toggle.paid { background: var(--green); border-color: var(--green); color: #ffffff; }
-
-  .cat-badge { display: inline-block; padding: 5px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s; white-space: nowrap; border: 1px solid transparent; user-select: none; }
-  .cat-badge.fixed { background: rgba(59,130,246,0.1); color: var(--blue); }
-  .cat-badge.variable { background: var(--bg); color: var(--muted); border-color: var(--border); }
-  .cat-badge.domiciliation { background: rgba(5,150,105,0.1); color: var(--green); }
-  .cat-badge.credit { background: rgba(220,38,38,0.1); color: var(--red); }
-
-  .del-btn { width: 32px; height: 32px; border-radius: var(--radius-sm); background: transparent; border: none; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; margin: 0 auto; opacity: 0.4; }
-  .del-btn:hover { background: rgba(220,38,38,0.1); color: var(--red); opacity: 1; }
-
-  .add-row-tr { background: var(--surface) !important; }
-  .add-row-tr td { padding: 0 !important; border-top: 1px dashed var(--border) !important; border-bottom: none !important; }
-  .add-row-btn { width: 100%; background: none; border: none; color: var(--muted); font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; transition: color 0.2s; }
-  .add-row-btn:hover { color: var(--text); }
-
-  /* ===== MODALS ===== */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); backdrop-filter: blur(6px); z-index: 200; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; padding: 16px; }
-  .modal-overlay.open { opacity: 1; pointer-events: all; }
-  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; width: 420px; max-width: 100%; transform: translateY(12px); transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); box-shadow: 0 28px 60px rgba(0,0,0,0.2); max-height: 90vh; overflow-y: auto; }
-  .modal-overlay.open .modal { transform: translateY(0); }
-  .modal-title { font-weight: 800; font-size: 18px; margin-bottom: 22px; color: var(--text); }
-  .modal-field { margin-bottom: 14px; }
-  .modal-field label { display: block; font-size: 11px; font-weight: 700; color: var(--muted); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.5px; }
-  .modal-field input, .modal-field select, .modal-field textarea { width: 100%; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; font-family: var(--font-sans); font-size: 15px; color: var(--text); outline: none; transition: border-color 0.2s; }
-  .modal-field textarea { font-family: var(--font-mono); font-size: 10px; resize: none; }
-  .modal-field input:focus, .modal-field select:focus, .modal-field textarea:focus { border-color: var(--accent); }
-  .modal-actions { display: flex; gap: 10px; margin-top: 22px; }
-  .modal-actions .btn { flex: 1; padding: 14px; font-size: 14px; min-height: 48px; }
-
-  /* Séparateur de section dans modale */
-  .modal-section-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-  }
-
-  /* Zone d'info dans la modale sync */
-  .import-info-box {
-    background: var(--accent-light);
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-    border-radius: var(--radius-sm);
-    padding: 10px 12px;
-    font-size: 12px;
-    color: var(--text);
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-
-  /* Thème selector */
-  .theme-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-  .theme-dot { width: 42px; height: 42px; border-radius: var(--radius-sm); cursor: pointer; transition: transform 0.2s; border: 2px solid transparent; flex-shrink: 0; }
-  .theme-dot:hover { transform: scale(1.12); }
-  .theme-dot.active { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--accent); }
-
-  .ios-step-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px; background: var(--bg); border-radius: var(--radius); margin-bottom: 10px; border: 1px solid var(--border); }
-  .ios-step-row:last-of-type { margin-bottom: 0; }
-  .ios-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: var(--accent-text); font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .ios-icon { font-size: 24px; flex-shrink: 0; }
-  .ios-txt { font-size: 13px; color: var(--text); line-height: 1.5; }
-  .ios-txt strong { color: var(--accent); }
-
-  .install-section { display: none; padding: 16px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); margin-bottom: 20px; }
-  .install-section-title { font-size: 11px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 12px; }
-
-  /* Champ mot de passe "ancien" — caché par défaut */
-  #oldPasswordField { display: none; }
-
-  /* ===== MOBILE ===== */
-  @media (max-width: 768px) {
-    input, select, textarea, .welcome-input, .cell-input { font-size: 16px !important; }
-
-    main { padding: 16px 16px 100px; }
-
-    .dashboard { grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-    .stat-card { padding: 16px; border-radius: var(--radius-lg); }
-    .stat-value { font-size: 22px; }
-    header { padding: 14px 16px; flex-direction: column; gap: 10px; border-bottom: none; background: transparent; position: relative; }
-    .header-right { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    .header-right .btn, .header-pwa-btn { flex: 1; min-height: 44px; font-size: 13px; border-radius: var(--radius); }
-    .user-badge { flex: 1; justify-content: center; min-height: 44px; border-radius: var(--radius); }
-    .advice-banner { flex-direction: column; margin: 16px 0; padding: 18px; gap: 14px; border-radius: var(--radius-lg); }
-    .advice-actions { width: 100%; flex-direction: column; gap: 8px; }
-    .advice-actions a { width: 100%; min-height: 44px; font-size: 14px; text-align: center; }
-    .table-section { margin-bottom: 24px; }
-    .table-header { padding: 0 0 12px 0; }
-    .budget-table { display: block; width: 100%; background: transparent; border: none; box-shadow: none; }
-    .budget-table thead { display: none; }
-    .budget-table tbody { display: block; width: 100%; }
-    .budget-table tbody tr:not(.add-row-tr) { display: flex; flex-wrap: wrap; align-items: center; padding: 14px; margin-bottom: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); position: relative; }
-    .budget-table td { display: block; padding: 0; border: none !important; }
-
-    #incomeTbody tr td:nth-child(1) { width: 32px; flex-shrink: 0; }
-    #incomeTbody tr td:nth-child(2) { flex: 1; padding-right: 8px; }
-    #incomeTbody tr td:nth-child(3) { position: absolute; right: 48px; top: 16px; width: 115px; }
-    #incomeTbody tr td:nth-child(4) { position: absolute; right: 10px; top: 14px; width: 32px; }
-
-    #expenseTbody tr:not(.add-row-tr) td:nth-child(1) { width: 32px; flex-shrink: 0; }
-    #expenseTbody tr:not(.add-row-tr) td:nth-child(2) { flex: 1; min-width: 0; padding-right: 125px; }
-    #expenseTbody tr:not(.add-row-tr) td:nth-child(3) { width: 100%; padding-left: 40px; margin-top: 6px; }
-    #expenseTbody tr:not(.add-row-tr) td:nth-child(4) { position: absolute; right: 48px; top: 16px; width: 118px; }
-    #expenseTbody tr:not(.add-row-tr) td:nth-child(5) { width: 100%; padding-left: 40px; margin-top: 4px; }
-    #expenseTbody tr:not(.add-row-tr) td:last-child { position: absolute; right: 10px; top: 14px; width: 32px; }
-
-    .cell-input { padding: 6px 10px; background: var(--bg) !important; border-radius: 6px; }
-    .cell-input.amt { background: transparent !important; padding: 4px 0; font-size: 17px !important; text-align: right; border: none !important; }
-    .status-toggle { width: 26px; height: 26px; margin: 0; }
-    .del-btn { width: 32px; height: 32px; margin: 0; background: var(--bg); border-radius: 8px; opacity: 1; }
-    .add-row-tr { display: block !important; background: transparent !important; border: none !important; box-shadow: none !important; margin-bottom: 0; padding: 0; }
-    .add-row-tr td { width: 100% !important; border: 1px dashed var(--border) !important; border-radius: var(--radius-lg); text-align: center; background: var(--surface); display: block !important; }
-    .add-row-btn { padding: 18px 0; color: var(--text); }
-    .month-nav { padding: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--surface); }
-    .month-tab { padding: 12px 10px; font-size: 11px; min-height: 50px; flex: 1; text-align: center; }
-
-    .modal-overlay { align-items: flex-start; padding-top: 20px; padding-bottom: 20px; }
-    .modal { width: 100%; padding: 24px 16px; max-height: calc(100vh - 40px); }
-
-    .welcome-box { padding: 32px 20px; }
-  }
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  input,select,textarea,.welcome-input,.cell-input{font-size:16px!important;}
+  main{padding:16px 16px 100px;}
+  .dashboard{grid-template-columns:1fr;gap:14px;margin-bottom:28px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .stat-card{padding:18px;border-radius:var(--r-xl);}
+  .stat-value{font-size:24px;}
+  header{padding:16px 20px;flex-direction:column;gap:12px;position:relative;box-shadow:none;border-bottom:1px solid var(--border);}
+  .header-right{width:100%;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .header-right .btn,.header-pwa-btn{flex:1;min-height:48px;font-size:13px;border-radius:30px;}
+  .user-badge{flex:1;justify-content:center;min-height:48px;}
+  .advice-banner{flex-direction:column;margin:0 0 28px;padding:22px;gap:16px;border-radius:var(--r-xl);text-align:center;}
+  .advice-actions{width:100%;flex-direction:column;gap:10px;}
+  .advice-actions a{width:100%;min-height:48px;font-size:15px;}
+  #expensesTableHeader .btn-accent{display:none;}
+  .fab{display:flex;}
+  .budget-table{display:block;width:100%;background:transparent;border:none;box-shadow:none;}
+  .budget-table thead{display:none;}
+  .budget-table tbody{display:block;width:100%;}
+  .budget-table tbody tr:not(.add-row-tr){display:flex;flex-wrap:wrap;align-items:center;padding:16px 14px;margin-bottom:12px;background:var(--surface);border-radius:var(--r-xl);box-shadow:var(--sh-sm);position:relative;}
+  .budget-table td{display:block;padding:0;border:none!important;}
+  #incomeTbody tr td:nth-child(1){width:36px;flex-shrink:0;}
+  #incomeTbody tr td:nth-child(2){flex:1;padding-right:10px;}
+  #incomeTbody tr td:nth-child(3){position:absolute;right:50px;top:18px;width:115px;}
+  #incomeTbody tr td:nth-child(4){position:absolute;right:10px;top:12px;width:36px;}
+  #expenseTbody tr:not(.add-row-tr) td:nth-child(1){width:36px;flex-shrink:0;}
+  #expenseTbody tr:not(.add-row-tr) td:nth-child(2){flex:1;min-width:0;padding-right:120px;}
+  #expenseTbody tr:not(.add-row-tr) td:nth-child(3){width:100%;padding-left:44px;margin-top:8px;}
+  #expenseTbody tr:not(.add-row-tr) td:nth-child(4){position:absolute;right:50px;top:18px;width:115px;}
+  #expenseTbody tr:not(.add-row-tr) td:nth-child(5){width:100%;padding-left:44px;margin-top:6px;}
+  #expenseTbody tr:not(.add-row-tr) td:last-child{position:absolute;right:10px;top:12px;width:36px;}
+  .cell-input{padding:7px 10px;background:var(--surface2)!important;border-radius:8px;}
+  .cell-input.amt{background:transparent!important;padding:4px 0;font-size:18px!important;text-align:right;}
+  .status-toggle{width:36px;height:36px;margin:0;}
+  .del-btn{width:36px;height:36px;margin:0;background:var(--surface2);border-radius:10px;opacity:1;}
+  .add-row-tr{display:block!important;padding:0;}
+  .add-row-tr td{width:100%!important;text-align:center;display:block!important;padding:0!important;}
+  .add-row-btn{padding:18px 0;background:var(--surface);box-shadow:var(--sh-sm);border-radius:var(--r-xl);}
+  .month-nav{padding:8px 16px;background:transparent;}
+  .month-tab{padding:10px 14px;font-size:11px;min-height:46px;text-align:center;}
+  .modal-overlay{align-items:flex-end;padding:0;}
+  .modal{width:100%;padding:28px 22px 36px;max-height:88vh;border-bottom-left-radius:0;border-bottom-right-radius:0;border-radius:var(--r-xl) var(--r-xl) 0 0;}
+  .welcome-box{padding:36px 22px;border-radius:var(--r-xl);}
+  .dropdown{flex:1;display:flex;}
+  .dropdown>.btn{width:100%;justify-content:center;}
+  .dropdown-content{right:auto;left:0;width:100%;}
+  .trend-card{padding:20px;}
+}
 </style>
 </head>
 <body>
+<template id="icon-trash">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
+</template>
 
-<!-- ===== WELCOME SCREEN ===== -->
+<!-- ===== WELCOME ===== -->
 <div id="welcomeScreen">
   <div class="welcome-box">
     <div class="welcome-logo">Budget<span>Flow</span> <sup>Pro</sup></div>
     <div class="welcome-tagline">Solution Souveraine · Chiffrement AES-256 local</div>
-
     <div class="profile-selector" id="profileSelector">
       <button class="profile-chip active" data-profile="perso" onclick="selectProfile('perso')">👤 Personnel</button>
       <button class="profile-chip" data-profile="pro" onclick="selectProfile('pro')">💼 Professionnel</button>
     </div>
-
     <label class="welcome-label" for="userCodeInput">Mot de passe (Clé AES-256)</label>
-    <input class="welcome-input" id="userCodeInput" type="password"
-           placeholder="6 caractères minimum…"
-           autocomplete="off" spellcheck="false" maxlength="64" />
-
-    <button type="button" class="welcome-cta btn-shimmer" onclick="enterApp()">
-      Déchiffrer et Ouvrir →
-    </button>
-
+    <input class="welcome-input" id="userCodeInput" type="password" placeholder="6 caractères minimum…" autocomplete="off" spellcheck="false" maxlength="64"/>
+    <button type="button" class="welcome-cta btn-shimmer" onclick="enterApp()">Déchiffrer et Ouvrir →</button>
     <button type="button" id="pwaBtnWelcome" class="pwa-install-btn btn-shimmer">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/>
-      </svg>
-      Installer sur l'écran d'accueil
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/></svg>
+      Installer l'App
     </button>
-
     <div id="iosHintWelcome" class="ios-hint-box">
       <div class="ios-hint-title">📲 Installer sur iPhone / iPad</div>
-      <div class="ios-hint-step">
-        <span class="ios-step-num">1</span>
-        <span>Appuyez sur <strong>Partager ⎙</strong> en bas de Safari</span>
-      </div>
-      <div class="ios-hint-step">
-        <span class="ios-step-num">2</span>
-        <span>Faites défiler et touchez <strong>"Sur l'écran d'accueil" ＋</strong></span>
-      </div>
-      <div class="ios-hint-step">
-        <span class="ios-step-num">3</span>
-        <span>Confirmez en appuyant sur <strong>"Ajouter"</strong> en haut à droite</span>
-      </div>
+      <div class="ios-hint-step"><span class="ios-step-num">1</span><span>Appuyez sur <strong>Partager ⎙</strong> en bas de Safari</span></div>
+      <div class="ios-hint-step"><span class="ios-step-num">2</span><span>Faites défiler et touchez <strong>"Sur l'écran d'accueil" ＋</strong></span></div>
+      <div class="ios-hint-step"><span class="ios-step-num">3</span><span>Confirmez en appuyant sur <strong>"Ajouter"</strong></span></div>
     </div>
-
     <div class="security-badge">
-      <span style="font-size:18px;">🛡️</span>
-      <span><strong>100% local & RGPD</strong> · Aucune donnée transmise sur internet. Chiffrement sur l'appareil uniquement.</span>
+      <span style="font-size:20px;">🛡️</span>
+      <span><strong>100% local & RGPD</strong> · Aucune donnée sur internet. Chiffrement local garanti.</span>
     </div>
-
     <button type="button" class="welcome-guide-btn" onclick="openGuideModal()">Mode d'emploi</button>
     <div class="welcome-error" id="welcomeError"></div>
   </div>
@@ -371,20 +354,26 @@
 
 <!-- ===== APP SHELL ===== -->
 <div id="appShell">
-
   <header>
     <div class="logo">Budget<span>Flow</span> <sup>Pro</sup></div>
     <div class="header-right">
-      <span id="yearBadge" style="font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--muted);"></span>
+      <span id="yearBadge" style="font-family:var(--font-mono);font-size:14px;font-weight:700;color:var(--muted);"></span>
       <span id="profilePill" class="profile-pill"></span>
       <button id="pwaBtnHeader" class="header-pwa-btn btn-shimmer" onclick="triggerInstall()">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/>
-        </svg>
-        Installer l'app
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/></svg>
+        Installer
       </button>
-      <button class="btn btn-shimmer" onclick="openSyncModal()">Portabilité / Transfert</button>
-      <button class="btn" onclick="exportData()">CSV</button>
+      <button class="btn btn-ghost btn-shimmer" onclick="openSyncModal()">Portabilité</button>
+      <div class="dropdown">
+        <button class="btn btn-ghost" onclick="toggleDropdown('exportMenu')" aria-label="Menu export">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exporter
+        </button>
+        <div id="exportMenu" class="dropdown-content">
+          <button onclick="exportData();toggleDropdown('exportMenu');">📑 Tableur CSV</button>
+          <button onclick="exportPDF();toggleDropdown('exportMenu');">📄 Bilan PDF</button>
+        </div>
+      </div>
       <div class="user-badge" onclick="openSettingsModal()">⚙️ Réglages</div>
     </div>
   </header>
@@ -393,21 +382,20 @@
 
   <main>
     <div class="gdpr-banner">
-      <span style="font-size: 20px;">🇪🇺</span>
-      <div>
-        <strong>Espace Sécurisé :</strong> Vos données sont actuellement déchiffrées en mémoire vive. Elles seront automatiquement re-chiffrées (AES-256) lors de l'enregistrement dans le stockage local.
-      </div>
+      <span style="font-size:22px;">🇪🇺</span>
+      <div><strong>Espace Sécurisé :</strong> Données déchiffrées en mémoire vive uniquement. Re-chiffrement AES-256 automatique à chaque modification.</div>
     </div>
 
     <div class="advice-banner">
       <div class="advice-icon">💡</div>
       <div class="advice-content">
-        <div class="advice-text" id="adviceText">Saisissez vos données pour obtenir votre analyse.</div>
-        <div class="advice-disclaimer">Diagnostic indicatif · Ne remplace pas l'avis d'un professionnel.</div>
+        <div class="advice-text" id="adviceText">Saisissez vos données pour obtenir l'analyse financière.</div>
+        <div class="advice-disclaimer">Diagnostic indicatif. Ne remplace pas l'avis d'un professionnel agréé.</div>
       </div>
       <div class="advice-actions">
-        <a href="https://guidefin.netlify.app/?hl=fr-BE" target="_blank" rel="noopener" class="btn-shimmer btn">Guide d'optimisation</a>
-        <a href="https://calendly.com/yaoakoe-ovb" target="_blank" rel="noopener" class="cta-accent btn-shimmer btn">Conseiller Dédié</a>
+        <!-- MOD : "Guide Fi'" → "Guide Pratique" -->
+        <a href="https://guidefin.netlify.app/?hl=fr-BE" target="_blank" rel="noopener" class="btn-shimmer btn btn-ghost">Guide Pratique</a>
+        <a href="https://calendly.com/yaoakoe-ovb" target="_blank" rel="noopener" class="cta-accent btn-shimmer btn">Conseiller →</a>
       </div>
     </div>
 
@@ -434,48 +422,64 @@
           <div class="stat-sub" id="statFixedCount">0 charge(s)</div>
         </div>
       </div>
-
       <div class="stat-card" style="display:flex;flex-direction:column;justify-content:center;">
-        <div class="stat-label">Répartition des dépenses</div>
-        <div style="display:flex;gap:20px;align-items:center;margin-top:16px;">
-          <div id="donut" style="width:96px;height:96px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;">
-            <div style="width:58px;height:58px;background:var(--surface);border-radius:50%;"></div>
+        <div class="stat-label">Répartition</div>
+        <div style="display:flex;gap:22px;align-items:center;margin-top:18px;">
+          <div id="donut" style="width:110px;height:110px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;transition:background .4s;">
+            <div style="width:66px;height:66px;background:var(--surface);border-radius:50%;"></div>
           </div>
           <div id="donutLegend" style="flex:1;"></div>
         </div>
       </div>
     </div>
 
+    <!-- TREND CHART -->
+    <div class="trend-card">
+      <div class="trend-header">
+        <div>
+          <div class="trend-title">📊 Épargne mensuelle</div>
+          <div class="trend-subtitle">Taux d'épargne sur l'année en cours</div>
+        </div>
+        <div id="trendLegendInline" style="font-size:12px;font-weight:700;color:var(--muted);display:flex;gap:16px;"></div>
+      </div>
+      <div id="trendChart"></div>
+      <div class="trend-labels">
+        <span>JAN</span><span>FÉV</span><span>MAR</span><span>AVR</span><span>MAI</span><span>JUN</span><span>JUL</span><span>AOÛ</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DÉC</span>
+      </div>
+    </div>
+
     <div class="table-section">
       <div class="table-header">
         <span class="table-title">Revenus · <span id="monthTitleInc"></span></span>
-        <button class="btn btn-accent btn-shimmer" onclick="addIncomeRow()">+ Ajouter revenu</button>
+        <button class="btn btn-accent btn-shimmer" onclick="addIncomeRow()">+ Revenu</button>
       </div>
-      <table class="budget-table">
+      <table class="budget-table" role="table" aria-label="Tableau des revenus">
         <thead><tr>
-          <th style="width:46px">✓</th><th>Source (Sanitisée)</th>
-          <th style="text-align:right;width:160px">Montant</th>
-          <th style="width:50px;text-align:center">Del.</th>
+          <th style="width:54px">✓</th>
+          <th>Source</th>
+          <th style="text-align:right;width:170px">Montant</th>
+          <th style="width:60px;text-align:center">Del.</th>
         </tr></thead>
         <tbody id="incomeTbody"></tbody>
       </table>
     </div>
 
     <div class="table-section">
-      <div class="table-header">
+      <div class="table-header" id="expensesTableHeader">
         <span class="table-title">Dépenses · <span id="monthTitle"></span></span>
         <div class="table-actions">
-          <button class="btn btn-shimmer" id="btnCopyPrev" style="display:none;" onclick="copyPrevMonth()">📋 Copier mois préc.</button>
-          <button class="btn btn-accent btn-shimmer" onclick="openExpModal()">+ Ajouter dépense</button>
+          <button class="btn btn-ghost btn-shimmer" id="btnCopyPrev" style="display:none;" onclick="copyPrevMonth()">📋 Copier mois préc.</button>
+          <button class="btn btn-accent btn-shimmer" onclick="openExpModal()">+ Dépense</button>
         </div>
       </div>
-      <table class="budget-table">
+      <table class="budget-table" role="table" aria-label="Tableau des dépenses">
         <thead><tr>
-          <th style="width:46px">✓</th><th>Libellé (Sanitisé)</th>
-          <th style="width:120px">Catégorie</th>
-          <th style="text-align:right;width:145px">Montant</th>
+          <th style="width:54px">✓</th>
+          <th>Libellé</th>
+          <th style="width:130px">Catégorie</th>
+          <th style="text-align:right;width:155px">Montant</th>
           <th>Mémo</th>
-          <th style="width:50px;text-align:center">Del.</th>
+          <th style="width:60px;text-align:center">Del.</th>
         </tr></thead>
         <tbody id="expenseTbody"></tbody>
       </table>
@@ -483,20 +487,30 @@
   </main>
 </div>
 
-<!-- ===== TOAST ===== -->
-<div id="toast">
-  <span>👋 Besoin d'aide pour démarrer ?</span>
-  <button class="toast-btn btn-shimmer" onclick="openGuideModal();closeToast();">Voir le guide</button>
+<!-- FAB Mobile -->
+<button class="fab btn-shimmer" onclick="openExpModal()" aria-label="Ajouter une dépense" title="Ajouter une dépense">＋</button>
+
+<!-- TOAST -->
+<div id="toast" role="status" aria-live="polite">
+  <span id="toastMsg"></span>
 </div>
 
-<!-- ===== MODAL : NOUVELLE DÉPENSE ===== -->
-<div class="modal-overlay" id="expModal" onclick="if(event.target.id==='expModal')closeExpModal()">
+<!-- MODAL : Nouvelle dépense -->
+<div class="modal-overlay" id="expModal" role="dialog" aria-modal="true" aria-labelledby="expModalTitle" onclick="if(event.target.id==='expModal')closeExpModal()">
   <div class="modal">
-    <div class="modal-title">Nouvelle dépense</div>
-    <div class="modal-field"><label>Libellé</label><input type="text" id="newLabel" placeholder="Ex: Assurance vie…"/></div>
-    <div class="modal-field"><label>Montant (€)</label><input type="number" id="newAmount" placeholder="0" step="0.01" min="0"/></div>
+    <div class="modal-title" id="expModalTitle">Nouvelle dépense</div>
     <div class="modal-field">
-      <label>Type de charge</label>
+      <label for="newLabel">Libellé</label>
+      <input type="text" id="newLabel" placeholder="Ex: Assurance vie…"/>
+      <div class="field-error" id="errLabel">Veuillez saisir un libellé.</div>
+    </div>
+    <div class="modal-field">
+      <label for="newAmount">Montant (€)</label>
+      <input type="number" inputmode="decimal" id="newAmount" placeholder="0.00" step="0.01" min="0"/>
+      <div class="field-error" id="errAmount">Veuillez saisir un montant valide.</div>
+    </div>
+    <div class="modal-field">
+      <label for="newCat">Type de charge</label>
       <select id="newCat">
         <option value="fixed">Fixe</option>
         <option value="domiciliation">Domiciliation</option>
@@ -504,1202 +518,532 @@
         <option value="variable">Variable</option>
       </select>
     </div>
-    <div class="modal-field"><label>Note / Mémo</label><input type="text" id="newNote" placeholder="Facultatif"/></div>
-    <div class="modal-field" style="display:flex;align-items:center;gap:10px;background:var(--bg);padding:12px 14px;border-radius:var(--radius);border:1px solid var(--border);">
-      <input type="checkbox" id="newRecurring" style="width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;"/>
-      <label for="newRecurring" style="margin:0;font-size:13px;color:var(--text);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600;">Appliquer à tous les mois suivants</label>
+    <div class="modal-field">
+      <label for="newNote">Mémo (facultatif)</label>
+      <input type="text" id="newNote" placeholder="Note libre…"/>
+    </div>
+    <div class="modal-field" style="display:flex;align-items:center;gap:14px;background:var(--surface2);padding:16px;border-radius:var(--r);">
+      <input type="checkbox" id="newRecurring" style="width:20px;height:20px;accent-color:var(--accent);cursor:pointer;flex-shrink:0;"/>
+      <label for="newRecurring" style="margin:0;font-size:14px;color:var(--text);cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600;">Appliquer à tous les mois suivants</label>
     </div>
     <div class="modal-actions">
-      <button class="btn" onclick="closeExpModal()">Annuler</button>
-      <button class="btn btn-accent btn-shimmer" onclick="confirmAddExp()">Valider</button>
+      <button class="btn btn-ghost" onclick="closeExpModal()">Annuler</button>
+      <button class="btn btn-accent btn-shimmer" onclick="confirmAddExp()">Ajouter</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL : PORTABILITÉ / TRANSFERT ===== -->
-<!--
-  LOGIQUE D'IMPORT DOUBLE :
-  ─ Méthode 1 (nouvelle) : payload au format binaire base64 (sel+iv+ciphertext concaténés),
-    déchiffrable via importSyncCode() avec le mot de passe actuel.
-  ─ Méthode 2 (ancienne) : payload au format "base64salt:base64iv:base64cipher" (séparateurs ":"),
-    déchiffrable via handleImportPayload(). Supporte également le ré-chiffrement automatique
-    avec le mot de passe actuel si l'ancien est fourni.
--->
-<div class="modal-overlay" id="syncModal" style="z-index:5000" onclick="if(event.target.id==='syncModal')closeSyncModal()">
+<!-- MODAL : Portabilité — version simplifiée (nouvelle version uniquement, sans saisie de mot de passe) -->
+<div class="modal-overlay" id="syncModal" style="z-index:5000" role="dialog" aria-modal="true" onclick="if(event.target.id==='syncModal')closeSyncModal()">
   <div class="modal">
-    <div class="modal-title">Portabilité &amp; Transfert (Chiffré)</div>
-
-    <!-- EXPORT -->
-    <div style="margin-bottom:24px;">
-      <span class="modal-section-label">📤 Exporter (Payload AES-256 — nouvelle version)</span>
-      <div class="modal-field">
-        <textarea id="exportTA" readonly rows="3" placeholder="Le payload apparaît ici…"></textarea>
+    <div class="modal-title">Portabilité des données</div>
+    <details class="sync-group" open>
+      <summary>📤 Exporter mes données <span>▾</span></summary>
+      <div class="details-content">
+        <div class="modal-field"><textarea id="exportTA" readonly rows="3" placeholder="Génération..."></textarea></div>
+        <div style="display:flex;gap:10px;">
+          <button class="btn btn-ghost" style="flex:1;" onclick="copySyncCode()">Copier</button>
+          <button class="btn btn-ghost" style="flex:1;" onclick="emailSyncCode()">Envoyer par e-mail</button>
+        </div>
       </div>
-      <div style="display:flex;gap:8px;">
-        <button class="btn" style="flex:1;min-height:44px;" onclick="copySyncCode()">Copier</button>
-        <button class="btn" style="flex:1;min-height:44px;" onclick="emailSyncCode()">Email</button>
+    </details>
+    <details class="sync-group">
+      <summary>📥 Restaurer <span>▾</span></summary>
+      <div class="details-content">
+        <div class="import-info-box">Collez un code généré depuis cette application. La restauration utilise automatiquement votre mot de passe de session.</div>
+        <div class="modal-field"><textarea id="importTA" rows="3" placeholder="Collez le code ici…"></textarea></div>
+        <button class="btn btn-accent btn-shimmer" style="width:100%;" id="btnImportNew" onclick="importSyncCode()">Restaurer</button>
       </div>
-    </div>
-
-    <!-- IMPORT NOUVELLE VERSION -->
-    <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border);">
-      <span class="modal-section-label">📥 Importer — Nouvelle version</span>
-      <div class="import-info-box">
-        Collez un payload exporté depuis cette version de l'application (même format de chiffrement).
-        Votre mot de passe actuel suffit.
-      </div>
-      <div class="modal-field">
-        <label>Payload chiffré (nouvelle version)</label>
-        <textarea id="importTA" rows="3" placeholder="Collez le payload ici…"></textarea>
-      </div>
-      <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:44px;" onclick="importSyncCode()">
-        Déchiffrer et Restaurer
-      </button>
-    </div>
-
-    <!-- IMPORT ANCIENNE VERSION -->
-    <div style="margin-bottom:16px;">
-      <span class="modal-section-label">🔄 Importer — Ancienne version</span>
-      <div class="import-info-box">
-        Utilisez cette section pour importer un payload exporté depuis une version antérieure de l'application
-        (format <code style="font-family:var(--font-mono);">salt:iv:cipher</code>).
-        Le format est détecté automatiquement. Si votre payload est au nouveau format, il sera également accepté ici.
-        Si le payload a été chiffré avec un <strong>ancien mot de passe différent</strong>, saisissez-le dans le champ prévu.
-      </div>
-      <div class="modal-field">
-        <label>Payload chiffré (ancienne version)</label>
-        <textarea id="importPayload" rows="3" placeholder="Collez le payload de l'ancienne version ici…"></textarea>
-      </div>
-      <div class="modal-field">
-        <label for="importPasswordCurrent">Mot de passe actuel</label>
-        <input type="password" id="importPasswordCurrent" placeholder="Mot de passe actuel" autocomplete="off" spellcheck="false">
-      </div>
-      <div class="modal-field" id="oldPasswordField">
-        <label for="importPasswordOld">Ancien mot de passe (si différent)</label>
-        <input type="password" id="importPasswordOld" placeholder="Mot de passe utilisé lors de l'export" autocomplete="off" spellcheck="false">
-      </div>
-      <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:44px;" onclick="handleImportPayload()">
-        Déchiffrer l'ancien format et Restaurer
-      </button>
-    </div>
-
-    
-    <div style="margin-bottom:20px;padding-top:8px;border-top:1px solid var(--border);">
-      <span class="modal-section-label">🧬 Import ultra-legacy (Base64 JSON)</span>
-      <div class="import-info-box">
-        Compatibilité avec les toutes premières versions utilisant le format Base64(JSON).
-      </div>
-      <div class="modal-field">
-        <label>Code legacy</label>
-        <textarea id="legacyImportCodeInput" rows="3" placeholder="Collez l'ancien code ici…"></textarea>
-      </div>
-      <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:44px;" onclick="importLegacySyncCode()">Restaurer ancien code</button>
-    </div>
-<button class="btn" style="width:100%;min-height:44px;" onclick="closeSyncModal()">Fermer</button>
+    </details>
+    <button class="btn btn-ghost" style="width:100%;margin-top:14px;" onclick="closeSyncModal()">Fermer</button>
   </div>
 </div>
 
-<!-- ===== MODAL : RÉGLAGES ===== -->
-<div class="modal-overlay" id="settingsModal" style="z-index:8000" onclick="if(event.target.id==='settingsModal')closeSettingsModal()">
+<!-- MODAL : Réglages -->
+<div class="modal-overlay" id="settingsModal" style="z-index:8000" role="dialog" aria-modal="true" onclick="if(event.target.id==='settingsModal')closeSettingsModal()">
   <div class="modal">
-    <div class="modal-title">Réglages et Sécurité</div>
-
+    <div class="modal-title">Préférences</div>
     <div class="install-section" id="installSection">
-      <div class="install-section-title">📱 Installation</div>
-      <button id="pwaBtnSettings" class="btn btn-shimmer" style="width:100%;min-height:44px;gap:8px;" onclick="triggerInstall();closeSettingsModal();">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/>
-        </svg>
-        Installer sur l'écran d'accueil
+      <div class="install-section-title">📱 Application</div>
+      <button id="pwaBtnSettings" class="btn btn-ghost btn-shimmer" style="width:100%;gap:10px;" onclick="triggerInstall();closeSettingsModal();">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/></svg>
+        Installer sur l'appareil
       </button>
     </div>
-
-    <div style="margin-bottom:18px;">
-      <label style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;display:block;">💼 Thème Pro</label>
+    <div style="margin-bottom:22px;">
+      <label style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;display:block;">💼 Thèmes Pro</label>
       <div class="theme-grid">
-        <button class="theme-dot" data-theme="" onclick="setTheme('')" style="background:#f0f2f5;border:2px solid #2563eb;" title="Clair"></button>
-        <button class="theme-dot" data-theme="theme-onyx" onclick="setTheme('theme-onyx')" style="background:#0c0c0c;border:2px solid #fff;" title="Onyx"></button>
-        <button class="theme-dot" data-theme="theme-navy" onclick="setTheme('theme-navy')" style="background:#0f172a;border:2px solid #38bdf8;" title="Navy"></button>
+        <button class="theme-dot" data-theme="" onclick="setTheme('')" style="background:#f4f6f8;border:2px solid #2563eb;" title="Clair"></button>
+        <button class="theme-dot" data-theme="theme-onyx" onclick="setTheme('theme-onyx')" style="background:#050505;border:2px solid #fff;" title="Onyx"></button>
+        <button class="theme-dot" data-theme="theme-navy" onclick="setTheme('theme-navy')" style="background:#020617;border:2px solid #38bdf8;" title="Navy"></button>
       </div>
     </div>
-    <div style="margin-bottom:28px;">
-      <label style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;display:block;">🎨 Thème Signature</label>
+    <div style="margin-bottom:32px;">
+      <label style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;display:block;">🎨 Thèmes Signature</label>
       <div class="theme-grid">
-        <button class="theme-dot" data-theme="theme-gold" onclick="setTheme('theme-gold')" style="background:#110f00;border:2px solid #f0a500;" title="Or Noir"></button>
-        <button class="theme-dot" data-theme="theme-violet" onclick="setTheme('theme-violet')" style="background:#110e2e;border:2px solid #a78bfa;" title="Violet Nuit"></button>
+        <button class="theme-dot" data-theme="theme-gold" onclick="setTheme('theme-gold')" style="background:#0a0800;border:2px solid #f0a500;" title="Or Noir"></button>
+        <button class="theme-dot" data-theme="theme-violet" onclick="setTheme('theme-violet')" style="background:#09071a;border:2px solid #a78bfa;" title="Violet Nuit"></button>
       </div>
     </div>
-
-    <div class="modal-actions" style="flex-direction:column;margin-top:0;gap:8px;">
-      <button class="btn btn-danger" style="width:100%;min-height:48px;font-size:14px;" onclick="lockApp()">VERROUILLER LA SESSION 🔒</button>
-      <button class="btn" style="width:100%;min-height:44px;" onclick="closeSettingsModal()">Fermer</button>
+    <div class="modal-actions" style="flex-direction:column;margin-top:0;gap:10px;">
+      <button class="btn btn-danger" style="width:100%;" onclick="lockApp()">VERROUILLER LA SESSION 🔒</button>
+      <button class="btn btn-ghost" style="width:100%;" onclick="closeSettingsModal()">Fermer</button>
     </div>
   </div>
 </div>
 
-<!-- ===== MODAL : GUIDE ===== -->
-<div class="modal-overlay" id="guideModal" style="z-index:9500" onclick="if(event.target.id==='guideModal')closeGuideModal()">
+<!-- MODAL : Guide -->
+<div class="modal-overlay" id="guideModal" style="z-index:9500" role="dialog" aria-modal="true" onclick="if(event.target.id==='guideModal')closeGuideModal()">
   <div class="modal" style="width:540px;max-width:95vw;">
-    <div class="modal-title" style="text-align:center;font-size:20px;">Guide BudgetFlow Souverain</div>
-    <p style="text-align:center;color:var(--muted);margin-bottom:20px;font-size:13px;">Prenez le contrôle de vos finances en toute sécurité.</p>
-    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px;">
-      <div style="display:flex;gap:14px;background:var(--bg);padding:14px;border-radius:var(--radius);border:1px solid var(--border);">
-        <div style="font-size:22px;flex-shrink:0;">🇪🇺</div>
-        <div><h4 style="margin:0 0 3px 0;font-weight:800;font-size:13px;">1. Sécurité totale (RGPD)</h4><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.5;">Votre mot de passe génère une clé AES-256. Aucune donnée financière n'est envoyée sur internet. Stockage 100% local et chiffré.</p></div>
+    <div class="modal-title" style="text-align:center;font-size:22px;">BudgetFlow Pro · Guide</div>
+    <p style="text-align:center;color:var(--muted);margin-bottom:24px;font-size:14px;">Prenez le contrôle de vos finances en toute sérénité.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+      <div style="display:flex;gap:16px;background:var(--surface2);padding:16px;border-radius:var(--r-lg);">
+        <div style="font-size:24px;flex-shrink:0;">🇪🇺</div>
+        <div><h4 style="margin:0 0 5px;font-weight:800;font-size:14px;">Sécurité totale (RGPD)</h4><p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6;">Votre mot de passe génère une clé AES-256. Vos données ne quittent jamais votre appareil.</p></div>
       </div>
-      <div style="display:flex;gap:14px;background:var(--bg);padding:14px;border-radius:var(--radius);border:1px solid var(--border);">
-        <div style="font-size:22px;flex-shrink:0;">⚡</div>
-        <div><h4 style="margin:0 0 3px 0;font-weight:800;font-size:13px;">2. Gain de temps</h4><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.5;">Cochez <strong>"Appliquer aux mois suivants"</strong> pour vos abonnements récurrents. Utilisez <strong>"Copier mois préc."</strong> pour reporter vos charges fixes.</p></div>
+      <div style="display:flex;gap:16px;background:var(--surface2);padding:16px;border-radius:var(--r-lg);">
+        <div style="font-size:24px;flex-shrink:0;">⚡</div>
+        <div><h4 style="margin:0 0 5px;font-weight:800;font-size:14px;">Gain de temps</h4><p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6;">Cochez <strong>"Appliquer aux mois suivants"</strong> pour les abonnements. Utilisez <strong>"Copier mois préc."</strong> pour les charges fixes.</p></div>
       </div>
-      <div style="display:flex;gap:14px;background:var(--bg);padding:14px;border-radius:var(--radius);border:1px solid var(--border);">
-        <div style="font-size:22px;flex-shrink:0;">📊</div>
-        <div><h4 style="margin:0 0 3px 0;font-weight:800;font-size:13px;">3. Analyse automatique</h4><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.5;">Le tableau de bord et le graphique se mettent à jour instantanément — capacité d'épargne, charges fixes, ratio mensuel.</p></div>
+      <div style="display:flex;gap:16px;background:var(--surface2);padding:16px;border-radius:var(--r-lg);">
+        <div style="font-size:24px;flex-shrink:0;">📊</div>
+        <div><h4 style="margin:0 0 5px;font-weight:800;font-size:14px;">Analyse automatique</h4><p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6;">Tableau de bord en temps réel : reste à vivre, taux d'effort, capacité d'épargne et graphique annuel.</p></div>
       </div>
-      <div style="display:flex;gap:14px;background:var(--bg);padding:14px;border-radius:var(--radius);border:1px solid var(--border);">
-        <div style="font-size:22px;flex-shrink:0;">🔄</div>
-        <div><h4 style="margin:0 0 3px 0;font-weight:800;font-size:13px;">4. Portabilité (Art. 20)</h4><p style="margin:0;color:var(--muted);font-size:12px;line-height:1.5;">Cliquez sur <strong>"Portabilité / Transfert"</strong> pour exporter un payload AES-256. Collez-le sur votre nouvel appareil avec le même mot de passe pour tout restaurer.</p></div>
+      <div style="display:flex;gap:16px;background:var(--surface2);padding:16px;border-radius:var(--r-lg);">
+        <div style="font-size:24px;flex-shrink:0;">🔄</div>
+        <div><h4 style="margin:0 0 5px;font-weight:800;font-size:14px;">Portabilité (Art. 20 RGPD)</h4><p style="margin:0;color:var(--muted);font-size:13px;line-height:1.6;">Exportez un payload AES-256 via <strong>"Portabilité"</strong>. Collez-le sur votre nouvel appareil pour tout restaurer.</p></div>
       </div>
     </div>
-    <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:48px;font-size:15px;" onclick="closeGuideModal()">Compris !</button>
+    <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:54px;font-size:16px;" onclick="closeGuideModal()">J'ai compris !</button>
   </div>
 </div>
 
-<!-- ===== MODAL : IOS ===== -->
-<div class="modal-overlay" id="iosModal" style="z-index:9800" onclick="if(event.target.id==='iosModal')closeIosModal()">
-  <div class="modal" style="max-width:340px;">
-    <div class="modal-title" style="text-align:center;">📲 Installer BudgetFlow</div>
-    <p style="font-size:13px;color:var(--muted);text-align:center;margin-bottom:18px;line-height:1.5;">3 étapes simples dans <strong>Safari</strong> :</p>
-    <div style="margin-bottom:20px;">
-      <div class="ios-step-row"><div class="ios-num">1</div><div class="ios-icon">⎙</div><div class="ios-txt">Appuyez sur l'icône <strong>Partager</strong> en bas de Safari</div></div>
-      <div class="ios-step-row"><div class="ios-num">2</div><div class="ios-icon">⬇️</div><div class="ios-txt">Touchez <strong>"Sur l'écran d'accueil"</strong></div></div>
-      <div class="ios-step-row"><div class="ios-num">3</div><div class="ios-icon">✅</div><div class="ios-txt">Appuyez sur <strong>"Ajouter"</strong> en haut à droite</div></div>
+<!-- MODAL : iOS -->
+<div class="modal-overlay" id="iosModal" style="z-index:9800" role="dialog" aria-modal="true" onclick="if(event.target.id==='iosModal')closeIosModal()">
+  <div class="modal" style="max-width:360px;">
+    <div class="modal-title" style="text-align:center;">📲 Installer l'App</div>
+    <p style="font-size:14px;color:var(--muted);text-align:center;margin-bottom:22px;line-height:1.5;">3 étapes simples sur <strong>Safari</strong> :</p>
+    <div style="margin-bottom:22px;">
+      <div class="ios-step-row"><div class="ios-num">1</div><div class="ios-icon">⎙</div><div class="ios-txt">Appuyez sur l'icône <strong>Partager</strong> en bas</div></div>
+      <div class="ios-step-row"><div class="ios-num">2</div><div class="ios-icon">⬇️</div><div class="ios-txt">Sélectionnez <strong>"Sur l'écran d'accueil"</strong></div></div>
+      <div class="ios-step-row"><div class="ios-num">3</div><div class="ios-icon">✅</div><div class="ios-txt">Validez avec <strong>"Ajouter"</strong></div></div>
     </div>
-    <p style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:14px;">⚠️ Disponible uniquement dans <strong>Safari</strong></p>
-    <button class="btn btn-accent btn-shimmer" style="width:100%;min-height:44px;" onclick="closeIosModal()">J'ai compris</button>
+    <button class="btn btn-accent btn-shimmer" style="width:100%;" onclick="closeIosModal()">Fermer</button>
   </div>
 </div>
 
-<!-- ===== SCRIPT PRINCIPAL ===== -->
 <script>
-(function(){
+(() => {
 'use strict';
 
-var MONTHS=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-var YEAR=new Date().getFullYear();
-var TRASH='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>';
+const MONTHS = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const YEAR = new Date().getFullYear();
+const TRASH_SVG = document.getElementById('icon-trash').innerHTML;
 
-var curMonth=new Date().getMonth();
-var curUser=null;
-var curProfile='perso';
-var state={};
-var storeKey='';
-var deferredPrompt=null;
+let curMonth = new Date().getMonth();
+let curUser = null;
+let curProfile = 'perso';
+let state = {};
+let storeKey = '';
+let deferredPrompt = null;
 
-document.getElementById('yearBadge').textContent=YEAR;
+document.getElementById('yearBadge').textContent = YEAR;
 
-/* ── UTILS ── */
-function uid(){return crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2,11);}
+/* ── UTILS & CRYPTO ── */
+const uid = () => crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2,11);
 
-function esc(s){
-  var d=document.createElement('div');
-  d.textContent=String(s||'');
-  return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-}
+const sanitize = (s) => {
+  if (typeof s !== 'string') return s;
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+};
 
-function sanitize(s){
-  if(typeof s!=='string')return s;
-  var d=document.createElement('div');d.textContent=s;
-  return d.innerHTML.replace(/"/g,'&quot;').replace(/'/g,'&#39;');
-}
+const amt = (v) => { if(v==null||v==='') return 0; return parseFloat(String(v).replace(',','.')) || 0; };
+const fmtAmt = (n) => n.toLocaleString('fr-BE',{minimumFractionDigits:0,maximumFractionDigits:2})+' €';
+const calcInc = (mi) => (state[mi]?.incomeRows||[]).reduce((s,r)=>s+amt(r.amount),0);
+const calcExp = (mi) => (state[mi]?.expenseRows||[]).reduce((s,r)=>s+amt(r.amount),0);
 
-function amt(v){if(v===null||v===undefined||v==='')return 0;return parseFloat(String(v).replace(',','.'))||0;}
-function fmtAmt(n){return n.toLocaleString('fr-BE',{minimumFractionDigits:0,maximumFractionDigits:2})+' €';}
-function calcInc(mi){return(state[mi].incomeRows||[]).reduce(function(s,r){return s+amt(r.amount);},0);}
-function calcExp(mi){return(state[mi].expenseRows||[]).reduce(function(s,r){return s+amt(r.amount);},0);}
-
-/* ══════════════════════════════════════
-   CRYPTOGRAPHIE AES-256-GCM (NOUVELLE VERSION)
-   Format : binaire [16 sel | 12 iv | ciphertext] encodé en base64 simple
-══════════════════════════════════════ */
-async function deriveKey(pw,salt){
-  var enc=new TextEncoder();
-  var km=await crypto.subtle.importKey('raw',enc.encode(pw),{name:'PBKDF2'},false,['deriveKey']);
-  return crypto.subtle.deriveKey(
-    {name:'PBKDF2',salt:salt,iterations:100000,hash:'SHA-256'},
-    km,{name:'AES-GCM',length:256},false,['encrypt','decrypt']
-  );
-}
-
-async function encrypt(data,pw){
-  var enc=new TextEncoder();
-  var salt=crypto.getRandomValues(new Uint8Array(16));
-  var iv=crypto.getRandomValues(new Uint8Array(12));
-  var key=await deriveKey(pw,salt);
-  var ct=await crypto.subtle.encrypt({name:'AES-GCM',iv:iv},key,enc.encode(JSON.stringify(data)));
-  var out=new Uint8Array(16+12+ct.byteLength);
-  out.set(salt,0);out.set(iv,16);out.set(new Uint8Array(ct),28);
-  return btoa(String.fromCharCode.apply(null,out));
-}
-
-async function decrypt(b64,pw){
-  try{
-    var raw=new Uint8Array(atob(b64).split('').map(function(c){return c.charCodeAt(0);}));
-    var salt=raw.slice(0,16),iv=raw.slice(16,28),ct=raw.slice(28);
-    var key=await deriveKey(pw,salt);
-    var dec=await crypto.subtle.decrypt({name:'AES-GCM',iv:iv},key,ct);
+const u8ToBase64 = (u8) => {
+  let bin=''; const cs=0x8000;
+  for(let i=0;i<u8.length;i+=cs) bin+=String.fromCharCode.apply(null,u8.subarray(i,i+cs));
+  return btoa(bin);
+};
+const base64ToU8 = (b64) => {
+  const bin=atob(b64); const out=new Uint8Array(bin.length);
+  for(let i=0;i<bin.length;i++) out[i]=bin.charCodeAt(i);
+  return out;
+};
+const deriveKey = async (pw,salt) => {
+  const enc=new TextEncoder();
+  const km=await crypto.subtle.importKey('raw',enc.encode(pw),{name:'PBKDF2'},false,['deriveKey']);
+  return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:100000,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+};
+const encrypt = async (data,pw) => {
+  const enc=new TextEncoder();
+  const salt=crypto.getRandomValues(new Uint8Array(16));
+  const iv=crypto.getRandomValues(new Uint8Array(12));
+  const key=await deriveKey(pw,salt);
+  const ct=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(JSON.stringify(data)));
+  const out=new Uint8Array(16+12+ct.byteLength);
+  out.set(salt,0); out.set(iv,16); out.set(new Uint8Array(ct),28);
+  return u8ToBase64(out);
+};
+const decrypt = async (b64,pw) => {
+  try {
+    const raw=base64ToU8(b64);
+    const salt=raw.slice(0,16),iv=raw.slice(16,28),ct=raw.slice(28);
+    const key=await deriveKey(pw,salt);
+    const dec=await crypto.subtle.decrypt({name:'AES-GCM',iv},key,ct);
     return JSON.parse(new TextDecoder().decode(dec));
-  }catch(e){return null;}
-}
-
-async function sha256hex(s){
-  var buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
-  return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
-}
-
-/* ══════════════════════════════════════
-   STOCKAGE SÉCURISÉ
-══════════════════════════════════════ */
-function defaultMonth(){return{incomeRows:[{id:uid(),label:'',amount:'',paid:false}],expenseRows:[]};}
-
-function normalizeState(){
-  MONTHS.forEach(function(_,i){
-    if(!state[i])state[i]=defaultMonth();
-    if(!state[i].incomeRows)state[i].incomeRows=[];
-    if(!state[i].expenseRows)state[i].expenseRows=[];
-  });
-}
-
-async function secureSave(){
-  if(!curUser||!storeKey)return;
-  try{
-    var payload=await encrypt(state,curUser);
-    localStorage.setItem(storeKey,payload);
-  }catch(e){console.warn('Erreur sauvegarde:',e);}
-}
-
-async function secureLoad(){
-  try{
-    var data=localStorage.getItem(storeKey);
-    if(data){
-      var dec=await decrypt(data,curUser);
-      if(!dec)return false;
-      state=dec;normalizeState();return true;
-    }
-    state={};normalizeState();return true;
-  }catch(e){return false;}
-}
-
-/* ══════════════════════════════════════
-   THÈME
-══════════════════════════════════════ */
-var themeColors={'':'#f0f2f5','theme-onyx':'#000','theme-navy':'#020617','theme-gold':'#0a0800','theme-violet':'#09071a'};
-
-window.setTheme=function(t){
-  document.body.className=t;
-  try{localStorage.setItem('bf_theme',t);}catch(e){}
-  var m=document.getElementById('themeColorMeta');if(m)m.content=themeColors[t]||'#f0f2f5';
-  document.querySelectorAll('.theme-dot').forEach(function(b){b.classList.toggle('active',b.dataset.theme===t);});
+  } catch(e){return null;}
 };
-(function(){var s='';try{s=localStorage.getItem('bf_theme')||'';}catch(e){}window.setTheme(s);})();
-
-/* ══════════════════════════════════════
-   PWA INSTALL
-══════════════════════════════════════ */
-function isIos(){return/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());}
-function isStandalone(){return window.matchMedia('(display-mode:standalone)').matches||!!navigator.standalone||document.referrer.includes('android-app://');}
-
-function showPWAButtons(){
-  ['pwaBtnWelcome','pwaBtnHeader'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display='flex';});
-  var sec=document.getElementById('installSection');if(sec)sec.style.display='block';
-}
-function hidePWAButtons(){
-  ['pwaBtnWelcome','pwaBtnHeader'].forEach(function(id){var el=document.getElementById(id);if(el)el.style.display='none';});
-  var sec=document.getElementById('installSection');if(sec)sec.style.display='none';
-}
-
-window.triggerInstall=function(){
-  if(isIos()){openIosModal();return;}
-  if(!deferredPrompt)return;
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(function(r){
-    if(r.outcome==='accepted')hidePWAButtons();
-    deferredPrompt=null;
-  });
+const sha256hex = async (s) => {
+  const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
 };
 
-(function initPWA(){
-  if(isStandalone())return;
-  if(isIos()){
-    var hint=document.getElementById('iosHintWelcome');if(hint)hint.style.display='block';
-    var sec=document.getElementById('installSection');if(sec)sec.style.display='block';
-    var settingsBtn=document.getElementById('pwaBtnSettings');
-    if(settingsBtn){
-      settingsBtn.textContent='Comment installer sur iPhone…';
-      settingsBtn.onclick=function(){openIosModal();closeSettingsModal();};
-    }
-  }else{
-    window.addEventListener('beforeinstallprompt',function(e){
-      e.preventDefault();deferredPrompt=e;showPWAButtons();
-    });
-    window.addEventListener('appinstalled',function(){
-      deferredPrompt=null;hidePWAButtons();
-    });
-  }
-})();
+/* ── TOAST & DROPDOWN ── */
+const showToast = (msg,type='') => {
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').innerHTML=msg;
+  t.className=type; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),4200);
+};
+window.closeToast = ()=>document.getElementById('toast').classList.remove('show');
+window.toggleDropdown = (id) => {
+  const el=document.getElementById(id);
+  const wasOpen=el.classList.contains('show');
+  document.querySelectorAll('.dropdown-content.show').forEach(d=>d.classList.remove('show'));
+  if(!wasOpen) el.classList.add('show');
+};
+window.addEventListener('click',e=>{
+  if(!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown-content.show').forEach(d=>d.classList.remove('show'));
+});
 
-document.getElementById('pwaBtnWelcome').addEventListener('click',window.triggerInstall);
+/* ── STATE ── */
+const defaultMonth = () => ({incomeRows:[{id:uid(),label:'',amount:'',paid:false}],expenseRows:[]});
+const normalizeState = () => { MONTHS.forEach((_,i)=>{ if(!state[i]) state[i]=defaultMonth(); if(!state[i].incomeRows) state[i].incomeRows=[]; if(!state[i].expenseRows) state[i].expenseRows=[]; }); };
+const secureSave = async () => {
+  if(!curUser||!storeKey) return;
+  try { await new Promise(r=>setTimeout(r,10)); localStorage.setItem(storeKey,await encrypt(state,curUser)); }
+  catch(e){console.warn('Sauvegarde échouée:',e);}
+};
+const secureLoad = async () => {
+  try {
+    const data=localStorage.getItem(storeKey);
+    if(data){ const dec=await decrypt(data,curUser); if(!dec) return false; state=dec; normalizeState(); return true; }
+    state={}; normalizeState(); return true;
+  } catch(e){return false;}
+};
 
-/* ══════════════════════════════════════
-   ENTRÉE DANS L'APP
-══════════════════════════════════════ */
-window.selectProfile=function(p){
+/* ── ENTRY & LOCK ── */
+window.selectProfile = (p) => {
   curProfile=p;
-  document.querySelectorAll('.profile-chip').forEach(function(c){c.classList.toggle('active',c.dataset.profile===p);});
+  document.querySelectorAll('.profile-chip').forEach(c=>c.classList.toggle('active',c.dataset.profile===p));
 };
-
-window.enterApp=async function(){
-  var pw=document.getElementById('userCodeInput').value.trim();
-  var err=document.getElementById('welcomeError');
-  err.textContent='';
-  if(pw.length<6){err.textContent='Sécurité insuffisante : 6 caractères minimum.';return;}
-
+window.enterApp = async () => {
+  const pw=document.getElementById('userCodeInput').value.trim();
+  const err=document.getElementById('welcomeError'); err.textContent='';
+  if(pw.length<6){err.textContent='Sécurité : 6 caractères minimum.';return;}
   curUser=pw;
-  storeKey=await sha256hex('bf_'+YEAR+'_'+curProfile+'_'+pw);
-
-  var ok=await secureLoad();
-  if(!ok){
-    err.textContent='Clé de déchiffrement invalide. Vérifiez votre mot de passe ou profil.';
-    curUser=null;storeKey='';return;
-  }
-
+  storeKey=await sha256hex(`bf_${YEAR}_${curProfile}_${pw}`);
+  const ok=await secureLoad();
+  if(!ok){err.textContent='Clé invalide. Vérifiez le mot de passe ou le profil.';curUser=null;storeKey='';return;}
   document.getElementById('profilePill').textContent=curProfile.toUpperCase();
-  var ws=document.getElementById('welcomeScreen');
+  const ws=document.getElementById('welcomeScreen');
   ws.classList.add('hidden');
-  setTimeout(function(){ws.style.display='none';},420);
+  setTimeout(()=>ws.style.display='none',420);
   document.getElementById('appShell').classList.add('visible');
-  renderAll();triggerToast();
-};
-
-document.getElementById('userCodeInput').addEventListener('keydown',function(e){if(e.key==='Enter')enterApp();});
-
-/* ── TOAST ── */
-function triggerToast(){
-  try{
-    var k='bf_guide_v3';
-    if(!localStorage.getItem(k)){
-      setTimeout(function(){document.getElementById('toast').classList.add('show');},900);
-      setTimeout(closeToast,7000);
-      localStorage.setItem(k,'1');
-    }
-  }catch(e){}
-}
-function closeToast(){document.getElementById('toast').classList.remove('show');}
-window.closeToast=closeToast;
-
-/* ══════════════════════════════════════
-   NAVIGATION MOIS
-══════════════════════════════════════ */
-window.changeMonth=function(i){curMonth=i;renderAll();};
-
-/* ══════════════════════════════════════
-   ANALYSE / ADVICE
-══════════════════════════════════════ */
-function generateAdvice(inc,exp,bal){
-  var el=document.getElementById('adviceText');
-  if(!inc&&!exp){el.textContent='Aucune donnée pour ce mois.';return;}
-  if(bal<0){el.innerHTML='<span class="hi-red">Alerte Déficit :</span> Vos dépenses excèdent vos revenus de '+Math.abs(bal).toFixed(2)+'€.';return;}
-  if(!inc)return;
-  var sav=(bal/inc)*100;
-  var fixRows=(state[curMonth].expenseRows||[]).filter(function(r){return['fixed','domiciliation','credit'].includes(r.cat);});
-  var fixAmt=fixRows.reduce(function(s,r){return s+amt(r.amount);},0);
-  var fixRate=(fixAmt/inc)*100;
-  if(fixRate>60)el.innerHTML='<strong>Attention :</strong> Vos charges fixes absorbent <strong>'+fixRate.toFixed(0)+'%</strong> de vos revenus (cible : &lt; 50%).';
-  else if(sav<10)el.innerHTML='<strong>Taux d\'épargne : '+sav.toFixed(0)+'%.</strong> Un effort sur les dépenses variables est conseillé.';
-  else if(sav<20)el.innerHTML='<strong>Gestion saine :</strong> Ratio d\'épargne à <strong>'+sav.toFixed(0)+'%</strong>.';
-  else el.innerHTML='<span class="hi-green">Performance optimale.</span> Épargne générée : <strong>'+sav.toFixed(0)+'%</strong>. Vous êtes en capacité d\'investir.';
-}
-
-/* ══════════════════════════════════════
-   STATS & NAVIGATION
-══════════════════════════════════════ */
-function updateStats(){
-  var mi=curMonth,inc=calcInc(mi),exp=calcExp(mi),bal=inc-exp;
-
-  document.getElementById('monthNav').innerHTML=MONTHS.map(function(m,i){
-    var t=calcExp(i);
-    return'<button class="month-tab'+(i===mi?' active':'')+'" onclick="changeMonth('+i+')">'+m.slice(0,3).toUpperCase()+'<span class="month-total">'+(t>0?fmtAmt(t):'—')+'</span></button>';
-  }).join('');
-
-  var fixR=(state[mi].expenseRows||[]).filter(function(r){return['fixed','domiciliation','credit'].includes(r.cat);});
-  var fixA=fixR.reduce(function(s,r){return s+amt(r.amount);},0);
-
-  document.getElementById('statIncome').textContent=fmtAmt(inc);
-  document.getElementById('statIncomeCount').textContent=(state[mi].incomeRows||[]).length+' flux';
-  document.getElementById('statExpenses').textContent=fmtAmt(exp);
-  document.getElementById('statExpensesCount').textContent=(state[mi].expenseRows||[]).length+' flux';
-  document.getElementById('statBalance').textContent=(bal>=0?'+':'')+fmtAmt(bal);
-  document.getElementById('statBalance').style.color=bal>=0?'var(--green)':'var(--red)';
-  document.getElementById('statBalanceLbl').textContent=bal>=0?'Surplus':'Déficit';
-  document.getElementById('statFixed').textContent=fmtAmt(fixA);
-  document.getElementById('statFixedCount').textContent=fixR.length+' charge(s)';
-  document.getElementById('monthTitle').textContent=MONTHS[mi]+' '+YEAR;
-  document.getElementById('monthTitleInc').textContent=MONTHS[mi]+' '+YEAR;
-
-  generateAdvice(inc,exp,bal);
-
-  var chartEl=document.getElementById('donut'),legEl=document.getElementById('donutLegend');
-  if(exp===0){
-    chartEl.style.background='var(--surface2)';
-    legEl.innerHTML='<span style="color:var(--muted);font-size:13px;">Aucune dépense.</span>';
-  }else{
-    var cats={fixed:0,domiciliation:0,credit:0,variable:0};
-    var colors={fixed:'#3b82f6',domiciliation:'#059669',credit:'#dc2626',variable:'#6b7280'};
-    var names={fixed:'Fixes',domiciliation:'Domicil.',credit:'Crédits',variable:'Variables'};
-    (state[mi].expenseRows||[]).forEach(function(r){if(cats[r.cat]!==undefined)cats[r.cat]+=amt(r.amount);});
-    var grad=[],ang=0,legH='';
-    Object.keys(cats).forEach(function(c){
-      if(cats[c]>0){
-        var p=(cats[c]/exp)*100,d=(p/100)*360;
-        grad.push(colors[c]+' '+ang+'deg '+(ang+d)+'deg');ang+=d;
-        legH+='<div style="display:flex;justify-content:space-between;margin-bottom:7px;font-size:12px;">'
-          +'<span style="display:flex;align-items:center;gap:7px;color:var(--text);font-weight:600;">'
-          +'<span style="width:10px;height:10px;border-radius:3px;background:'+colors[c]+';flex-shrink:0;"></span>'+names[c]+'</span>'
-          +'<span style="font-weight:700;font-family:var(--font-mono);color:var(--text);">'+p.toFixed(0)+'%</span></div>';
-      }
-    });
-    chartEl.style.background='conic-gradient('+grad.join(',')+')';
-    legEl.innerHTML=legH;
+  renderAll();
+  setTimeout(()=>{ const active=document.querySelector('.month-tab.active'); if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); },300);
+  if(!localStorage.getItem('bf_guide_v4')){
+    setTimeout(()=>showToast("Besoin d'aide ? <button class='toast-btn' onclick='openGuideModal();closeToast();'>Guide</button>"),1200);
+    localStorage.setItem('bf_guide_v4','1');
   }
-
-  var bc=document.getElementById('btnCopyPrev');
-  if(bc)bc.style.display=mi===0?'none':'inline-flex';
-}
-
-/* ══════════════════════════════════════
-   RENDER TABLES
-══════════════════════════════════════ */
-function renderTables(){
-  var mi=curMonth;
-  var fs='onfocus="setTimeout(function(){this.scrollIntoView({behavior:\'smooth\',block:\'center\'})},300)"';
-
-  document.getElementById('incomeTbody').innerHTML=(state[mi].incomeRows||[]).map(function(r){
-    return'<tr>'
-      +'<td><button class="status-toggle'+(r.paid?' paid':'')+'" onclick="toggleInc(\''+r.id+'\')">'+(r.paid?'✓':'')+'</button></td>'
-      +'<td><input class="cell-input" value="'+esc(r.label)+'" placeholder="Origine du flux…" onchange="updInc(\''+r.id+'\',\'label\',this.value)" '+fs+'/></td>'
-      +'<td><input class="cell-input amt pos" type="number" step="0.01" min="0" value="'+esc(r.amount)+'" placeholder="0" onchange="updInc(\''+r.id+'\',\'amount\',this.value)" '+fs+'/></td>'
-      +'<td style="text-align:center;"><button class="del-btn" onclick="delInc(\''+r.id+'\')" title="Supprimer">'+TRASH+'</button></td>'
-      +'</tr>';
-  }).join('');
-
-  var catMap={fixed:'Fixe',domiciliation:'Dom.',credit:'Crédit',variable:'Variable'};
-  var html=(state[mi].expenseRows||[]).map(function(r){
-    return'<tr>'
-      +'<td><button class="status-toggle'+(r.paid?' paid':'')+'" onclick="toggleExp(\''+r.id+'\')">'+(r.paid?'✓':'')+'</button></td>'
-      +'<td><input class="cell-input" value="'+esc(r.label)+'" placeholder="Désignation…" onchange="updExp(\''+r.id+'\',\'label\',this.value)" '+fs+'/></td>'
-      +'<td><span class="cat-badge '+esc(r.cat)+'" onclick="cycleCat(\''+r.id+'\')" title="Changer">'+(catMap[r.cat]||r.cat)+'</span></td>'
-      +'<td><input class="cell-input amt" type="number" step="0.01" min="0" value="'+esc(r.amount)+'" placeholder="0" onchange="updExp(\''+r.id+'\',\'amount\',this.value)" '+fs+'/></td>'
-      +'<td><input class="cell-input" style="font-size:13px;color:var(--muted);" value="'+esc(r.note||'')+'" placeholder="Mémo…" onchange="updExp(\''+r.id+'\',\'note\',this.value)" '+fs+'/></td>'
-      +'<td style="text-align:center;"><button class="del-btn" onclick="delExp(\''+r.id+'\')" title="Supprimer">'+TRASH+'</button></td>'
-      +'</tr>';
-  }).join('');
-  html+='<tr class="add-row-tr"><td colspan="6"><button class="add-row-btn" onclick="openExpModal()">+ Ajouter une ligne de dépense</button></td></tr>';
-  document.getElementById('expenseTbody').innerHTML=html;
-}
-
-function renderAll(){updateStats();renderTables();}
-
-/* ══════════════════════════════════════
-   CRUD REVENUS
-══════════════════════════════════════ */
-window.addIncomeRow=function(){state[curMonth].incomeRows.push({id:uid(),label:'',amount:'',paid:false});renderAll();secureSave();};
-window.updInc=function(id,f,v){var r=state[curMonth].incomeRows.find(function(r){return r.id===id;});if(r){r[f]=f==='label'?sanitize(v):v;updateStats();secureSave();}};
-window.delInc=function(id){if(!confirm('Supprimer ce revenu ?'))return;state[curMonth].incomeRows=state[curMonth].incomeRows.filter(function(r){return r.id!==id;});renderAll();secureSave();};
-window.toggleInc=function(id){var r=state[curMonth].incomeRows.find(function(r){return r.id===id;});if(r){r.paid=!r.paid;renderAll();secureSave();}};
-
-/* ══════════════════════════════════════
-   CRUD DÉPENSES
-══════════════════════════════════════ */
-window.updExp=function(id,f,v){var r=state[curMonth].expenseRows.find(function(r){return r.id===id;});if(r){r[f]=(f==='label'||f==='note')?sanitize(v):v;updateStats();secureSave();}};
-window.delExp=function(id){if(!confirm('Supprimer cette dépense ?'))return;state[curMonth].expenseRows=state[curMonth].expenseRows.filter(function(r){return r.id!==id;});renderAll();secureSave();};
-window.toggleExp=function(id){var r=state[curMonth].expenseRows.find(function(r){return r.id===id;});if(r){r.paid=!r.paid;renderAll();secureSave();}};
-window.cycleCat=function(id){var c=['fixed','domiciliation','credit','variable'],r=state[curMonth].expenseRows.find(function(r){return r.id===id;});if(r){r.cat=c[(c.indexOf(r.cat)+1)%4];renderAll();secureSave();}};
-
-window.copyPrevMonth=function(){
-  var mi=curMonth;if(mi===0)return;
-  var prev=(state[mi-1].expenseRows||[]).filter(function(r){return['fixed','domiciliation','credit'].includes(r.cat);});
-  if(!prev.length){alert('Aucune charge fixe le mois précédent.');return;}
-  if(!confirm('Copier '+prev.length+' charges fixes de '+MONTHS[mi-1]+' vers '+MONTHS[mi]+' ?'))return;
-  prev.forEach(function(r){state[mi].expenseRows.push({id:uid(),label:r.label,amount:r.amount,cat:r.cat,note:r.note||'',paid:false});});
-  renderAll();secureSave();
 };
-
-/* ══════════════════════════════════════
-   MODAL : DÉPENSE
-══════════════════════════════════════ */
-window.openExpModal=function(){
-  ['newLabel','newAmount','newNote'].forEach(function(id){document.getElementById(id).value='';});
-  document.getElementById('newCat').value='fixed';
-  document.getElementById('newRecurring').checked=false;
-  document.getElementById('expModal').classList.add('open');
-  setTimeout(function(){document.getElementById('newLabel').focus();},100);
-};
-window.closeExpModal=function(){document.getElementById('expModal').classList.remove('open');};
-
-window.confirmAddExp=function(){
-  var label=sanitize(document.getElementById('newLabel').value.trim());
-  var amount=document.getElementById('newAmount').value;
-  var cat=document.getElementById('newCat').value;
-  var note=sanitize(document.getElementById('newNote').value.trim());
-  var recurring=document.getElementById('newRecurring').checked;
-  if(!label&&!amount){window.closeExpModal();return;}
-  var base={label:label,amount:amount,cat:cat,note:note,paid:false};
-  if(recurring){for(var i=curMonth;i<12;i++)state[i].expenseRows.push(Object.assign({},base,{id:uid()}));}
-  else state[curMonth].expenseRows.push(Object.assign({},base,{id:uid()}));
-  window.closeExpModal();renderAll();secureSave();
-};
-
-/* ══════════════════════════════════════
-   MODAL : SYNC / TRANSFERT
-══════════════════════════════════════ */
-window.openSyncModal=async function(){
-  if(!curUser)return;
-  // Pré-remplir l'export
-  document.getElementById('exportTA').value=await encrypt(state,curUser);
-  // Vider les champs d'import
-  document.getElementById('importTA').value='';
-  document.getElementById('importPayload').value='';
-  document.getElementById('importPasswordCurrent').value='';
-  document.getElementById('importPasswordOld').value='';
-  document.getElementById('oldPasswordField').style.display='none';
-  document.getElementById('syncModal').classList.add('open');
-};
-window.closeSyncModal=function(){document.getElementById('syncModal').classList.remove('open');};
-
-window.copySyncCode=function(){
-  var t=document.getElementById('exportTA');t.select();t.setSelectionRange(0,99999);
-  navigator.clipboard.writeText(t.value).then(function(){alert('Code copié !');}).catch(function(){alert('Copiez manuellement.');});
-};
-window.emailSyncCode=function(){window.location.href='mailto:?subject=Sauvegarde BudgetFlow Pro&body='+encodeURIComponent(document.getElementById('exportTA').value);};
-
-/* Import nouvelle version (format binaire base64) */
-window.importSyncCode=async function(){
-  try{
-    var raw=document.getElementById('importTA').value.trim();
-    if(!raw){alert('Collez d\'abord un payload dans le champ "Nouvelle version".');return;}
-    var dec=await decrypt(raw,curUser);
-    if(!dec)throw new Error('Déchiffrement échoué');
-    if(!confirm('Restaurer les données écrasera les données actuelles. Continuer ?'))return;
-    state=dec;normalizeState();renderAll();secureSave();window.closeSyncModal();
-    alert('Données restaurées avec succès !');
-  }catch(e){alert('Code invalide ou mot de passe incorrect.');}
-};
-
-
-window.importLegacySyncCode=function(){
-  try{
-    var el=document.getElementById('legacyImportCodeInput');
-    var legacyCode=(el?el.value:'').trim();
-    if(!legacyCode){alert('Collez un code legacy valide.');return;}
-    var decoded=JSON.parse(decodeURIComponent(atob(legacyCode)));
-    if(!decoded||typeof decoded!=='object')throw new Error('Payload invalide');
-    if(!confirm('Restaurer les données écrasera les données actuelles. Continuer ?'))return;
-    state=decoded;
-    normalizeState();
-    renderAll();
-    secureSave();
-    window.closeSyncModal();
-    alert('Anciennes données restaurées avec succès !');
-  }catch(e){alert('Erreur lors du déchiffrement legacy : '+e.message);}
-};
-
-/* ══════════════════════════════════════
-   MODAL : RÉGLAGES
-══════════════════════════════════════ */
-window.openSettingsModal=function(){document.getElementById('settingsModal').classList.add('open');};
-window.closeSettingsModal=function(){document.getElementById('settingsModal').classList.remove('open');};
-
-window.lockApp=function(){
-  if(!confirm('Verrouiller la session ? La mémoire sera purgée.'))return;
-  curUser=null;state={};storeKey='';
-  document.getElementById('settingsModal').classList.remove('open');
+document.getElementById('userCodeInput').addEventListener('keydown',e=>{if(e.key==='Enter') enterApp();});
+window.lockApp = () => {
+  if(!confirm('Verrouiller la session ? La mémoire sera purgée.')) return;
+  curUser=null; storeKey='';
+  Object.keys(state).forEach(k=>delete state[k]); state={};
+  closeSettingsModal();
   document.getElementById('appShell').classList.remove('visible');
-  var ws=document.getElementById('welcomeScreen');
-  ws.style.display='flex';ws.classList.remove('hidden');
+  const ws=document.getElementById('welcomeScreen');
+  ws.style.display='flex'; setTimeout(()=>ws.classList.remove('hidden'),50);
   document.getElementById('userCodeInput').value='';
   document.getElementById('welcomeError').textContent='Session verrouillée · Mémoire purgée.';
 };
 
-/* ══════════════════════════════════════
-   MODAL : GUIDE
-══════════════════════════════════════ */
-window.openGuideModal=function(){document.getElementById('guideModal').classList.add('open');};
-window.closeGuideModal=function(){document.getElementById('guideModal').classList.remove('open');};
+/* ── RENDERING ── */
+window.changeMonth = (i) => {
+  curMonth=i; renderAll();
+  setTimeout(()=>{ const active=document.querySelector('.month-tab.active'); if(active) active.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'}); },50);
+};
 
-/* ══════════════════════════════════════
-   MODAL : IOS
-══════════════════════════════════════ */
-window.openIosModal=function(){document.getElementById('iosModal').classList.add('open');};
-window.closeIosModal=function(){document.getElementById('iosModal').classList.remove('open');};
+const generateAdvice = (inc,exp,bal,fixAmt) => {
+  const el=document.getElementById('adviceText');
+  if(!inc&&!exp){el.textContent='Saisissez vos données pour obtenir l\'analyse financière.';return;}
+  if(bal<0){el.innerHTML=`<span class="hi-red">⚠ Déficit de ${fmtAmt(Math.abs(bal))}</span> · Action requise sur les dépenses compressibles.`;return;}
+  if(!inc) return;
+  const savRate=(bal/inc)*100, fixRate=(fixAmt/inc)*100, varRate=((exp-fixAmt)/inc)*100, rav=inc-fixAmt;
+  let msgs=[];
+  if(fixRate>50) msgs.push(`<strong>Taux d'effort élevé :</strong> Charges fixes à <strong>${fixRate.toFixed(0)}%</strong>. Reste à vivre net : ${fmtAmt(rav)}.`);
+  if(varRate>30&&savRate<15) msgs.push(`<strong>Dépenses variables :</strong> Poids important (${varRate.toFixed(0)}%). Potentiel d'optimisation.`);
+  if(savRate<10&&bal>0) msgs.push(`<strong>Épargne faible :</strong> ${savRate.toFixed(0)}% — cible conseillée : 15% minimum.`);
+  else if(savRate>=20) msgs.push(`<span class="hi-green">✓ Indicateurs au vert</span> · Capacité d'épargne <strong>${savRate.toFixed(0)}%</strong>.`);
+  else if(savRate>=10&&msgs.length===0) msgs.push(`<strong>Gestion saine :</strong> Taux d'épargne <strong>${savRate.toFixed(0)}%</strong>.`);
+  if(msgs.length===0) msgs.push(`<strong>Budget équilibré.</strong> Reste à vivre : <strong>${fmtAmt(rav)}</strong>.`);
+  el.innerHTML=msgs.join('<br><span style="display:block;height:7px;"></span>');
+};
 
-/* ══════════════════════════════════════
-   EXPORT CSV
-══════════════════════════════════════ */
-window.exportData=function(){
-  var mi=curMonth,rows=state[mi].expenseRows||[],inc=state[mi].incomeRows||[];
-  var csv='BudgetFlow Pro — '+MONTHS[mi]+' '+YEAR+'\n\nREVENUS,Montant\n';
-  inc.forEach(function(r){csv+='"'+String(r.label||'').replace(/"/g,'""')+'",'+amt(r.amount)+'\n';});
+const updateTrend = () => {
+  const container=document.getElementById('trendChart');
+  if(!container) return;
+  container.innerHTML='';
+  const rates=MONTHS.map((_,i)=>{ const inc=calcInc(i),exp=calcExp(i),bal=inc-exp; return inc>0?(bal/inc)*100:0; });
+  const maxAbs=Math.max(...rates.map(Math.abs),5);
+  rates.forEach((r,i)=>{
+    const bar=document.createElement('div');
+    bar.className='trend-bar';
+    if(r===0){
+      bar.classList.add('empty');
+    } else {
+      const barH=Math.max(Math.abs(r)/maxAbs*100,4);
+      bar.style.height=`${barH}%`;
+      bar.classList.add(r>0?'positive':'negative');
+    }
+    bar.title=`${MONTHS[i]} : ${r===0?'Aucune donnée':((r>0?'+':'')+r.toFixed(1)+'%')}`;
+    if(i===curMonth){bar.style.outline='2px solid var(--accent)';bar.style.outlineOffset='-2px';}
+    container.appendChild(bar);
+  });
+  const legEl=document.getElementById('trendLegendInline');
+  if(legEl){
+    const monthsData=rates.filter(r=>r!==0);
+    if(monthsData.length){
+      const avg=monthsData.reduce((s,r)=>s+r,0)/monthsData.length;
+      legEl.innerHTML=`<span style="color:var(--green);font-weight:700;">▲ Moy. ${avg.toFixed(1)}%</span>`;
+    } else {
+      legEl.innerHTML='';
+    }
+  }
+};
+
+const updateStats = () => {
+  const mi=curMonth, inc=calcInc(mi), exp=calcExp(mi), bal=inc-exp;
+  document.getElementById('monthNav').innerHTML=MONTHS.map((m,i)=>{
+    const t=calcExp(i);
+    return `<button class="month-tab${i===mi?' active':''}" onclick="changeMonth(${i})" aria-label="${m} ${YEAR}">${m.slice(0,3).toUpperCase()}<span class="month-total">${t>0?fmtAmt(t):'—'}</span></button>`;
+  }).join('');
+  const fixR=(state[mi]?.expenseRows||[]).filter(r=>['fixed','domiciliation','credit'].includes(r.cat));
+  const fixA=fixR.reduce((s,r)=>s+amt(r.amount),0);
+  document.getElementById('statIncome').textContent=fmtAmt(inc);
+  document.getElementById('statIncomeCount').textContent=`${(state[mi]?.incomeRows||[]).length} flux`;
+  document.getElementById('statExpenses').textContent=fmtAmt(exp);
+  document.getElementById('statExpensesCount').textContent=`${(state[mi]?.expenseRows||[]).length} flux`;
+  const balEl=document.getElementById('statBalance');
+  balEl.textContent=(bal>=0?'+':'')+fmtAmt(bal);
+  balEl.style.color=bal>=0?'var(--green)':'var(--red)';
+  document.getElementById('statBalanceLbl').textContent=bal>=0?'Surplus':'Déficit';
+  document.getElementById('statFixed').textContent=fmtAmt(fixA);
+  document.getElementById('statFixedCount').textContent=`${fixR.length} charge(s)`;
+  document.getElementById('monthTitle').textContent=`${MONTHS[mi]} ${YEAR}`;
+  document.getElementById('monthTitleInc').textContent=`${MONTHS[mi]} ${YEAR}`;
+  generateAdvice(inc,exp,bal,fixA);
+  updateTrend();
+  // Donut
+  const chartEl=document.getElementById('donut'),legEl=document.getElementById('donutLegend');
+  if(exp===0){
+    chartEl.style.background='var(--surface2)';
+    legEl.innerHTML='<span style="color:var(--muted);font-size:13px;">Aucune dépense.</span>';
+  } else {
+    const cats={fixed:0,domiciliation:0,credit:0,variable:0};
+    const colors={fixed:'#3b82f6',domiciliation:'#059669',credit:'#dc2626',variable:'#6b7280'};
+    const names={fixed:'Fixes',domiciliation:'Domicil.',credit:'Crédits',variable:'Variables'};
+    (state[mi].expenseRows||[]).forEach(r=>{if(cats[r.cat]!==undefined) cats[r.cat]+=amt(r.amount);});
+    let grad=[],ang=0,legH='';
+    Object.keys(cats).forEach(c=>{
+      if(cats[c]>0){
+        const p=(cats[c]/exp)*100,d=(p/100)*360;
+        grad.push(`${colors[c]} ${ang}deg ${ang+d}deg`); ang+=d;
+        legH+=`<div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:13px;"><span style="display:flex;align-items:center;gap:8px;color:var(--text);font-weight:600;"><span style="width:12px;height:12px;border-radius:4px;background:${colors[c]};flex-shrink:0;"></span>${names[c]}</span><span style="font-weight:700;font-family:var(--font-mono);">${p.toFixed(0)}%</span></div>`;
+      }
+    });
+    chartEl.style.background=`conic-gradient(${grad.join(',')})`;
+    legEl.innerHTML=legH;
+  }
+  const bc=document.getElementById('btnCopyPrev');
+  if(bc) bc.style.display=mi===0?'none':'inline-flex';
+};
+
+const renderTables = () => {
+  const mi=curMonth;
+  const fs=`onfocus="setTimeout(()=>this.scrollIntoView({behavior:'smooth',block:'center'}),300)"`;
+  document.getElementById('incomeTbody').innerHTML=(state[mi]?.incomeRows||[]).map(r=>`<tr>
+    <td><button class="status-toggle${r.paid?' paid':''}" onclick="toggleInc('${r.id}')" aria-label="${r.paid?'Payé':'Non payé'}">${r.paid?'✓':''}</button></td>
+    <td><input class="cell-input" value="${sanitize(r.label)}" placeholder="Origine du flux…" onchange="updInc('${r.id}','label',this.value)" aria-label="Source revenu" ${fs}/></td>
+    <td><input class="cell-input amt pos" type="number" inputmode="decimal" step="0.01" min="0" value="${sanitize(r.amount)}" placeholder="0" onchange="updInc('${r.id}','amount',this.value)" aria-label="Montant" ${fs}/></td>
+    <td style="text-align:center;"><button class="del-btn" onclick="delInc('${r.id}')" aria-label="Supprimer ce revenu">${TRASH_SVG}</button></td>
+    </tr>`).join('')+`<tr class="add-row-tr"><td colspan="4"><button class="add-row-btn" onclick="addIncomeRow()">+ Ajouter un revenu</button></td></tr>`;
+  const catMap={fixed:'Fixe',domiciliation:'Dom.',credit:'Crédit',variable:'Variable'};
+  document.getElementById('expenseTbody').innerHTML=(state[mi]?.expenseRows||[]).map(r=>`<tr>
+    <td><button class="status-toggle${r.paid?' paid':''}" onclick="toggleExp('${r.id}')" aria-label="${r.paid?'Payé':'Non payé'}">${r.paid?'✓':''}</button></td>
+    <td><input class="cell-input" value="${sanitize(r.label)}" placeholder="Désignation…" onchange="updExp('${r.id}','label',this.value)" aria-label="Libellé dépense" ${fs}/></td>
+    <td><span class="cat-badge ${sanitize(r.cat)}" onclick="cycleCat('${r.id}')" title="Cliquer pour changer" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ')cycleCat('${r.id}')">${catMap[r.cat]||r.cat}</span></td>
+    <td><input class="cell-input amt" type="number" inputmode="decimal" step="0.01" min="0" value="${sanitize(r.amount)}" placeholder="0" onchange="updExp('${r.id}','amount',this.value)" aria-label="Montant" ${fs}/></td>
+    <td><input class="cell-input" style="font-size:13px;color:var(--muted);" value="${sanitize(r.note||'')}" placeholder="Mémo…" onchange="updExp('${r.id}','note',this.value)" aria-label="Mémo" ${fs}/></td>
+    <td style="text-align:center;"><button class="del-btn" onclick="delExp('${r.id}')" aria-label="Supprimer cette dépense">${TRASH_SVG}</button></td>
+    </tr>`).join('')+`<tr class="add-row-tr"><td colspan="6"><button class="add-row-btn" onclick="openExpModal()">+ Ajouter une dépense</button></td></tr>`;
+};
+const renderAll = ()=>{updateStats();renderTables();};
+
+/* ── CRUD ── */
+window.updInc=(id,f,v)=>{const r=state[curMonth].incomeRows.find(x=>x.id===id);if(r){r[f]=v;updateStats();secureSave();}};
+window.updExp=(id,f,v)=>{const r=state[curMonth].expenseRows.find(x=>x.id===id);if(r){r[f]=v;updateStats();secureSave();}};
+window.addIncomeRow=()=>{state[curMonth].incomeRows.push({id:uid(),label:'',amount:'',paid:false});renderAll();secureSave();};
+window.delInc=(id)=>{state[curMonth].incomeRows=state[curMonth].incomeRows.filter(x=>x.id!==id);renderAll();secureSave();};
+window.toggleInc=(id)=>{const r=state[curMonth].incomeRows.find(x=>x.id===id);if(r){r.paid=!r.paid;renderAll();secureSave();}};
+window.delExp=(id)=>{state[curMonth].expenseRows=state[curMonth].expenseRows.filter(x=>x.id!==id);renderAll();secureSave();};
+window.toggleExp=(id)=>{const r=state[curMonth].expenseRows.find(x=>x.id===id);if(r){r.paid=!r.paid;renderAll();secureSave();}};
+window.cycleCat=(id)=>{const c=['fixed','domiciliation','credit','variable'],r=state[curMonth].expenseRows.find(x=>x.id===id);if(r){r.cat=c[(c.indexOf(r.cat)+1)%4];renderAll();secureSave();}};
+window.copyPrevMonth=()=>{
+  const mi=curMonth; if(mi===0) return;
+  const prev=(state[mi-1].expenseRows||[]).filter(r=>['fixed','domiciliation','credit'].includes(r.cat));
+  if(!prev.length){showToast('Aucune charge fixe au mois précédent.','error');return;}
+  prev.forEach(r=>state[mi].expenseRows.push({id:uid(),label:r.label,amount:r.amount,cat:r.cat,note:r.note||'',paid:false}));
+  renderAll();secureSave();
+  showToast(`${prev.length} charges importées !`,'success');
+};
+
+/* ── MODALS ── */
+window.openExpModal = () => {
+  ['newLabel','newAmount','newNote'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('newCat').value='fixed';
+  document.getElementById('newRecurring').checked=false;
+  ['newLabel','newAmount'].forEach(id=>document.getElementById(id).classList.remove('input-error'));
+  ['errLabel','errAmount'].forEach(id=>document.getElementById(id).classList.remove('show'));
+  document.getElementById('expModal').classList.add('open');
+  setTimeout(()=>document.getElementById('newLabel').focus(),150);
+};
+window.closeExpModal = ()=>document.getElementById('expModal').classList.remove('open');
+
+window.confirmAddExp = () => {
+  const label=document.getElementById('newLabel').value.trim();
+  const rawAmount=document.getElementById('newAmount').value;
+  const amount=parseFloat(rawAmount);
+  let valid=true;
+  if(!label){
+    document.getElementById('newLabel').classList.add('input-error');
+    document.getElementById('errLabel').classList.add('show');
+    valid=false;
+  } else {
+    document.getElementById('newLabel').classList.remove('input-error');
+    document.getElementById('errLabel').classList.remove('show');
+  }
+  if(isNaN(amount)||amount<=0){
+    document.getElementById('newAmount').classList.add('input-error');
+    document.getElementById('errAmount').classList.add('show');
+    valid=false;
+  } else {
+    document.getElementById('newAmount').classList.remove('input-error');
+    document.getElementById('errAmount').classList.remove('show');
+  }
+  if(!valid) return;
+  const base={label,amount,cat:document.getElementById('newCat').value,note:document.getElementById('newNote').value.trim(),paid:false};
+  if(document.getElementById('newRecurring').checked){
+    for(let i=curMonth;i<12;i++) state[i].expenseRows.push({...base,id:uid()});
+  } else {
+    state[curMonth].expenseRows.push({...base,id:uid()});
+  }
+  closeExpModal();renderAll();secureSave();
+  showToast('Dépense ajoutée.','success');
+};
+window.openSettingsModal=()=>document.getElementById('settingsModal').classList.add('open');
+window.closeSettingsModal=()=>document.getElementById('settingsModal').classList.remove('open');
+window.openGuideModal=()=>document.getElementById('guideModal').classList.add('open');
+window.closeGuideModal=()=>document.getElementById('guideModal').classList.remove('open');
+window.openIosModal=()=>document.getElementById('iosModal').classList.add('open');
+window.closeIosModal=()=>document.getElementById('iosModal').classList.remove('open');
+
+/* ── SYNC (version simplifiée — mot de passe de session uniquement) ── */
+window.openSyncModal = async () => {
+  if(!curUser) return;
+  document.getElementById('exportTA').value='Génération en cours...';
+  document.getElementById('syncModal').classList.add('open');
+  await new Promise(r=>setTimeout(r,10));
+  document.getElementById('exportTA').value=await encrypt(state,curUser);
+  document.getElementById('importTA').value='';
+};
+window.closeSyncModal=()=>document.getElementById('syncModal').classList.remove('open');
+window.copySyncCode = () => {
+  const t=document.getElementById('exportTA'); t.select(); t.setSelectionRange(0,99999);
+  navigator.clipboard.writeText(t.value).then(()=>showToast('Copié !','success')).catch(()=>showToast('Copiez manuellement.','error'));
+};
+window.emailSyncCode=()=>window.location.href=`mailto:?subject=Sauvegarde BudgetFlow Pro&body=${encodeURIComponent(document.getElementById('exportTA').value)}`;
+
+const applyImportData = async (dataObj) => {
+  state=dataObj; normalizeState(); await secureSave(); renderAll(); closeSyncModal();
+  showToast('Restauration réussie !','success');
+};
+
+/* Restaurer : utilise le mot de passe de session en cours, sans saisie supplémentaire */
+window.importSyncCode = async () => {
+  const raw=document.getElementById('importTA').value.trim();
+  if(!raw){showToast('Collez un code valide.','error');return;}
+  const btn=document.getElementById('btnImportNew');
+  btn.textContent='Déchiffrement...'; await new Promise(r=>setTimeout(r,10));
+  const dec=await decrypt(raw,curUser);
+  btn.textContent='Restaurer';
+  if(!dec){showToast('Code invalide ou incompatible avec ce mot de passe.','error');return;}
+  await applyImportData(dec);
+};
+
+/* ── EXPORTS ── */
+window.exportPDF=()=>window.print();
+window.exportData=()=>{
+  const mi=curMonth,rows=state[mi]?.expenseRows||[],inc=state[mi]?.incomeRows||[];
+  let csv=`BudgetFlow Pro — ${MONTHS[mi]} ${YEAR}\n\nREVENUS,Montant\n`;
+  inc.forEach(r=>csv+=`"${(r.label||'').replace(/"/g,'""')}",${amt(r.amount)}\n`);
   csv+='\nDEPENSES,Catégorie,Montant,Mémo\n';
-  rows.forEach(function(r){csv+='"'+String(r.label||'').replace(/"/g,'""')+'","'+String(r.cat||'').replace(/"/g,'""')+'",'+amt(r.amount)+',"'+String(r.note||'').replace(/"/g,'""')+'"\n';});
-  csv+='\nTOTAL REVENUS,'+calcInc(mi)+'\nTOTAL DÉPENSES,'+calcExp(mi)+'\nSOLDE NET,'+(calcInc(mi)-calcExp(mi))+'\n';
-  var blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'});
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);
-  a.download='budgetflow_'+MONTHS[mi].toLowerCase()+'_'+YEAR+'.csv';a.click();
-  setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+  rows.forEach(r=>csv+=`"${(r.label||'').replace(/"/g,'""')}","${(r.cat||'').replace(/"/g,'""')}",${amt(r.amount)},"${(r.note||'').replace(/"/g,'""')}"\n`);
+  csv+=`\nTOTAL REVENUS,${calcInc(mi)}\nTOTAL DÉPENSES,${calcExp(mi)}\nSOLDE NET,${calcInc(mi)-calcExp(mi)}\n`;
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));
+  a.download=`budgetflow_${MONTHS[mi].toLowerCase()}_${YEAR}.csv`;
+  a.click();
 };
 
-/* ══════════════════════════════════════
-   CLAVIER
-══════════════════════════════════════ */
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    window.closeExpModal();window.closeSettingsModal();
-    window.closeGuideModal();window.closeSyncModal();
-    window.closeIosModal();closeToast();
-  }
-  if(e.key==='Enter'&&document.getElementById('expModal').classList.contains('open'))confirmAddExp();
-});
-
-})();
-</script>
-
-<!-- ===== SCRIPT IMPORT ANCIENNE VERSION ===== -->
-<!--
-  Ce script gère le déchiffrement des payloads produits par l'ancienne version
-  de l'application, dont le format est : base64(salt):base64(iv):base64(ciphertext)
-  Il permet aussi le ré-chiffrement automatique avec le mot de passe actuel
-  si l'export avait été fait avec un ancien mot de passe différent.
--->
-<script>
-/* ── Helpers binaires ── */
-function b64ToU8(b64) {
-  const bin = atob(b64);
-  const out = new Uint8Array(bin.length);
-  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
-  return out;
-}
-
-function u8ToB64(u8) {
-  let bin = '';
-  for (let i = 0; i < u8.length; i++) bin += String.fromCharCode(u8[i]);
-  return btoa(bin);
-}
-
-/* ── Dérivation de clé (ancienne version) ── */
-async function getPasswordKeyLegacy(password, salt, iterations = 100000) {
-  const baseKey = await crypto.subtle.importKey(
-    'raw',
-    new TextEncoder().encode(password),
-    'PBKDF2',
-    false,
-    ['deriveKey']
-  );
-  return crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt, iterations, hash: 'SHA-256' },
-    baseKey,
-    { name: 'AES-GCM', length: 256 },
-    false,
-    ['encrypt', 'decrypt']
-  );
-}
-
-/*
- * decryptLegacyPayload
- * Déchiffre un payload au format ancien : "base64salt:base64iv:base64cipher"
- * Retourne le JSON plaintext sous forme de string.
- */
-async function decryptLegacyPayload(payload, password, iterations = 100000) {
-  const parts = payload.trim().split(':');
-  if (parts.length !== 3) throw new Error('FORMAT_INVALID');
-
-  const salt       = b64ToU8(parts[0]);
-  const iv         = b64ToU8(parts[1]);
-  const ciphertext = b64ToU8(parts[2]);
-
-  const key = await getPasswordKeyLegacy(password, salt, iterations);
-  const plainBuf = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
-  return new TextDecoder().decode(plainBuf);
-}
-
-/*
- * encryptLegacyPayload
- * Ré-chiffre le plaintext au format ancien "base64salt:base64iv:base64cipher"
- * avec le nouveau mot de passe, pour conserver la compatibilité export si nécessaire.
- */
-async function encryptLegacyPayload(plaintext, password, iterations = 100000) {
-  const salt = crypto.getRandomValues(new Uint8Array(16));
-  const iv   = crypto.getRandomValues(new Uint8Array(12));
-  const key  = await getPasswordKeyLegacy(password, salt, iterations);
-
-  const cipherBuf = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv },
-    key,
-    new TextEncoder().encode(plaintext)
-  );
-
-  return `${u8ToB64(salt)}:${u8ToB64(iv)}:${u8ToB64(new Uint8Array(cipherBuf))}`;
-}
-
-/* Affiche/cache le champ "ancien mot de passe" */
-function showImportOldPasswordField(show) {
-  const el = document.getElementById('oldPasswordField');
-  if (el) el.style.display = show ? 'block' : 'none';
-}
-
-/*
- * loadLegacyData
- * Intègre les données déchiffrées (JSON string) dans l'état courant
- * de la nouvelle version de l'application, puis sauvegarde.
- *
- * Structure attendue du JSON ancien :
- *   { incomeRows, expenseRows, notes } — ou tout autre format passé.
- * Si le JSON correspond au format complet de la nouvelle version (objet indexé
- * par mois 0–11), il est injecté directement. Sinon, on tente une migration
- * du format mois unique vers le mois courant.
- */
-async function loadLegacyData(plainText) {
-  let data;
-  try {
-    data = JSON.parse(plainText);
-  } catch(e) {
-    throw new Error('JSON_INVALID');
-  }
-
-  // Détection du format : objet dont les clés sont des indices de mois (0..11)
-  const isFullState = Object.keys(data).every(k => !isNaN(parseInt(k)));
-
-  if (isFullState) {
-    // Format déjà compatible avec la nouvelle version → injection directe
-    // (normalizeState() complétera les mois manquants)
-    if (typeof normalizeStateAndRender === 'function') {
-      normalizeStateAndRender(data);
-    } else {
-      // Fallback : appel via les globals exposées par le script principal
-      _legacyInjectState(data);
-    }
-  } else {
-    // Format ancien mois unique : on migre vers le mois courant
-    _legacyInjectSingleMonth(data);
-  }
-}
-
-/*
- * _legacyInjectState
- * Injecte un état complet (format nouvelle version) via les globals du script principal.
- */
-function _legacyInjectState(newState) {
-  // Le script principal expose `state` et `normalizeState` via la closure IIFE.
-  // On passe par localStorage + rechargement si les globals ne sont pas accessibles.
-  // Ici on utilise la technique la plus sûre : réécriture en localStorage chiffrée
-  // via la fonction encrypt() exposée globalement ci-dessous.
-  _legacyWriteAndReload(newState);
-}
-
-/*
- * _legacyInjectSingleMonth
- * Migre les données d'un format mois unique vers le mois en cours.
- */
-function _legacyInjectSingleMonth(data) {
-  const monthData = {
-    incomeRows:  Array.isArray(data.incomeRows)  ? data.incomeRows  : [],
-    expenseRows: Array.isArray(data.expenseRows) ? data.expenseRows : [],
-  };
-  _legacyWriteAndReload({ 0: monthData }); // sera normalisé par normalizeState()
-}
-
-/*
- * _legacyWriteAndReload
- * Chiffre les données avec le mot de passe actuel (nouvelle version)
- * et recharge l'interface.
- */
-async function _legacyWriteAndReload(newStateObj) {
-  // encrypt() et curUser/storeKey sont définis dans le script principal (scope global window)
-  // car ils sont utilisés en dehors de la closure via window.xxx ou les fonctions exposées.
-  // On passe par openSyncModal/importSyncCode qui eux ont accès à la closure.
-  // La solution propre : déclencher un événement custom que le script principal écoute.
-  const event = new CustomEvent('bf:legacy-import', { detail: { state: newStateObj } });
-  document.dispatchEvent(event);
-}
-
-/* ── Écoute de l'événement dans le script principal (ajout) ── */
-document.addEventListener('bf:legacy-import', async function(e) {
-  // Cet événement est émis par _legacyWriteAndReload ci-dessus.
-  // Le script principal doit l'attraper. Comme il est dans une IIFE,
-  // on s'y accroche ici en dehors via window._bfLegacyImportCallback.
-  if (typeof window._bfLegacyImportCallback === 'function') {
-    window._bfLegacyImportCallback(e.detail.state);
-  }
-});
-
-/*
- * isLegacyPayload
- * Détecte si un payload est au format ancien "base64:base64:base64"
- * ou au format nouveau (base64 binaire simple sans séparateurs ":").
- */
-function isLegacyPayload(payload) {
-  // L'ancien format contient exactement 2 ":" séparant 3 blocs base64
-  // Le nouveau format est un base64 pur (peut contenir "=" mais jamais ":")
-  const parts = payload.split(':');
-  if (parts.length !== 3) return false;
-  // Vérifier que chaque partie est du base64 valide
-  try {
-    parts.forEach(p => atob(p));
-    return true;
-  } catch(e) {
-    return false;
-  }
-}
-
-/*
- * handleImportPayload
- * Point d'entrée principal du bouton "Importer ancienne version".
- *
- * Algorithme :
- * 1. Détection automatique du format du payload (ancien ou nouveau).
- * 2. Si nouveau format → délégation à importSyncCode() (qui utilise curUser de la closure).
- * 3. Si ancien format → essai avec le mot de passe actuel, puis avec l'ancien si fourni.
- */
-async function handleImportPayload() {
-  const payloadEl        = document.getElementById('importPayload');
-  const currentPwdEl     = document.getElementById('importPasswordCurrent');
-  const oldPwdEl         = document.getElementById('importPasswordOld');
-
-  const payload    = (payloadEl?.value    || '').trim();
-  const currentPwd = (currentPwdEl?.value || '').trim();
-  const oldPwd     = (oldPwdEl?.value     || '').trim();
-
-  if (!payload) {
-    alert('Collez d\'abord un payload dans le champ "Ancienne version".');
-    return;
-  }
-
-  if (!currentPwd) {
-    alert('Saisissez le mot de passe actuel.');
-    return;
-  }
-
-  // ── Détection automatique du format ──
-  if (!isLegacyPayload(payload)) {
-    // Nouveau format binaire base64 détecté → on reroute vers importSyncCode()
-    // en pré-remplissant le champ importTA
-    const importTA = document.getElementById('importTA');
-    if (importTA) {
-      importTA.value = payload;
-      await window.importSyncCode();
-    } else {
-      alert('Erreur interne : champ d\'import introuvable.');
-    }
-    return;
-  }
-
-  // ── Format ancien confirmé ──
-
-  // ── Tentative 1 : déchiffrement avec le mot de passe actuel ──
-  try {
-    const plain = await decryptLegacyPayload(payload, currentPwd);
-    if (!confirm('Données déchiffrées. Restaurer écrasera les données actuelles. Continuer ?')) return;
-    await loadLegacyData(plain);
-    alert('Import réussi avec le mot de passe actuel.');
-    if (typeof closeSyncModal === 'function') closeSyncModal();
-    return;
-  } catch (e) {
-    // Déchiffrement échoué avec mot de passe actuel → on propose l'ancien
-    showImportOldPasswordField(true);
-  }
-
-  // ── Tentative 2 : déchiffrement avec l'ancien mot de passe ──
-  if (!oldPwd) {
-    alert('Impossible de déchiffrer avec le mot de passe actuel.\nSaisissez l\'ancien mot de passe dans le champ qui vient d\'apparaître, puis cliquez à nouveau sur "Importer".');
-    return;
-  }
-
-  try {
-    const plain = await decryptLegacyPayload(payload, oldPwd);
-
-    if (!confirm('Données déchiffrées avec l\'ancien mot de passe. Restaurer écrasera les données actuelles. Continuer ?')) return;
-
-    // Ré-chiffrement au nouveau format (ancienne structure, nouveau mot de passe)
-    const newLegacyPayload = await encryptLegacyPayload(plain, currentPwd);
-    if (payloadEl) payloadEl.value = newLegacyPayload;
-
-    await loadLegacyData(plain);
-    alert('Import réussi avec l\'ancien mot de passe. Les données ont été ré-chiffrées avec le mot de passe actuel.');
-    if (typeof closeSyncModal === 'function') closeSyncModal();
-
-  } catch (e) {
-    alert('Mot de passe incorrect ou payload corrompu. Vérifiez les deux mots de passe et réessayez.');
-  }
-}
-
-// Exposition globale pour le bouton onclick dans le HTML
-window.handleImportPayload = handleImportPayload;
-</script>
-
-<!-- ===== CALLBACK LEGACY IMPORT dans le scope du script principal ===== -->
-<!--
-  Ce script s'exécute après les deux précédents et enregistre le callback
-  que _legacyWriteAndReload() appelle via l'événement custom 'bf:legacy-import'.
-  Il a accès aux fonctions exposées sur window par le script principal.
--->
-<script>
-(function() {
-  /*
-   * _bfLegacyImportCallback
-   * Reçoit le nouvel état (objet) depuis le script legacy, le normalise,
-   * le sauvegarde et rafraîchit l'interface.
-   *
-   * Dépend des fonctions exposées par le script principal :
-   *   - window._bfInternals (objet bridge optionnel) OU
-   *   - les fonctions renderAll, secureSave, normalizeState via une couture.
-   *
-   * Pour éviter de casser l'encapsulation IIFE du script principal, on utilise
-   * le mécanisme d'événement déjà mis en place, complété par une API bridge minimale.
-   */
-  window._bfLegacyImportCallback = async function(newStateObj) {
-    // On délègue à l'API bridge exposée par le script principal.
-    // Cette API est définie juste après dans ce bloc (hors IIFE).
-    if (typeof window._bfApplyLegacyState === 'function') {
-      await window._bfApplyLegacyState(newStateObj);
-    } else {
-      console.error('BudgetFlow : _bfApplyLegacyState non disponible.');
-      alert('Erreur interne : impossible d\'appliquer les données importées.');
-    }
-  };
-})();
-</script>
-
-<!-- ===== API BRIDGE : exposée par le script principal ===== -->
-<!--
-  On ré-ouvre un script pour injecter _bfApplyLegacyState APRÈS que la IIFE
-  du script principal s'est exécutée, en passant par les globals qu'elle expose
-  (renderAll, secureSave), et en accédant à l'état via une function dédiée.
--->
-<script>
-/*
- * Ce bloc s'exécute en dernier. Il définit window._bfApplyLegacyState
- * qui est appelée par le callback d'import legacy.
- *
- * Il utilise un CustomEvent supplémentaire pour demander au script principal
- * d'appliquer le nouvel état — car state, normalizeState et secureSave
- * vivent dans la closure IIFE et ne sont pas directement accessibles.
- *
- * Le script principal doit écouter 'bf:apply-state' et y répondre.
- * On étend donc la IIFE principale via un second événement.
- */
-(function attachBridge() {
-  // Le script principal expose renderAll et secureSave sur window
-  // si on lui demande via un event. Sinon on passe par la réouverture de session.
-  // Approche choisie : injection directe via un event que la IIFE écoute.
-
-  window._bfApplyLegacyState = async function(newStateObj) {
-    // Émettre un événement que le script principal (ré-ouvert ci-dessous) écoute
-    document.dispatchEvent(new CustomEvent('bf:apply-state', { detail: { state: newStateObj } }));
-  };
-})();
-
-// Extension du script principal : écoute de 'bf:apply-state'
-// (doit être au niveau global pour avoir accès aux fonctions de la closure via leur binding window)
-document.addEventListener('bf:apply-state', async function(e) {
-  // renderAll et secureSave sont exposées par la IIFE via window.*
-  // state et normalizeState ne le sont pas directement.
-  // On les appelle via le mécanisme d'import interne déjà existant.
-  //
-  // Solution propre et sans modifier la IIFE :
-  // on sérialise le nouvel état en JSON, on le chiffre avec le mot de passe
-  // actuel (accessible via la closure à travers encrypt() qui est exposée),
-  // on l'écrit dans localStorage sous la storeKey courante,
-  // puis on recharge l'interface via un rechargement d'état.
-
-  // encrypt, curUser et storeKey ne sont PAS sur window.
-  // On passe par importSyncCode() qui LUI a accès à la closure,
-  // en pré-remplissant importTA avec le payload chiffré.
-
-  try {
-    // 1. Demander au script principal de chiffrer et d'exporter l'état legacy
-    //    via un round-trip : on déclenche bf:encrypt-and-apply
-    document.dispatchEvent(new CustomEvent('bf:encrypt-and-apply', { detail: e.detail }));
-  } catch(err) {
-    console.error('Erreur bridge apply-state:', err);
-  }
-});
-</script>
-
-<!-- ===== EXTENSION IIFE : écoute des events bridge ===== -->
-<!--
-  On ne peut pas modifier la IIFE directement, mais on peut ajouter un listener
-  DANS la même portée via un script séparé qui s'exécute après elle.
-  Puisque les variables de la closure ne sont pas accessibles de l'extérieur,
-  on utilise la seule méthode disponible sans modifier la IIFE :
-  passer par les fonctions window.importSyncCode et encrypt (si exposées)
-  ou déclencher un rechargement via openSyncModal/importSyncCode.
-
-  ── SOLUTION FINALE PROPRE ──
-  On ajoute directement ici le listener bf:encrypt-and-apply qui utilise
-  les fonctions window.importSyncCode et la fonction encrypt() réexposée
-  sur window ci-dessous pour éviter toute duplication de code.
--->
-<script>
-// Exposition de encrypt sur window pour que le bridge puisse l'utiliser.
-// On la redéfinit identiquement (même algo que dans la IIFE).
-window._bfEncryptForBridge = async function(data, pw) {
-  const enc  = new TextEncoder();
-  const salt = crypto.getRandomValues(new Uint8Array(16));
-  const iv   = crypto.getRandomValues(new Uint8Array(12));
-
-  const baseKey = await crypto.subtle.importKey('raw', enc.encode(pw), { name: 'PBKDF2' }, false, ['deriveKey']);
-  const key = await crypto.subtle.deriveKey(
-    { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-    baseKey,
-    { name: 'AES-GCM', length: 256 },
-    false,
-    ['encrypt']
-  );
-
-  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, enc.encode(JSON.stringify(data)));
-  const out = new Uint8Array(16 + 12 + ct.byteLength);
-  out.set(salt, 0); out.set(iv, 16); out.set(new Uint8Array(ct), 28);
-  return btoa(String.fromCharCode.apply(null, out));
+/* ── THEMES ── */
+const themeColors={'':'#f4f6f8','theme-onyx':'#050505','theme-navy':'#020617','theme-gold':'#0a0800','theme-violet':'#09071a'};
+window.setTheme=(t)=>{
+  document.body.setAttribute('class', t);
+  try{localStorage.setItem('bf_theme',t);}catch(e){}
+  const m=document.getElementById('themeColorMeta');if(m) m.content=themeColors[t]||'#f4f6f8';
+  document.querySelectorAll('.theme-dot').forEach(b=>b.classList.toggle('active',b.dataset.theme===t));
 };
+window.setTheme(localStorage.getItem('bf_theme')||'');
 
-document.addEventListener('bf:encrypt-and-apply', async function(e) {
-  /*
-   * À ce stade on a besoin de curUser et storeKey (dans la closure IIFE).
-   * On les obtient via window._bfSession que la IIFE expose après connexion.
-   * (voir le patch de la IIFE ci-dessous)
-   */
-  const session = window._bfSession;
-  if (!session || !session.curUser || !session.storeKey) {
-    alert('Session non initialisée. Connectez-vous avant d\'importer.');
-    return;
-  }
+/* ── PWA ── */
+const showPWAButtons=()=>{['pwaBtnWelcome','pwaBtnHeader'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='flex';});document.getElementById('installSection').style.display='block';};
+const hidePWAButtons=()=>{['pwaBtnWelcome','pwaBtnHeader'].forEach(id=>{const e=document.getElementById(id);if(e)e.style.display='none';});document.getElementById('installSection').style.display='none';};
+window.triggerInstall=()=>{if(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())) return openIosModal();if(!deferredPrompt) return;deferredPrompt.prompt();deferredPrompt.userChoice.then(r=>{if(r.outcome==='accepted') hidePWAButtons();deferredPrompt=null;});};
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;showPWAButtons();});
+window.addEventListener('appinstalled',()=>{deferredPrompt=null;hidePWAButtons();});
+if(/iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase())&&!window.matchMedia('(display-mode:standalone)').matches&&!navigator.standalone){
+  document.getElementById('iosHintWelcome').style.display='block';
+  document.getElementById('installSection').style.display='block';
+  const sBtn=document.getElementById('pwaBtnSettings');
+  if(sBtn){sBtn.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><rect x="3" y="17" width="18" height="5" rx="2"/></svg> Installer sur iPhone';sBtn.onclick=()=>{openIosModal();closeSettingsModal();};}
+}
 
-  const newState = e.detail.state;
-
-  try {
-    // Chiffrer le nouvel état avec le mot de passe actuel
-    const payload = await window._bfEncryptForBridge(newState, session.curUser);
-
-    // Écrire en localStorage sous la storeKey courante
-    localStorage.setItem(session.storeKey, payload);
-
-    // Demander à la IIFE de recharger l'état depuis localStorage
-    document.dispatchEvent(new CustomEvent('bf:reload-state'));
-
-  } catch(err) {
-    console.error('Erreur encrypt-and-apply:', err);
-    alert('Erreur lors du chiffrement des données importées.');
-  }
+/* ── KEYBOARD ── */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeExpModal();closeSettingsModal();closeGuideModal();closeSyncModal();closeIosModal();closeToast();document.querySelectorAll('.dropdown-content.show').forEach(d=>d.classList.remove('show'));}
+  if(e.key==='Enter'&&document.getElementById('expModal').classList.contains('open')) confirmAddExp();
 });
 
-/*
- * Écoute de bf:reload-state dans le contexte IIFE.
- * On ne peut pas l'ajouter dans la IIFE rétroactivement sans la modifier.
- * Solution : on passe par la fonction window.importSyncCode modifiée,
- * ou on injecte le listener ici et on appelle les globals window.renderAll + window.secureLoad.
- *
- * secureLoad et renderAll ne sont pas sur window directement.
- * Seule renderAll est indirectement appelable via changeMonth(curMonth).
- * On utilise window.changeMonth pour forcer un re-render.
- *
- * Pour secureLoad : on ne peut pas y accéder. Mais comme on vient d'écrire
- * en localStorage, il suffit de simuler ce que fait enterApp() sans le mot de passe.
- *
- * ── APPROCHE FINALE VRAIMENT PROPRE ──
- * On expose _bfSession et _bfReloadState depuis la IIFE en ajoutant
- * deux lignes à la fin de la IIFE (voir le patch inline ci-dessous).
- * Comme on ne peut plus modifier la IIFE (fichier livré), on le fait
- * ici en monkey-patching enterApp après son exécution.
- */
-document.addEventListener('bf:reload-state', async function() {
-  if (typeof window._bfReloadState === 'function') {
-    await window._bfReloadState();
-  } else {
-    // Fallback : rechargement de la page (dernier recours)
-    if (confirm('Import réussi. La page va se recharger pour appliquer les données.')) {
-      location.reload();
-    }
-  }
-});
-</script>
-
-<!-- ===== PATCH IIFE : exposition de _bfSession et _bfReloadState ===== -->
-<!--
-  Ce bloc s'exécute après la IIFE principale. On surcharge enterApp
-  pour capturer curUser/storeKey/state dans window._bfSession,
-  et on définit _bfReloadState qui recharge l'état depuis localStorage.
--->
-<script>
-(function patchIIFE() {
-  /*
-   * On intercepte la fin de enterApp() pour capturer la session.
-   * On surcharge window.enterApp en wrappant l'original.
-   */
-  const _origEnterApp = window.enterApp;
-  window.enterApp = async function() {
-    await _origEnterApp.apply(this, arguments);
-
-    // Après connexion réussie, on capture les infos de session
-    // en lisant depuis localStorage la storeKey qui vient d'être créée.
-    // On n'a pas accès direct à curUser/storeKey, mais on peut les
-    // reconstruire depuis les inputs (juste après l'appel, avant reset).
-    // Note : enterApp() ne réinitialise pas l'input immédiatement.
-    const pw = document.getElementById('userCodeInput')?.value?.trim() || '';
-    const profile = document.querySelector('.profile-chip.active')?.dataset?.profile || 'perso';
-    const year = new Date().getFullYear();
-
-    if (pw.length >= 6) {
-      const hashBuf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('bf_' + year + '_' + profile + '_' + pw));
-      const storeKey = Array.from(new Uint8Array(hashBuf)).map(b => b.toString(16).padStart(2,'0')).join('');
-
-      window._bfSession = { curUser: pw, storeKey, profile, year };
-
-      // Définir _bfReloadState : recharge depuis localStorage et rafraîchit l'UI
-      window._bfReloadState = async function() {
-        const raw = localStorage.getItem(storeKey);
-        if (!raw) { alert('Aucune donnée trouvée en localStorage.'); return; }
-
-        // Déchiffrer
-        const u8raw = new Uint8Array(atob(raw).split('').map(c => c.charCodeAt(0)));
-        const salt = u8raw.slice(0,16), iv = u8raw.slice(16,28), ct = u8raw.slice(28);
-
-        const baseKey = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), { name: 'PBKDF2' }, false, ['deriveKey']);
-        const key = await crypto.subtle.deriveKey(
-          { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-          baseKey, { name: 'AES-GCM', length: 256 }, false, ['decrypt']
-        );
-
-        try {
-          const dec = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct);
-          const newState = JSON.parse(new TextDecoder().decode(dec));
-
-          // Injecter via importTA + importSyncCode (qui a accès à la closure)
-          // On chiffre à nouveau avec encrypt() de la IIFE via le textarea.
-          // Mais encrypt() n'est pas sur window...
-          // On passe par le payload déjà en localStorage : on force importSyncCode
-          // en pré-remplissant importTA avec le raw payload déjà chiffré.
-          document.getElementById('importTA').value = raw;
-
-          // importSyncCode() déchiffre importTA avec curUser (dans la closure)
-          // et restaure l'état — c'est exactement ce qu'on veut.
-          await window.importSyncCode();
-
-        } catch(err) {
-          alert('Erreur lors du rechargement de l\'état : ' + err.message);
-        }
-      };
-    }
-  };
 })();
 </script>
-
 </body>
 </html>
